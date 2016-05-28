@@ -1,0 +1,150 @@
+.search{
+    .levelval {
+        font-size: 14px;
+    }
+    .numval {
+        font-size: 18px;
+        margin-left: 2px;
+        margin-right: 2px;
+    }
+    .recmd_list .item {
+        margin-bottom: 10px;
+        padding-left: 88px;
+        padding-right: 16px;
+    }
+    .recmd_list .item img {
+        max-width: 60px;
+        max-height: 60px;
+        top: 20px;
+        left: 14px;
+    }
+    .has-subheader {
+        top: 81px;
+    }
+    .recmd_item_numRight {
+        float: right;
+    }
+    .recmd_item_hospital {
+        padding-bottom: 6px;
+        border-bottom: solid #f6f6f6 1px;
+    }
+    .recmd_item_num {
+        padding-top: 6px;
+    }
+    .padding6{
+        padding:6px 0 0 4px;
+    }
+    .grey{
+        background:#f8f8f8;
+    }
+    .cyan-bg{
+        background-color:#86daf7;
+        border-radius:8px;
+    }
+    ::-webkit-input-placeholder{
+        color:#fff;
+    }
+    ::-moz-input-placeholder{
+        color:#fff;
+    }
+    :-ms-input-placeholder{
+        color:#fff;
+    }
+    .grey .scroll{
+        height:100%;
+    }
+    .height100{
+        height:100%;
+    }
+    .width100{
+        width:100%;
+        color:#fff;
+    }
+    .searchDocNoData{
+        text-align: center;
+        padding:20px 0;
+    }
+    .searchDocExitData{
+        height:100%;
+    }
+    .grey .scroll{
+        height:100%;
+    }
+    .margin-40{
+        margin-top:-40px;
+    }
+    .grey .item:first-child{
+        border-top:0;
+    }
+    .font-gray{
+        color:#B5B4B4;
+    }
+    .cardInfor .card{
+    margin:8px 5px;
+    border:0;
+    padding:22px 10px;
+    border-radius: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    }
+    .cardInfor .list{
+        border:0;
+    }
+    .cardInfor .margin-5{
+        margin-bottom:6px;
+    }
+    .cardInfor .font-gray{
+        color:#7B7B7B;
+    }
+   .cardInfor .left{
+    width:83%;
+    display: inline-block;
+    }
+    .cardInfor .right{
+        font-size:35px;
+        padding-left:15px;
+        color:#95d3ce;
+        display: inline-block;
+       
+    }
+    .cardInfor .right:before{
+        width:35px;
+        height:35px;
+        text-align: center; 
+    }
+    .search_color {
+        color: #159500;
+    }
+    .light {
+        color: #fff !important;
+    }
+    .search_hisScroll {
+        max-height: 300px;
+        height: initial;
+    }
+    .search_backdrop {
+        position: absolute;
+        top: 44px;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+    .isEmptyDataSearch{
+        height:93%;
+        width:100%;
+        .list{
+            height:90%;
+            width:100%;
+            display: table;
+        }
+    }
+    .box-search{
+        border-radius: 22px;
+        padding-left:12px;
+    }
+    .padding6 .item:last-child{
+        margin-bottom:40px;
+    }
+}
+

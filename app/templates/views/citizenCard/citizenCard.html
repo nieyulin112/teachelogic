@@ -1,0 +1,79 @@
+<ion-view class="stable-bg familyDoctor">
+    <!--主标题-->
+    <ion-header-bar align-title="center" class="bar-calm">
+        <button class="button button-icon ion-ios-arrow-back" ng-click="backToHome()"></button>
+        <h1 class="title super-text">市民卡</h1>
+    </ion-header-bar>
+
+    <ion-content class="record-bg cardPos">
+    	<img src="images/noCard.png" class="cardBg" id="noCardBg">
+		<div class="cardDocNoData card-text normal-text hidEmptyData" ng-class=''{hidEmptyData:!citizenCardDoc}'' ng-show="citizenCardDoc">您尚无市民卡，可到附近服务网点查询相关业务</div>
+        <div class="row light-bg" style="padding:20px 0" id="cardPadding">
+            <div class="col col-41 text-right">
+                <img ng-src="{{cards.person.image}}" class="insurance-face" onerror="this.src='images/per_male.png'">
+            </div>
+
+            <div class="col">
+                
+                <div class="mt10 min-text">
+                    <strong class="large-text" ng-bind="cards.person.name"></strong>
+                    <span class="min-text" ng-bind="cards.person.sex"></span> 
+                    <span class="min-text" ng-bind="cards.person.age">
+                    </span>岁
+                </div>
+                <span class="min-text" ng-bind="cards.person.siCard"></span>
+            </div>
+
+        </div>
+        <!-- 判断是否有市民卡 -->
+        <div class="cardExitData" ng-if="!citizenCardDoc">
+        <div class="list item-margin10">
+            <h5 class="si-padding-10 large-text">市民卡</h5>
+	            <!--第一张卡-->
+	            <!--<div class="first-card shadow" ng-repeat="item in cards.cardList" ng-click="skipMain(item)" ng-if="$index==0" ng-class="item.bgColor">-->
+				<div class="first-card shadow" ng-repeat="item in cards.cardList" ng-if="$index==0" ng-class="item.bgColor">		
+	                <img ng-src="images/{{item.bankCode}}.png" class="bank-img" onerror="this.src='images/bankDefault.png'">
+	                <span class="small-text" ng-bind="item.bankName"></span><br>
+	                <!--<span class="min-text" ng-bind="item.cardNumber"></span>-->
+	                <span class="min-text" ng-bind="item.handledCardNumber"></span>           
+	            </div>
+	
+	            <!--第n张卡-->
+	            <!--<div class="second-card shadow" ng-repeat="item in cards.cardList" ng-click="skipMain(item)" ng-if="$index>0"ng-class="item.bgColor">-->
+	            <div class="second-card shadow" ng-repeat="item in cards.cardList" ng-if="$index>0" ng-class="item.bgColor">    
+	                <img ng-src="images/{{item.bankCode}}.png" class="bank-img img-size" onerror="this.src='images/bankDefault.png'">
+	                <span class="small-text" ng-bind="item.bankName"></span><br>
+	                <!--<span class="min-text" ng-bind="item.cardNumber"></span>-->
+	                <span class="min-text" ng-bind="item.handledCardNumber"></span>
+	            </div>
+            <!-- <h5 class="si-padding-10 large-text" ng-if="cards.assistCard">市民卡-副卡</h5>
+            <div class="second-card shadow" ng-click="skipMain()" ng-class="item.bgColor" ng-repeat="item in cards.assistCard">
+                <img ng-src="{{item.image}}" class="bank-img-small">
+
+                <span class="small-text" ng-bind="item.cardName"></span>
+                <span class="min-text si-fl-right"ng-bind="item.cardNumber">
+                </span>                 
+            </div> -->
+
+            <!-- <div class="second-card shadow gfyh-bg">
+                <img src="images/placeholder/avatars/avatar-1.png" class="bank-img-small">
+                <span class="small-text">广发银行</span><span class="min-text si-fl-right">**** **** **** 1234</span>                 
+            </div>
+            <div class="second-card shadow zxyh-bg">
+                <img src="images/placeholder/avatars/avatar-1.png" class="bank-img-small">
+                 <span class="small-text">中信银行</span><span class="min-text si-fl-right">**** **** **** 1234</span>                 
+            </div> -->
+            <div class="card-button calm large-text" ng-click="interPoint(0)">
+                点击查看市民卡服务网点
+            </div>
+        </div>
+       </div>
+       	<!--无卡状态-->
+        <div class="cardDocNoData normal-text" ng-show="citizenCardDoc">
+        	<div class="noPic">
+        		<img src="images/cardPoint.png" ng-click="interPoint(0)">
+        		<p class="calm large-text" ng-click="interPoint(0)">点击查看市民卡服务网点</p>
+        	</div>
+        </div>
+  </ion-content>
+</ion-view>

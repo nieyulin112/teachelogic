@@ -1,0 +1,120 @@
+<ion-view class="stable-bg familyDoctor">
+    <!--主标题-->
+    <ion-header-bar align-title="center" class="bar-calm">
+        <button class="button button-icon ion-ios-arrow-back" ui-sref="app.citizenCard">
+        </button>
+        <h1 class="title super-text">联机账户查询</h1>
+    </ion-header-bar>
+
+    <!--市民卡-->
+    <ion-content class="record-bg">
+        <div class="light-bg text-center padding">
+            <h2 class="assertive orange">
+                ￥<span class="text-left" style="font-size:150%;" ng-bind="accountData.card.money"></span>
+            </h2>
+            <span class="large-text text-left">市民卡联机账户余额<span>
+        </div>
+        <div class="list item-margin10"> 
+
+            <h5 class="si-padding-10 large-text citizenCard">
+                市民卡
+            </h5>
+
+            <!-- <div class="item item-icon-right item-avatar"> 
+
+                <img src="images/placeholder/avatars/avatar-1.png">
+                <h2 ng-bind="accountData.mainCard.bankName"></h2>
+                <h3 ng-bind="accountData.mainCard.bankNum"></h3>             
+            </div> -->
+
+            <div class="first-card shadow payh-bg">
+                <img src="images/placeholder/avatars/avatar-1.png" class="bank-img">
+                <span class="small-text" 
+                ng-bind="accountData.card.bankName"></span><br>
+                <span class="min-text" 
+                    ng-bind="accountData.card.bankNum">
+                </span>               
+            </div>
+
+            <h5 class="si-padding-10 large-text citizenCard">联机账户明细</h5>   
+            <div class="bank-year">
+                <strong ng-bind="accountData.card.year">
+                </strong>
+                <strong>年</strong>
+            </div> 
+
+            <div class="money-detail light-bg si-padding-6">
+                  <ul>
+
+                    <li ng-repeat="item in accountData.card.data">
+
+                        <div class="money-detail-date">{{item.date.substr(0,2)}}<span>/{{item.date.substr(3,2)}}</span></div>
+                        <div class="money-detail-d" 
+                        ng-class="{money_detail_reduce:item.consumption,  money_detail_add:item.amountInclude}">
+                          <div class="money-detail-content">
+                            <p class="money-detail-content-type" ng-if="item.amountInclude">充值金额</p>
+                            <p class="money-detail-content-type" ng-if="item.consumption">支出金额</p>
+                            <p class="money-detail-content-amount account_add assertive" ng-if="item.amountInclude">
+                                <span>+</span>{{item.amountInclude}}</p>
+                            <p class="money-detail-content-amount account_mud balanced" ng-if="item.consumption">-{{item.consumption}}</p>
+                          </div>
+                        </div>
+                    </li>
+                  </ul>
+
+                  <div class="clearfix"></div>
+            </div>
+        </div>
+    </ion-content>
+
+    
+    <!-- <ion-content class="record-bg" ng-show="">
+        <div class="light-bg text-center padding">
+            <h2 class="assertive">
+                ￥<span class="text-left" style="font-size:150%;" ng-bind="accountData.assistCard.money"></span>
+            </h2>
+            <span class="large-text text-left">联机账户余额<span>
+        </div>
+        <div class="list item-margin10 item-border"> 
+
+            <h5 class="si-padding-10 large-text">
+                市民卡－副卡
+            </h5>
+
+            <div class="item item-icon-right item-avatar"> 
+
+                <img src="images/placeholder/avatars/avatar-1.png">
+                <h2 ng-bind="accountData.assistCard.bankName"></h2>
+                <h3 ng-bind="accountData.assistCard.bankNum"></h3>             
+            </div>
+            <h5 class="si-padding-10 large-text">联机账户明细</h5>   
+            <div class="bank-year">
+                <strong ng-bind="accountData.assistCard.year">
+                </strong>
+                <strong>年</strong>
+            </div> 
+
+            <div class="money-detail light-bg si-padding-6">
+                  <ul>
+
+                    <li ng-repeat="item in accountData.assistCard.data">
+
+                        <div class="money-detail-date">{{item.date.substr(0,2)}}<span>/{{item.date.substr(3,2)}}</span></div>
+                        <div class="money-detail-d" 
+                        ng-class="{money_detail_reduce:item.consumption,  money_detail_add:item.amountInclude}">
+                          <div class="money-detail-content">
+                            <p class="money-detail-content-type" ng-if="item.amountInclude">充值金额</p>
+                            <p class="money-detail-content-type" ng-if="item.consumption">支出金额</p>
+                            <p class="money-detail-content-amount account_add assertive" ng-if="item.amountInclude">
+                                <span>+</span>{{item.amountInclude}}</p>
+                            <p class="money-detail-content-amount account_mud balanced" ng-if="item.consumption">-{{item.consumption}}</p>
+                          </div>
+                        </div>
+                    </li>
+                  </ul>
+
+                  <div class="clearfix"></div>
+            </div>
+        </div>
+    </ion-content> -->
+</ion-view>

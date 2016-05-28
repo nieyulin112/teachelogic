@@ -1,0 +1,70 @@
+<ion-view class="bg-lighter">
+
+    <ion-header-bar align-title="center" class="bar-calm">
+        <button class="button button-icon icon ion-ios-arrow-back" ui-sref="app.pill"></button>
+        <h1 class="title super-text">续方申请确认</h1>
+    </ion-header-bar>
+
+    <ion-content class="atm">
+    
+        <div class="list" >
+
+            <div class="item item-divider calm large-text" >
+                药品清单
+            </div>
+
+            <div class="item" >
+
+                <i class="icon ion-chevron-left large-text my-leftl" ng-click="leftScroll()" ng-show="pillListVO.num > 3"></i>
+
+                <ion-scroll direction="x" delegate-handle="pillScroll" class="my-pillScroll">
+                    <!--药品滚动的清单-->
+                    <div class="scroll-container">
+
+                        <div class="scroll-pill-list my-pill-list list-pill" ng-repeat="item in continuePillData.pillListCustom">
+                            <span class="myimg">
+                                <img class="my-picst" src="{{item.imageUrl}}" onerror="this.src='images/pill-default.png'" alt="药品图片" class="mwh90 padding" >
+                                <div class="mask">
+                                    <!--<i class="icon ion-close"></i>-->
+                                    <span>x</span>
+                                    <span ng-bind="item.amount" ></span>
+                                </div>
+                            </span>   
+                            <p class="my-pcontent normal-text" ng-bind="item.itemName">
+                                <!-- <span ng-bind="item.itemName"></span> -->
+                            </p>
+                            
+                        </div>
+
+                    </div>
+
+                </ion-scroll>
+
+                <i class="icon ion-chevron-right large-text my-leftr" ng-click="rightScroll()" ng-show="pillListVO.num > 3"></i>
+
+            </div>
+
+            <div class="second has-subheader">
+                <label class="item item-input">
+                    <textarea class="large-text" placeholder="想对医生说的话..." rows="10" ng-model="continuePillData.talkContent" ng-blur="showSubmitButton()" ng-focus="hidSubmitButton()""></textarea>
+                </label>
+
+                <h5 class="lighter normal-text text-center">医生会依据历史用药信息与诊疗信息为您开具处方</h5>
+                <div>
+                    <!--<div class="row my-row calm">
+                        <label class="checkbox calm" style="padding-right:4px;">
+                            <input class="calm my-fsize" type="checkbox" lass="checkbox" ng-model="agree.value">
+                        </label>
+                        <a class="calm normal-text my-a">我已阅读并同意《智慧人社通电子处方协议》</a>
+                    </div>                -->
+                    <!-- <input type="checkbox" class="checkbox" ng-model="agree.value" > -->
+                </div>
+            </div>
+            <div class="my-mar"></div>
+        </div>
+    </ion-content>
+
+    <ion-footer-bar align-title="center" class="bar-calm" id="submitPill">
+        <h1 class="title super-text" ng-click="applySubmit(continuePillData)">申请提交</h1>
+    </ion-footer-bar>
+</ion-view>

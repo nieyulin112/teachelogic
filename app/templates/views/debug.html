@@ -1,0 +1,43 @@
+<ion-view>
+    <ion-header-bar align-title="center" class="bar-calm">
+        <h1 class="title large-text">设置</h1>
+    </ion-header-bar>
+
+    <ion-content>
+      <ul class="list" style="margin-top:40px">
+        <li class="item item-toggle">
+           使用模拟数据
+           <label class="toggle toggle-balance">
+             <input type="checkbox" ng-model="settings.useFake">
+             <div class="track">
+               <div class="handle"></div>
+             </div>
+           </label>
+        </li>
+        <li class="item item-toggle">
+           使用H5请求替代hybrid请求
+           <label class="toggle toggle-balance">
+             <input type="checkbox" ng-disabled="settings.useFake" ng-model="settings.devHttp">
+             <div class="track">
+               <div class="handle"></div>
+             </div>
+           </label>
+        </li>
+          <label class="item item-input" ng-show="!settings.useFake && settings.devHttp">
+            <span class="input-label">Endpoint:</span>
+          <input type="text" ng-show="!settings.useFake && settings.devHttp" ng-model="settings.endPoint">
+          </label>
+
+        <li class="item">
+          <a class="button button-positive" ng-click="testNetwork()">网络测试</a>
+        </li>
+        </div>
+      </ul>
+    </ion-content>
+      <div class="bar bar-footer">
+        <div class="button-bar">
+          <a class="button" ng-click="cancel">取消</a>
+          <a class="button button-positive" ng-click="apply()">应用</a>
+        </div>
+      </div>
+</ion-view>

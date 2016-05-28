@@ -1,0 +1,28 @@
+<ion-view class="stable-bg stuInsParent">
+    <ion-header-bar align-title="center" class="bar-calm">
+        <button class="button button-icon ion-ios-arrow-back" ng-click="goBackStuIndex();"></button>
+        <h1 class="title super-text">按付款人查询</h1>
+    </ion-header-bar>
+    <div class="customParent content has-header">
+      <div class="list list-inset">
+            <label class="item item-input">
+                <input type="tel" maxlength="11" id="stu_parentPhone" ng-blur="showSearchButton();" placeholder="输入付款人手机号">
+            </label>
+             <label class="emptyLabel item item-input" ng-show="true">
+	          <input type="text" readonly="readonly">
+	        </label>
+	        <label class="emptyLabel item item-input" ng-show="true">
+	          <input type="text" readonly="readonly">
+	        </label>
+	        <label class="emptyLabel item item-input" ng-show="true">
+	          <input type="text" readonly="readonly">
+	        </label>
+	         <label class="emptyLabel item item-input" ng-show="true">
+	          <input type="text" readonly="readonly">
+	        </label>
+        </div>
+      </div>
+    <ion-footer-bar id="searchPhoneId" class="bar-calm" on-touch="searchByParent();">
+    		<h1 class="title super-text">查询</h1>
+    </ion-footer-bar>
+</ion-view>

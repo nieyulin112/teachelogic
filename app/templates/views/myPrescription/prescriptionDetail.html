@@ -1,0 +1,66 @@
+<ion-view class="bg-light" ng-init="initPrescriptionDetail()">
+    <ion-header-bar align-title="center" class="bar-calm">
+        <button class="button button-icon icon ion-ios-arrow-back"  ng-click="goBack()"></button>
+        <h1 class="title super-text">处方详情</h1>
+    </ion-header-bar>
+
+    <ion-content class="scroll-content ionic-scroll has-header has-footer detail-my" ng-class="{isEmptyDataPrescriptionList:!showPreDetailContent}">
+        <div class="rec text-center normal-text padding hidEmptyData" ng-class="{hidEmptyData:showPreDetailContent,isEmptyData:!showPreDetailContent}" ng-if="!showPreDetailContent">
+                    <img src="images/Doctor.png">
+                    <p ng-bind="emptyMsg"></p>
+            </div>
+
+    	<div class="preDetailExitData" ng-show="showPreDetailContent">
+	        <div class="list pd-list-one padding-0">
+	            <div class="item item-divider item-icon-left div-one">
+	                <span class="icon pd-one">
+	                     <span class="large-text  year-margin pd-two" ng-bind="prescriptionDetail.disease"><!--糖尿病--></span> 
+	                </span>
+	                <span class="item-note normal-text pd-dis" ng-bind="prescriptionDetail.anagraphDate"><!--2005-05-05--></span>
+	            </div>
+	            <div class="item item-thumbnail-left item-icon-right div-two" ng-repeat="item in prescriptionDetail.drugList" ng-click="getPrescriptionPillDetail(item.itemId,item.itemCode,prescriptionDetail.anagraphStatus)">
+	            	<div class="detailPic">
+	                	<img class="pic" src="{{item.imageUrl}}" onerror="this.src='images/doctor-default.png'">
+	               	</div>
+	               	<div class="detail-insurance">
+		                <div class="normal-text name" ng-bind="item.itemName"></div>
+		                <div class="normal-text spe"  ng-bind="item.specifications"></div>
+		                <div class="min-text adv">医嘱:<span class="min-text pd-adv" ng-bind="item.advice"></span></div>
+		            </div>
+		            <i ng-bind="item.amount" class="icon ion-close min-text dis-doc"></i>
+		            <i class="icon ion-chevron-right min-text customGT"></i>
+	            </div>
+	            <div class="item item-icon-right div-three">
+	            	<div class="div-t-o">
+		                <img class="doctor-pic" src="images/head1@2x.png" alt=""/>
+		                <span class="doctor-name" ng-bind="prescriptionDetail.doctorName"></span>
+	                </div>
+	            </div>
+	            <div class="item item-divider div-four">
+	                <span class="col col-75 large-text status-tittle">处方跟踪</span>
+	            </div>
+	        </div>
+	
+	        <div class="list pd-list-two">
+	            <!--<div class="slider-line balanced active-green">
+	                <p>已完成取药</p>
+	                <p>2015-04-03</p>
+	            </div>-->
+	            <div class="slider-line" ng-repeat="item in prescriptionDetail.anagraphTrackingList">
+	                <div ng-bind="item.changeType" class="normal text"><!--您的家庭医生已为您开具电子处方，请到合作药店购买药品。--></div>
+	                <div ng-bind="item.changeDate"  class="normal text"><!--2015-04-08--></div>
+	            </div>
+	        </div>
+	
+	        <div class="super-text pd-res pd-state margin-60">
+	        	<div class="pd-res-bgImg">
+		            <div class="large-text pd-res-w" ng-bind="prescriptionDetail.anagraphStatusStr"><!--状态--></div>
+	            </div>
+	        </div>
+	    </div>    
+    </ion-content>
+    <!--<div class="bar bar-footer bar-calm">
+        <div class="title super-text">附近药店</div>
+    </div>-->
+</ion-view>
+

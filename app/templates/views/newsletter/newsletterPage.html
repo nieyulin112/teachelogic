@@ -1,0 +1,56 @@
+<ion-view class="newsletter">
+  <!--主标题-->
+  <ion-header-bar align-title="center" class="bar-calm">
+        <button class="button button-icon icon ion-ios-arrow-back" ng-click="backToHome()"></button>
+        <div class="title super-text">{{headerTitle}}</div>
+    </ion-header-bar>
+    
+    <!--副标题-->
+    <div class="bar bar-subheader" ng-if="isTab && menuTypeNum === '1'">
+        <div class="button-bar paddingTab" ng-if="menuTypeNum === '1'">
+            <a class="button cyan-bg opacity_left" ng-class="{active:isHave}" ng-click="changeTab({{tabItem[0].tab}});">{{tabItem[0].tag}}</a>
+            <a class="button cyan-bg opacity_right" ng-class="{active:!isHave}" ng-click="changeTab({{tabItem[1].tab}})">{{tabItem[1].tag}}</a>
+        </div>
+    </div>
+        
+    <div class="tabs-striped tabs-top tabs-color-calm" ng-if="isTab && menuTypeNum==='2'">
+    		<ion-scroll direction="x" class="tabScroll">
+	      <div class="tabs scroll_tab">
+	      		<div class="tab-item large-text" ng-class="{active:item.active}" ng-repeat="item in tabItem" 
+	      			ng-click="changeTab(item)" ng-bind="item.tag"></div>
+	      </div>
+      </ion-scroll>
+    </div>
+
+    <!-- 中心内容 -->
+    <ion-content class="grey-bg newsScroll greyColor" ng-class="{true: 'has-subheader margin21', false: ''}[isTab]" overflow-scroll="true">
+    	<ion-scroll delegate-handle="newsletter" ng-class="{isEmptyDataNewsLetterList:!findBool}">
+            <div class="rec text-center normal-text padding hidEmptyData" ng-class="{hidEmptyData:findBool,isEmptyData:!findBool}" ng-if="!findBool">
+                    <img src="images/Doctor.png">
+                    <p ng-bind="emptyMsg"></p>
+            </div>
+		    <div ng-show="findBool">
+		    		<ion-list >
+		            <ion-item ng-repeat="item in newsletterItems" class="padding noHavePadding" ui-sref="app.informationBody({idNews:item.idNews})">
+		                <div ng-bind="item.title" class="normal-text item-margin10 overStep" style="font-weight:bold"></div>
+		
+		                 <div class="row row-no-padding" ng-if="menuTypeNum !== '2'">
+                        <div class="col text-right"> 
+                            <div ng-bind="item.dateNews" class="min-text font-gray"></div>
+                        </div>
+		                </div>
+		
+		                <div class="row row-no-padding" ng-if="menuTypeNum === '2'">
+                        <div class="col"> 
+                            <div ng-bind="item.tag" class="min-text calm info-lable"></div>
+                        </div>
+		                </div>
+		
+		            </ion-item>
+		        </ion-list>
+		        <ion-infinite-scroll ng-if="newsOver" on-infinite="getNextPageNewsletter();" distance="20%" ></ion-infinite-scroll>
+		    </div>
+		   </ion-scroll>
+  </ion-content>
+    
+</ion-view>

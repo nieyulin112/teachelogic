@@ -1,0 +1,338 @@
+.selectYearMonthDate {
+  display: table;
+  width: 100%;
+  margin: 0 0 0 50px;
+}
+.selectYearMonthDate select {
+  height: 45px;
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+}
+.paymentDetail{
+    .dateDIV {
+      float: left;
+    }
+    input#h5Month {
+      /* margin: -40px 0 0 50px; */
+      color: #E7F4FA;
+      background-color: #E7F4FA;
+      width: 50px;
+      /* margin-left: 70px; */
+      /* position: absolute; */
+      height: 30px;
+      border: none;
+    }
+    .h5DateDIV {
+      z-index: 10;z-index: 100;
+      position: absolute;
+      background: #E7F4FA;
+      width: 36px;
+      height: 32px;
+      margin-left: 41px;
+      margin-top: -1px;
+      border: none;
+    }
+    .dateDIVYear {
+      z-index: 10;
+      position: relative;
+    }
+    input#h5MonthYear {
+      width: 50px;
+      height: 20px;
+      position: absolute;
+      top: 25px;
+      left: 40px;
+      /* z-index: -10; */
+      color: #E7F4FA;
+      background: #E7F4FA;
+    }
+
+    .isShowFirstPage{
+        display:none;
+    }
+    .button.button-light.active, .button.button-light.activated{
+        box-shadow:none;
+    }
+    .isEmptyDataPaymentList{
+        .list {
+          height: 100%;
+          width:100%;
+          display: table;
+        }
+    }
+    .bar-subheader {
+        height: 70px;
+        padding: 0;
+    }
+    .has-subheader {
+        top: 112px;
+        width: 100%;
+    }
+    .button-bar{
+        height:100%;
+        background-color: #E7F4FA;
+    }
+    .slider {
+        height: 100%;
+    }
+    .slider-pager{
+        display:none;
+    } 
+    
+    .paymentYear {
+        font-weight: normal;
+        font-size: 13px;
+        margin: 10px 0 5px 10px;
+        color: #35C7FA;
+        .paymentYearSpan:last-child {
+            margin: 0 0 0 -5px;
+        }
+    }
+    .insuranceYear {
+        font-weight: normal;
+        font-size: 22px;
+        text-align: left;
+        vertical-align: middle;
+        display: table-cell;
+        .insuranceMonthSpanLeft{
+            margin: 0 0 0 -5px;
+            font-size:12px;
+        }
+    }
+    .paymentMonth {
+        font-weight: bold;
+        margin: 5px 0 0 10px;
+        font-size: 25px;
+        color: #35C7FA;
+        
+        .paymentMonthSpanLeft{
+            margin: 0 0 0 -5px;
+            font-size: 12px;
+        }
+    }
+    .paymentCompanyPersonalFirst{
+        font-size: 14px;
+        font-weight: bold;
+        margin: 10px 20px 0 15px;
+        color: #333333;
+        float: left;
+    }
+    .paymentCompanyPersonalFirst div:last-child {
+      font-size: 18px;
+      color: #ff6600;
+      margin: 5px 0 0 0;
+    }
+    .paymentCompanyPersonalSec{
+          font-size: 14px;
+          font-weight: bold;
+          margin: 10px 20px 0 15px;
+          color: #333333;
+          float: right;
+    }
+    @media screen and(min-width:300px) and (max-width:321px){
+      .paymentCompanyPersonalSec{
+          font-size: 14px;
+          font-weight: bold;
+          margin: 10px 0px 0 15px;
+          color: #333333;
+          float: right;
+      }
+    }
+    .paymentCompanyPersonalSec div:last-child {
+      font-size: 18px;
+      color: #ff6600;
+      margin: 5px 0 0 0;
+    }
+    .insuranceList {
+        font-weight: normal;
+        /**margin: 0;
+        padding: 15px 5px 5px 10px;*/
+        padding-left: 10px;
+    }
+    .insuranceTypeName {
+          float: left;
+          width: 34%;
+          padding-left: 0px;
+          font-weight: bold;
+          font-size: 16px;
+          color: #333333;
+    }
+    .insuranceTypeName span {
+      white-space: pre-wrap;
+    }
+    .insuranceTypeName div:last-child {
+      font-size: 12px;
+      color: #999999;
+      margin-top: 5px;
+    }
+    .paymentAmount {
+        float: left;
+        font-weight: normal;
+        width: 100%;
+        span {
+            font-size: 16px;
+            color: #333333;
+        }
+    }
+    .paymentCompanyPersonalDetail{
+        float: right;
+        text-align: left;
+        width: 64%;
+        .companyPersonal {
+          float: left;
+          font-size: 12px;
+          font-weight: bold;
+          color: #999999;
+          margin-top: 5px;
+
+          display: table;
+          width: 100%;
+        }
+        .companyPersonal span:first-child {
+          display: table-cell;
+          width: 50%;
+        }
+        .companyPersonal span:last-child {
+          display: table-cell;
+          width: 50%;
+        }
+    }
+
+    .insuranceMonths {
+        padding: 0;
+        border-bottom: #ddd solid 1px;
+        height: 70px;
+        .month {
+            display: block;
+            float: left;
+            margin: 10px 0 0 10px;
+            width:33%;
+            .monthDIVFirst {
+                margin-bottom: 5px;
+            }
+            .monthDIVSec {
+              font-size: 12px;
+              font-weight: normal;
+              color: #999999;
+            }
+        }
+        .insuranceDetail {
+            float: right;
+            width:60%;
+            margin: 10px 0 0 0;
+            .insuranceDetailDIV {
+              font-size: 13px;
+            }
+            .insuranceDetailDIVSec {
+              height: 100%;
+              .paymentAmountDIV {
+                  float: left;
+                  height: 40%;
+                  width: 100%;
+                  margin-bottom: 5px;
+                  display: table;
+                  font-size:18px;
+                }
+                .paymentAmountDIV span {
+                  display: table-cell;
+                }
+                .insuranceDetailDIV {
+                  float: left;
+                  width: 100%;
+                  height: 45%;
+                  display: table; 
+                  font-weight: normal;
+                  color: #999999;
+                  font-size:12px;
+                }
+                .insuranceDetailDIV span {
+                  display: table-cell;
+                }
+            }
+            .arrivalStatus {
+                float:right;
+                margin-right: 10px;
+            }
+            .isPayState {
+              font-size: 20px;
+              font-weight: bold;
+              padding: 10px 0 0 0;
+              float: left;
+            }
+            .paymentAmountSpan{
+
+            }
+        }
+    }
+    .button.button-light.icon-right.ion-ios-arrow-down.custom_button_arrow {
+        /**border-radius: 20px;
+        margin: 0px 0px 0px 15px;
+        border: none;
+        width: 10px;
+        height: 10px;*/
+        border:none;
+        background-color: #E7F4FA;
+        color: #35C7FA;
+        padding-left: 3px;
+        height: 10px;
+        margin-top: -1px;
+    }
+    .heightLine {
+      border-left: #35C7FA solid 1px;
+      margin: 10px 0 10px 0;
+    }
+
+    /**@media screen and(min-width:300px) and (max-width:321px){*/
+        
+        .paymentCompanyPersonal{
+          display: table;
+          width: 65%;
+        }
+        .paymentYearMonth {  
+          width: 30%;
+          display: table;
+        }
+
+        .insuranceYearMonth {
+            width: 30%;
+          display: table;
+            margin: 25px 0 0 10px;
+            color: #35C7FA;
+        }
+        .insuranceCompanyPersonal{
+          width:210px;
+        }
+          
+        .insuranceYear .button.button-light.icon-right.ion-ios-arrow-down.custom_button_arrow {
+            border-radius: 20px;
+            margin: -2px 0px 0 15px;
+            border: none;
+            width: 10px;
+            height: 10px;
+        }
+    
+        .paymentMonthIndex {
+              height: 20px;
+              width: 20px;
+              border: #ADA9A9 solid 1px;
+              border-radius: 20px;
+              float: right;
+              margin: -30px 7px 0px 0px;
+              z-index: 3;
+              position: relative;
+              cursor: pointer;
+        }
+        .insuranceMonthIndex {
+              height: 20px;
+              width: 20px;
+              border: #ADA9A9 solid 1px;
+              border-radius: 20px;
+              float: right;
+              margin: -25px 10px 0px 0px;
+              z-index: 3;
+              position: relative;
+              cursor: pointer;
+        }
+    /**}*/
+}

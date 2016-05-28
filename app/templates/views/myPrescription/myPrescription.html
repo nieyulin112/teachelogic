@@ -1,0 +1,83 @@
+<ion-view class="bg-lighter" ng-init="initPrescriptionList()">
+    <ion-header-bar align-title="center" class="bar-calm head-noborder">
+        
+        <button class="button button-icon icon ion-ios-arrow-back"  ng-click="backToHome()"></button>
+        <h1 class="title super-text">我的处方</h1>
+    </ion-header-bar>
+    
+    <ion-content class="c-background-color noscroll-myPre" scroll="true" overflow-scroll="true" ng-class="{isEmptyDataPrescriptionList:!showPreContent}">
+    	<ion-scroll delegate-handle="myPreScroll">      
+             <div class="rec text-center normal-text padding hidEmptyData" ng-class="{hidEmptyData:showPreContent,isEmptyData:!showPreContent}" ng-if="!showPreContent">
+                    <img src="images/Doctor.png">
+                    <p ng-bind="emptyMsg"></p>
+            </div>
+	    	<div class="myPreExitData" ng-show="showPreContent">
+		        <ion-refresher on-refresh="getNextPagePrescription(0);" pulling-text="下拉刷新" refreshing-text="正在刷新..."></ion-refresher>
+		        <div class="list">
+		            <div class = "card flatten"  ng-repeat="prescription in prescriptionList">
+		                <div class="item mP-disease-doctor-status">
+		                    <div class="row row-center mP-dds padding">
+	                            <div class="col mP-dds-divone">
+	                                <div class="mP-disease-doctor">
+	                                  <span class="large-text disease-padingtop mPre-disease" ng-bind="prescription.disease"><!-- 高血压 --></span>
+	                                  <img class="mPre-doc-pic" src="images/head1@2x.png"/>
+	                                  <!--<span class="min-text">医生</span>-->
+	                                  <span class="min-text  mPre-doc-name" ng-bind="prescription.doctorName"><!-- 李天一 --></span>
+	                                </div>
+	                            </div>
+	                            
+	                            <div class="col mP-dds-divtwo" ng-if="prescription.anagraphStatus!=='1'&& prescription.anagraphStatus!=='2'">
+	                              <div class="status-r normal-text" ng-bind="prescription.anagraphStatusStr">
+	                               <!--  已取药 -->
+	                              </div>
+	                              
+	                            </div>
+	                            <div class="col mP-dds-divthree" ng-if="prescription.anagraphStatus==='1'||prescription.anagraphStatus==='2'">
+	                              <div class="status-w normal-text" ng-bind="prescription.anagraphStatusStr">
+	                               <!--  等待医生确认 -->
+	                              </div>
+	                            </div>
+		                    </div>
+		                </div>
+		
+		                <div class="item myPre-piliList" ng-click="getPrescriptionDetail(prescription.anagraphCode,prescription.anagraphStatus)">
+		                    <div class="row myPre-row">
+							    <div class="myPre-container-default" ng-show="!prescription.showAllMpreList">
+									<div class="myPre-pilldiv" ng-repeat="pill in prescription.imageURLList">
+										<div class="pre-img">
+							    	    	<img src="{{pill.imageURL}}" onerror="this.src='images/pill-default.png'" class="myPre-pillImg"></img>
+							    	    </div>
+									   	<div class="normal-text myPre-PillName" ng-bind="pill.name"></div>
+									</div>
+							    </div>
+							    <div class="myPre-container-click" ng-show="prescription.showAllMpreList">
+									<div class="myPre-pilldiv" ng-repeat="pill in prescription.imageURLList">
+							    	    <div class="pre-img">
+							    	    	<img src="{{pill.imageURL}}" onerror="this.src='images/pill-default.png'" class="myPre-pillImg"></img>
+							    	    </div>
+									   	<div class="normal-text myPre-PillName" ng-bind="pill.name"></div>
+									</div>
+							    </div>
+							</div>
+		                </div>
+		
+		                <div class="item mPre-button-time">
+		                    <div class="row mPre-bt-row">
+		                        <div class="col mPre-button padding">
+		                            <i class="icon ion-chevron-down normal-text mPre-downi calm" ng-if="prescription.imageURLList.length>3" ng-click="showAllMpreListMethod(prescription)" ng-show="!prescription.showAllMpreList">查看全部</i>
+		                            <i class="icon ion-chevron-up normal-text mPre-upi calm" ng-if="prescription.imageURLList.length>3" ng-click="showAllMpreListMethod(prescription)" ng-show="prescription.showAllMpreList">点击收起</i>
+		                            <!--<i class="icon ion-chevron-down normal-text mPre-upi calm" ng-disabled="true" ng-click="showAllMpreListMethod(prescription)" ng-show="!prescription.showAllMpreList" ng-if="prescription.imageURLList.length<=3">已显示完</i>-->
+		                            <div class="mPre-time">
+		                            	<span class="mPre-timespan normal-text" ng-bind="prescription.anagraphDate"></span>
+		                            </div>
+		                        </div>
+		                    </div>
+		                </div>
+		            </div>
+				</div>
+				<ion-infinite-scroll ng-if="isOver" on-infinite="getNextPagePrescription(start);" distance="20%" ></ion-infinite-scroll>
+				</div>
+    	
+    	</ion-scroll>
+    </ion-content>
+</ion-view>

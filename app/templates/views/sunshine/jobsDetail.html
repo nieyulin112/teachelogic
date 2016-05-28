@@ -1,0 +1,107 @@
+<ion-view class="sun-jobs-view" ng-init="initJobsDetail();">
+	<!-- title return 返回至首页 -->
+	<ion-header-bar align-title="center" class="job-detail-header bar-calm">
+		
+		<button class="button button-icon icon ion-ios-arrow-back" ng-click="back()"></button>
+		<!--
+		<h1 class="job-detail-title" ng-bind="arc.detail.affairName"></h1>
+		<h5 class="job-detail-sub">yyyy年MM月dd日</h3>
+		-->
+		<h1 class="title super-text" ng-bind="arc.affairName"></h1>
+	</ion-header-bar>
+
+	<div class="job-arc-nav tabs-striped tabs-top tabs-color-calm">
+
+		<ion-scroll direction="x" class="tabScroll" ng-show="true">
+			<div class="tabs scroll_tab">
+				<div class="jobs-item tab-item" 
+					ng-repeat="item in ARC_SUB_DETAILS track by $index" 
+					ng-click="activeArcHandler(item)" 
+					ng-class="{'active': item.isActive}"
+					ng-bind="item.itemName">
+				</div>
+			</div>
+		</ion-scroll>
+
+    </div>
+
+	<!-- ARC_SUB_DETAILS -->
+	
+	<div style="margin-top: 44px;"></div>
+	
+	<ion-content class="job-detail-content">
+		
+		<section class="job-section-hide" 
+			ng-class="{'job-section-show': ARC_SUB_DETAILS[0].isDisplay}">
+			
+			<div class="arc-d-context first" >
+				<ion-list>
+					<ion-item ng-repeat="item in arc.contentData.arr_0 track by $index" class="arc-item row">
+						<span class="arc-item-left col col-34" ng-bind="item.key"></span>
+						<span ng-class="{'text-left': item.isLeft}" class="arc-item-right col col-66" ng-bind="item.value"></span>
+					</ion-item>
+				</ion-list>
+			</div>
+			
+			<div class="arc-d-context">
+				<ion-list>
+					<ion-item ng-repeat="item in arc.contentData.arr_1 track by $index" class="arc-item row">
+						<span class="arc-item-left col col-34" ng-bind="item.key"></span>
+						<span class="arc-item-right col col-66" ng-bind="item.value"></span>
+					</ion-item>
+				</ion-list>
+			</div>
+			
+			<div class="arc-d-context">
+				<ion-list>
+					<ion-item ng-repeat="item in arc.contentData.arr_2 track by $index" class="arc-item row">
+						<span class="arc-item-left col col-34" ng-bind="item.key"></span>
+						<span class="arc-item-right col col-66" ng-bind="item.value"></span>
+					</ion-item>
+				</ion-list>
+			</div>
+
+			<div class="arc-d-context">
+				<ion-list>
+					<ion-item ng-repeat="item in arc.contentData.arr_3 track by $index" class="arc-item row">
+						<span class="arc-item-left col col-34" ng-bind="item.key"></span>
+						<span class="arc-item-right col col-66" ng-bind="item.value"></span>
+					</ion-item>
+				</ion-list>
+			</div>
+		</section>
+		<!--  -->
+		<section class="job-section-hide"
+			ng-class="{'job-section-show': ARC_SUB_DETAILS[1].isDisplay}">
+			<div class="arc-d-context first">
+				<div class="arc-text" ng-bind="arc.basis"></div>
+			</div>
+		</section>
+		<!--  -->
+		<section class="job-section-hide"
+			ng-class="{'job-section-show': ARC_SUB_DETAILS[2].isDisplay}">
+			<div class="arc-d-context first">
+				<div class="arc-text" ng-bind="arc.applyData"></div>
+			</div>
+		</section>
+		<!--  -->
+		<section class="job-section-hide"
+			ng-class="{'job-section-show': ARC_SUB_DETAILS[3].isDisplay}">
+			<div class="arc-d-context first">
+				<div class="arc-text" ng-bind="arc.procedures"></div>
+			</div>
+		</section>
+
+		
+
+	</ion-content>
+
+	<footer class="psa_empty text-middle width100" ng-class="eptCls" ng-show="isEmpty">
+		
+		<div class="text-center width100">
+			<img src="images/Doctor.png" />
+			<div class="normal-text">暂无数据</div>
+		</div>
+
+	</footer>
+</ion-view>

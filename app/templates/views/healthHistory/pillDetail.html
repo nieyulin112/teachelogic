@@ -1,0 +1,68 @@
+<ion-view class="bg-lighter" ng-init="initPillDetail()">
+    <ion-header-bar align-title="center" class="bar-calm">
+	    <button class="button button-icon icon ion-ios-arrow-back" ng-click="back()"></button>
+	    <h1 class="title super-text">药品详情</h1>
+    </ion-header-bar>
+  
+    <ion-content ng-class="{isPill:!recbool}">
+		<div class="text-center normal-text padding isEmptyData rec hidEmptyData" ng-if="!recbool" ng-class="{hidEmptyData:recbool}">
+			<img src="images/Doctor.png">
+			<p ng-bind="emptyMsg"></p>
+		</div>
+
+ 		<div class="list pill-detail" ng-show="recbool">
+		  	<div class="item normal-text">
+			    药品名称
+			    <span class="item-note normal-text" ng-bind="pillDetail.pillName"></span>
+		  	</div>
+		    <div class="item normal-text">
+			  	剂型
+			    <span class="item-note normal-text" ng-bind="pillDetail.type"></span>
+		  	</div>
+		    <div class="item normal-text">
+			  	规格
+			    <span class="item-note normal-text" ng-bind="pillDetail.specification"></span>
+		    </div>
+		    <div class="item normal-text">
+		  		单位
+			    <span class="item-note normal-text" ng-bind="pillDetail.unit"></span>
+		  	</div>
+		  	<div class="item normal-text">
+		  		报销级别
+			    <span class="item-note normal-text" ng-bind="pillDetail.reimburseLevel"></span>
+		  	</div>
+			<div class="item normal-text">
+			  	自付比例
+			    <span class="item-note normal-text" ng-bind="pillDetail.selfPay"></span>
+			</div>
+		  	<div class="item normal-text">
+		  		医保项目
+			    	<span class="item-note normal-text" ng-bind="pillDetail.medicalProgrem"></span>
+		  	</div>
+			<div class="item normal-text">
+			  	工伤项目
+			    <span class="item-note normal-text" ng-bind="pillDetail.workInjuries"></span>
+			</div>
+		  	<div class="item normal-text">
+		  		非处方要
+			    <span class="item-note normal-text" ng-bind="pillDetail.nonPrescription"></span>
+		  	</div>
+		  	<div class="item normal-text">
+		  		厂家名称
+		    		<span class="item-note normal-text" ng-bind="pillDetail.companyName"></span>
+		  	</div>
+		  	<div class="item normal-text">
+		  		发票项目
+		    		<span class="item-note normal-text" ng-bind="pillDetail.invoice"></span>
+		  	</div>
+		  	<div class="item normal-text">
+		  		备注
+		    		<span class="item-note normal-text" ng-bind="pillDetail.notes" ></span>
+		  	</div>
+		  	<div class="item normal-text">
+		  		文件号
+		    		<span class="item-note normal-text" ng-bind="pillDetail.fileName"></span>
+		  	</div>
+	  </div>			
+  	</ion-content>
+</ion-view>

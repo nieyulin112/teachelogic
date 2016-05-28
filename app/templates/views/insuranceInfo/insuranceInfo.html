@@ -1,0 +1,60 @@
+<ion-view class="stable-bg familyDoctor">
+    <!--主标题-->
+    <ion-header-bar align-title="center" class="bar-calm">
+        <button class="button button-icon ion-ios-arrow-back" ng-click="backToHome()"></button>
+        <h1 class="title super-text">参保信息</h1>
+    </ion-header-bar>
+
+    <ion-content class="record-bg">
+        <div class="row light-bg  item-margin10 insurance-head">
+            <div class="col col-25 text-right">
+                 <img ng-src="{{insuranceInfoData.image}}" class="insurance-face"> 
+            </div>
+
+            <div class="col col-50">
+                <h4>
+                    <div>
+                        <span ng-bind="insuranceInfoData.NAME"
+                         class="large-text">
+                        </span>
+                        <span class="min-text">
+                        <span ng-bind="insuranceInfoData.SEX"></span>
+                        <span>
+                            <span ng-bind="insuranceInfoData.AGE"></span>
+                            <span ng-if="insuranceInfoData.AGE">岁</span>
+                        </span>
+                    </div>
+
+                    
+                    </span>
+
+                    <div class="min-text margin-top5" 
+                        ng-bind="insuranceInfoData.IDCARD">
+                    </div>
+               </h4>
+            </div>
+
+            <div class="col col-25">
+                <button class="button button-small button-outline button-calm si-margin-top20" ng-click="skipPayment()"> 
+                    <span class="calm normal-text">缴费明细</span> 
+                </button>
+            </div>
+        </div>
+
+        <div class="list">
+            <div class="item item-icon-right" ng-repeat="item in insuranceInfoData.record">
+                <h2 ng-bind="item.insuranceType" class="large-text"></h2>
+                <h3 class="energized normal-text" ng-bind="item.paymentUnit"></h3>
+                <h4 class="font-gray min-text">缴费基数{{item.baseNumber}}</h4>
+                <i class="icon large-text" ng-class="isCheck(item)" ng-bind="item.insuranceStatus"></i>
+            </div>
+
+            <!-- <div class="item item-icon-right">
+                <h2>机关工伤</h2>
+                <h3 class="energized">吉林市人力资源和社会保障局</h3>
+                <h4 class="font-gray">缴费基数 3710</h4>
+                <i class="icon large-text font-gray">过保</i>
+            </div> -->
+        </div>
+  </ion-content>
+</ion-view>

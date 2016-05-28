@@ -1,0 +1,85 @@
+<ion-view class="stable-bg doctorDetail" ng-init="initDetail()">
+    <ion-header-bar align-title="center" class="bar-calm">
+        <button class="button button-icon icon ion-ios-arrow-back" ng-click="historyBack();"></button>
+        <h1 class="title super-text">医生详情</h1>
+        <button class="button button-icon" ng-show="isSign && !isChange" on-touch="showChange();" ng-class="{opacity7:!hasChangeTime}">
+        		<img class="barImg" src="images/change1@2x.png">
+        		<div class="min-text barText">更换医生</div>
+        </button>
+    </ion-header-bar>
+    
+    <ion-content class="greyColor">
+        <div class="list detail_header">
+        		<div class="item item-avatar text-center">
+        			<image ng-src="{{modelDoctor.portrait}}"></image>
+        			<div class="header_right">
+        				<p class="large-text">
+	        				<span ng-bind="modelDoctor.name"></span>
+	        				<span class="min-text" ng-bind="modelDoctor.deplev"></span>
+	        			</p>
+	        			<p class="normal-text" ng-bind="modelDoctor.hospital"></p>
+        			</div>
+        		</div>
+        		<div class="item item-body row text-center item-borderless padding0">
+        			<div class="col borderR">
+        				<p><span ng-bind="modelDoctor.contractNum"></span>人</p>
+        				<p>签约数</p>
+        			</div>
+        			<div class="col">
+        				<p><span ng-bind="modelDoctor.slowNum"></span>次</p>
+        				<p>慢病续方</p>
+        			</div>
+        		</div>
+        </div>
+        
+        <!--未签约-->
+        <div class="card" ng-show="!isSign || isChange">
+            <div class="item item-divider light-bg large-text black">简介</div>
+            <div class="item item-text-wrap indent2 line15 normal-text" ng-bind="modelDoctor.intro"></div>
+        </div>
+
+		<!--已签约-->
+		<div class="card" ng-show="isSign && !isChange">
+            <div class="item item-divider light-bg large-text black">简介</div>
+            <!--<div class="item item-text-wrap indent2 line15 normal-text" ng-show="isIntroCpt">
+            		<span ng-bind="modelDoctor.introBrief"></span>
+            		<span class="calm" ng-click="isIntroCpt = false;">详情</span>
+            </div>-->
+            <!--<div class="item item-text-wrap indent2 line15 normal-text" ng-show="!isIntroCpt" ng-bind="modelDoctor.intro"></div>-->
+            <div class="item item-text-wrap indent2 line15 normal-text" ng-bind="modelDoctor.intro"></div>
+        </div>
+        
+        <div class="card detail_tome" ng-show="isSign && isMyDoctor">
+            <div class="item item-divider light-bg large-text">对我的服务</div>
+            <div class="item item-text-wrap">
+                <p class="normal-text">
+                		<img src="images/icon-qysj.png">
+                		签约时间:
+                		<span class="orange" ng-bind="modelDoctor.signDate"></span>
+                </p>
+                <p class="normal-text">
+                		<img src="images/icon-rili.png">
+                		最近续方日期:
+                		<span class="orange" ng-bind="modelDoctor.lastDate"></span>
+                </p>
+                <p class="normal-text">
+                		<img src="images/icon-mbxf.png">
+                		慢病续方次数:
+                		<span class="orange marginR2" ng-bind="modelDoctor.selfNum"></span>次
+                </p>
+                <img class="large-img" src="images/hand@2x.png">
+            </div>
+        </div>
+        <div class="content_footer"></div>
+    </ion-content>
+    
+	<ion-footer-bar class="bar-calm" ng-show="!isSign" on-touch="signDoctor('sign');">
+		<h1 class="title super-text">立即签约</h1>
+	</ion-footer-bar>
+	<ion-footer-bar class="bar-calm" ng-show="isSign && isChange && !isMyDoctor" on-touch="signDoctor('change');">
+		<h1 class="title super-text">更换医生</h1>
+	</ion-footer-bar>
+    <ion-footer-bar class="bar-calm" ng-show="isSign && (!isChange || isMyDoctor)" ui-sref="app.project">
+    		<h1 class="title super-text">慢病续方<h1>
+    </ion-footer-bar>
+</ion-view>

@@ -1,0 +1,81 @@
+<ion-view class="stable-bg stuInsChild" >
+    <!--主标题-->
+    <ion-header-bar align-title="center" class="bar-calm">
+        <button class="button button-icon ion-ios-arrow-back" ng-click="goIntroduce();"></button>
+        <h1 class="title super-text">按参保人查询</h1>
+    </ion-header-bar>
+    
+    <!--副标题-->
+    <div class="bar bar-subheader stable-bg">
+        <div class="button-bar light-bg">
+            <a ng-click="showByName();" ng-class="{'button-outline':isSearchByName}" class="button button-calm large-text opacity_left">按姓名</a>
+            <a ng-click="showByCard();" ng-class="{'button-outline':!isSearchByName}" class="button button-calm large-text opacity_right">按身份证号</a>
+        </div>
+    </div>
+    
+    <div class="customChild content has-subheader">
+      <div class="list list-inset">
+        <label class="item item-input" ng-show="isSearchByName">
+          	<input id="stu_childName"  ng-model="stu_childName" ng-keyup="keyupByName($event);" type="text" placeholder="输入参保人姓名">
+        </label>
+        <label class="item item-input stu_chileIdCardLabel" ng-class="{'stu_chileIdCardLabel':isSearchByName}" id="stu_chileIdCardLabel">
+          <input type="text" id="stu_chileIdCard" ng-blur="showSearchButton()" placeholder="输入参保人身份证号">
+        </label>
+         <label class="item item-input" on-touch="goStuInsSchool();" ng-show="isSearchByName">
+          		<span>学校</span>
+                <input type="text" id="stu_sclName" readonly="true" ng-model="sltSclName" class="itemInput" placeholder="选择学校">
+                <i class="icon ion-ios-arrow-right super-text"></i>
+        </label>
+         <label class="item item-input" on-touch="showClassView();" id="stu_clsNameLabel" ng-show="isSearchByName">
+          	<span>班级</span>
+                <input type="text" id="stu_clsName" readonly="true" ng-model="sltClsName" class="itemInput" placeholder="选择班级">
+                <i class="icon ion-ios-arrow-right super-text"></i>
+        </label>
+        <label class="emptyLabel item item-input" ng-show="!isSearchByName">
+          <input type="text" readonly="readonly">
+        </label>
+        <label class="emptyLabel item item-input" ng-show="!isSearchByName">
+          <input type="text" readonly="readonly">
+        </label>
+        <label class="emptyLabel item item-input" ng-show="!isSearchByName">
+          <input type="text" readonly="readonly">
+        </label>
+      </div>
+    </div>
+    
+    <!--按姓名-->
+    <!--<ion-content class="has-subheader " scroll="true" overflow-scroll="true" >
+        <div class="list">
+        		<label class="item item-input childItem normal-text" ng-show="isSearchByName">
+                <input id="stu_childName" ng-model="stu_childName" ng-focus="hidSearchButton()" ng-blur="showSearchButton()" ng-keyup="keyupByName($event);" type="text" placeholder="输入参保人姓名">
+            </label>
+             <label id="stu_chileIdCardLabel" class="item item-input childItem normal-text" ng-show="!isSearchByName">
+                <input type="text" id="stu_chileIdCard" ng-focus="hidSearchButton()" ng-blur="showSearchButton()" ng-keyup="keyupByCard($event);" placeholder="输入参保人身份证号">
+            </label>
+            <label on-touch="goStuInsSchool();" class="item item-input item-icon-right childItem normal-text" ng-show="isSearchByName">
+                <span>学校</span>
+                <input type="text" id="stu_sclName" readonly="true" ng-model="sltSclName" class="itemInput" placeholder="选择学校">
+                <i class="icon ion-ios-arrow-right super-text"></i>
+            </label>
+            <label on-touch="showClassView();" id="stu_clsNameLabel" class="item item-input item-icon-right normal-text" ng-show="isSearchByName">
+                <span>班级</span>
+                <input type="text" id="stu_clsName" readonly="true" ng-model="sltClsName" class="itemInput" placeholder="选择班级">
+                <i class="icon ion-ios-arrow-right super-text"></i>
+            </label>
+        </div>
+        <div class="stu_child_spacer"></div>
+  	</ion-content>-->
+  	
+  	<!--按身份证号-->
+    <!--<ion-content class="has-subheader noscroll custom-personal-card" overflow-scroll="true" ng-show="!isSearchByName">
+        <div class="list">
+            <label class="item item-input normal-text">
+                <input type="text" id="stu_chileIdCard" ng-focus="hidSearchButton()" ng-blur="showSearchButton()" ng-keyup="keyupByCard($event);" placeholder="输入参保人身份证号">
+            </label>
+        </div>
+  	</ion-content>-->
+  	
+  	<ion-footer-bar id="searchChildId" keyboard-attach class="bar-calm" on-touch="searchByChild();">
+  		<h1 class="title super-text">查询</h1>
+  	</ion-footer-bar>
+</ion-view>

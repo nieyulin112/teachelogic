@@ -1,0 +1,259 @@
+/********账户查询页面样式开始********/ 
+.si-blance-total h3, .si-blance-total h4 {
+  margin-top: 0;
+  color: #fff;
+}
+.si-blance-total div {
+  color: #fff;
+  margin-bottom: 0;
+  padding-top:5px;
+}
+.si-blance-total{
+  .row{
+    .sid{
+      border-right:dashed #b7e5f5 1px;
+    }
+    .healthAccount{
+      div{
+        border-right:dashed #b7e5f5 1px;
+      }
+    }
+    .col-50 {
+        padding: 10px;
+    }
+  }
+  .act_siCard {
+      background-color: #37A3D4;
+      padding: 4px 0;
+  }
+}
+.si-border-right {
+  border-right: solid #eee 1px;
+}
+.si-account-border-right{
+  border-right:dashed #b7e5f5 1px;
+}
+.si-total-info {
+  border-bottom: none;
+  /*//solid 1px #eee*/
+  background: #fff;
+  position:absolute;
+  z-index:2000;
+}
+.si-total-info span {
+/*//width: 50%;*/
+  display: inline-block;
+/*//float: left;*/
+}
+.money-detail-date {
+  width: 25%;
+  float: left;
+  font-size: 20px;
+  text-align: center;
+  margin: 18px 0 10px 0;
+  .year{
+    color: #474646;
+    font-size:14px;
+    margin-top:-8px;
+  }
+}
+.money-detail-date span {
+  font-size: 14px;
+  color: #474646;
+}
+
+.money-detail-d {
+  border-left: none;
+  /*//1px solid #ccc;*/
+  padding: 20px 0px 10px 50px;
+  margin-left: 24%;
+  position: relative;
+  width: 75%;
+  
+}
+.money-detail-content {
+  display: -webkit-box;
+  position: relative;
+  padding: 0 5px 5px 0;
+  -webkit-border-radius: 2px;
+  font-size: 16px;
+}
+.money-detail-d:after {
+  content: '';
+  position: absolute;
+  left: -16px;
+  top: -5px;
+  width: 30px;
+  height: 30px;
+  -webkit-border-radius: 50%;
+/*//background: #ccc;*/
+/*//border: 2px solid #EEE;*/
+   
+}
+.money-detail-content-type {
+    font-size: 16px;
+    width: 60%;
+}
+.money-detail-content i {
+    display: inline-block;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    color: #ccc;
+}
+.money-detail-class {
+  border-radius: 5px;
+  border: solid 1px #eee;
+  position: relative;
+  div{
+    padding:5px;
+  }
+}
+.money-detail-class:before {
+  content: '';
+  display: inline-block;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #eee;
+  position: absolute;
+  right: 20%;
+  top: -10px;
+}
+.money-detail-class:after {
+  content: '';
+  display: inline-block;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #fff;
+  position: absolute;
+  right: 20%;
+  top: -9px;
+}
+.money-detail{
+  ul{
+     /**padding-top:12px;*/
+     /**margin-left:12px;*/
+  }
+}
+@media screen and(max-width:370px){
+  .detail-images{
+    position:absolute;
+    left:-46px;
+    top:-6px;
+    width:32px;
+  }
+  .money-detail-d{
+    margin-left: 27%;
+    padding: 20px 0px 10px 50px;
+  }
+}
+@media screen and(min-width:371px) and (max-width:413px){
+  .detail-images{
+    position:absolute;
+    left:-48px;
+    top:-6px;
+    width:35px;
+  }
+}
+@media screen and(min-width:414px){
+  .detail-images{
+    position:absolute;
+    left:-48px;
+    top:-8px;
+    width:37px;
+  }
+}
+.noscroll_account{
+  /**margin-top:68px;*/
+  overflow:hidden;
+
+}
+.card_account{
+   background-color:#e7f4fa;
+   padding:18px;
+   color:#37A3D4;
+   z-index: 30;
+   position: relative;
+}
+.card_account div:first-child{
+    margin-bottom:5px;
+}
+.account_width span:first-child{
+    margin-bottom:5px;
+}
+.greenColor{
+    color: #42c29c;
+}
+.margin-86{
+   top:72px;
+}
+.custom-year-divider {
+  margin: 0 0 10px 0;
+  height: 40px;
+  background-color: #eee;
+  font-size: 16px;
+  color: grey;
+}
+.custom-year-divider span {
+  vertical-align: middle;
+  margin: 10px 0 0 12px;
+  position: absolute;
+}
+
+.money-detail .money-detail-date span {
+  font-size: 16px;
+  color: #474646;
+  margin: 0 0 0 10px;
+}
+.money-detail ul li {
+ /*// margin: 0px 0 20px 0;*/
+  border-top: #eee solid 1px;
+}
+.money-detail{
+    height:100%;
+}
+.money-detail ul{
+   /** height:100%;*/
+}
+.isAccountSearch{
+    height:100%;
+    width:100%;
+    ul{
+        height:70%;
+        width:100%;
+        display: table;
+    }
+}
+
+div#fixAccountLabel {
+    top: 152px;
+    background-color: #eee;
+    z-index: 1;
+    position: absolute;
+    height: 40px;
+    display: block;
+    width: 100%;
+    color: gray;
+    margin: 0 0 10px 0;
+    font-size: 16px;
+    display: none;
+    #fixAccountSpan {
+        vertical-align: middle;
+        margin: 10px 0 0 12px;
+        position: absolute;
+    }
+}
+
+.customAccountSearch{
+    .bar-subheader{
+        padding: 0;
+    }
+    .account_top{
+        top: 70px;
+    }
+}
+
+.money-detail-content-amount {
+    width: 30%;
+    text-align: right;
+}

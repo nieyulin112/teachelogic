@@ -1,0 +1,47 @@
+<ion-view class="servieGuide familyDoctor pane bg-color">
+    <!--主标题-->
+    <ion-header-bar align-title="center" class="bar-calm">
+        <button class="button button-icon ion-ios-arrow-back" ng-click="previous()"></button>
+        <h1 class="title super-text">市民卡服务网点</h1>
+        <button class="button button-icon icon ion-ios-search-strong" ui-sref="app.citizenSearch"></button>
+    </ion-header-bar>
+
+    <!--副标题-->
+    <div class="bar bar-subheader bar-bg">
+        <div class="button-bar" ng-click="showHide()">
+            <a class="button  button-light icon-right ion-ios-arrow-up text-left record-icon-cur large-text region-color" 
+            		ng-class="{'ion-ios-arrow-up':regionName!='按区域', 'ion-ios-arrow-down':regionName=='按区域'}"
+            		ng-bind="regionName">
+            </a>
+        </div>
+    </div>
+
+    <!--遮罩-->
+    <div class="mask" ng-show="change"></div>
+    
+    <!--按地点选择-->
+    <div class="card-pull-down" ng-show="change">
+        <div class="row row-no-padding">
+            <div class="col stable-bg">
+                <div class="list row-no-padding">
+                    <ion-item class="area stable-bg item" ng-repeat="item in citizenArea" ng-click="selectArea(item)" ng-bind="item.regionName"></ion-item>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--内容-->
+    <ion-content class="has-header has-subheader record-bg">
+        <div class="cardInfor">
+            <div class="list card" ng-repeat="item in dataArray" ng-click="getPosition(item);">
+            	<div class="left">
+	                <div class="large-text margin-5" ng-bind="item.unit"></div>     
+	                <div class="font-gray normal-text" ng-bind="item.address" ng-show="addressTrim(item)"></div>
+                </div>
+                <!--<h3 class="font-gray">电话:<span ng-bind="item.phonenumber"></span></h3>-->
+                <i class="icon ion-ios-telephone right" ng-show="dataTrim(item)" on-touch="telephoned(item)"></i>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>
+

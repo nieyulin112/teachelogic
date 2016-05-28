@@ -1,0 +1,355 @@
+
+/********就诊记录页面样式开始********/ 
+.record-bg{
+  background-color: #f5f5f5;
+}
+.record{
+  position: absolute;
+  top: 40px;
+  z-index:100;
+}
+.record-face{
+  width:60px;
+  height:60px;
+  border-radius:50%;
+}
+.record-detail{
+    padding: 0 12px;
+    
+}
+
+.record-detail.record_detail_purchase{
+        height: 100%;
+        width: 100%;
+        display: table;
+}
+.record-detail.record_detail_record{
+        height: 78%;
+        width: 100%;
+        display: table;
+}
+
+.rec{
+  text-align: center;
+  font-size: 18px;
+}
+.mrc_day {
+    margin-left: -3px;
+}
+.record-detail-date {
+  padding-top: 44px;
+  text-align: right;
+  padding-right: 12px;
+}
+.record-detail-d {
+  border-left: 1px solid #ccc;
+  padding: 26px 0px 26px 24px;
+  position: relative;
+}
+.record-detail-d:fir {
+    padding-top: 46px;
+}
+.record-detail-content {
+  position: relative;
+  padding: 8px;
+  -webkit-border-radius: 8px;
+  font-size: 16px;
+  background: #fff;
+  border: solid 1px #ccc;
+  border-top: solid 2px #50C4A0;
+  border-radius: 8px;
+}
+.record-detail-content:before{
+  content: '';
+  display: inline-block;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 10px solid #ccc;
+  position: absolute;
+  top: 30%;
+  left: -10px;
+}
+.record-detail-content:after{
+  content: '';
+  display: inline-block;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 10px solid #fff;
+  position: absolute;
+  top: 30%;
+  left: -9px;
+}
+//.record-detail-first:before {
+//content: '2025';
+//position: absolute;
+//left: -20px;
+//top: -6px;
+//width: 40px;
+//height: 40px;
+//-webkit-border-radius: 50%;
+//background-color: #4DC6A2;
+//color: #fff;
+//display: flex;
+//align-items: center;
+//padding-left: 4px;
+//}
+.mrc_year {
+  position: absolute;
+  top: -18px;
+  left: -20px;
+  display: flex;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  padding-left: 4px;
+  border-radius: 50%;
+  background-color: #50C4A0;
+  color: #fff;
+}
+.mrc_group {
+}
+.record-detail-d:after {
+  content: '';
+  position: absolute;
+  left: -8px;
+  bottom: 52px;
+  width: 16px;
+  height: 16px;
+  -webkit-border-radius: 50%;
+  background-color: #50C4A0;
+  border: 2px solid #EEE;
+}
+.record-detail-green:after {
+  background: #45c19c;
+  border: 2px solid #eee;
+}
+.record-detail-orange:after {
+  background: #ff6600;
+  border: 2px solid #eee;
+}
+.record-detail-blue:after {
+  background: #35c7fa;
+  border: 2px solid #eee;
+}
+.record-detail-other:after {
+  background: #35FA5F;
+  border:2px solid #eee;
+}
+
+.col{
+  .mt20{
+    margin-top:20px;
+  }
+}
+.record-detail-content-amount {
+  width: 70px;
+  text-align: right;
+  float: right;
+  padding-top:6px;
+  white-space: nowrap;
+}
+.record-detail-class:after {
+  content: '';
+  display: inline-block;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #fff;
+  position: absolute;
+  right: 20%;
+  top: -9px;
+}
+.record-detail-content h4{
+  margin: 0;
+}
+.record-detail-content span{
+  display: inline-block;
+}
+.record-detail-orange .record-detail-content {
+  border-top: solid 2px #ff6600;
+}
+.record-detail-green .record-detail-content {
+  border-top: solid 2px #45c19c;
+}
+.record-detail-blue .record-detail-content {
+  border-top: solid 2px #35c7fa;
+}
+.record-detail-other .record-detail-content{
+  border-top:#35FA5F 2px solid;
+}
+.record-detail-hospital{
+  color: #45c19c;
+  width: 67%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+}
+.mrc_spacer {
+    width: 100%;
+    height: 30px;
+}
+.record-detail-orange .record-detail-hospital{
+  color: #ff6600;
+}
+.record-detail-green .record-detail-hospital{
+  color: #45c19c;
+}
+.record-detail-blue .record-detail-hospital { 
+  color: #35c7fa;
+}
+.record-detail-other .record-detail-hospital {
+  color:#35FA5F;
+}
+.record-detail-content-mold{
+  top: 7px;
+  position: absolute;
+  right: 10px;
+  color: #666;
+}
+.personInfo{
+  margin-top:5px;
+}
+.jz-num{
+  font-size:20px;
+  margin-bottom:-10px;
+}
+.jz-time{
+  margin-top:26px;
+}
+/********就诊记录页面样式开始********/ 
+
+/********就诊明细页面样式开始********/ 
+.item-jzmx {
+  border: none;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+.item-jzmx:last-child{
+  border-bottom: solid 1px #ddd;
+}
+.item-margin10{
+  margin-bottom: 10px;
+}
+.jz-mar{
+  margin-top:10px;
+}
+.item-jzmxyp {
+  padding: 5px;
+}
+.item-noborder{
+  border-bottom: none;
+}
+.si-border-bottom{
+  border-bottom: solid 1px #ddd;
+}
+/********就诊明细页面样式结束********/ 
+
+
+.bar-subheader{
+  .button-bar{
+    .bottom-green{
+      border-bottom:2px solid #45c19c;
+    }
+  }
+}
+/*药品明细*/
+.pill-detail {
+  .item{
+    color:#aaa;
+    .item-note{
+      color:#444;
+    }
+  }
+}
+.record-detail-content-type{
+  padding-top:6px;
+}
+
+span.record-detail-content-type{
+
+    width:56%;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+.noscroll_record {
+    overflow: hidden;
+    top:164px;
+}
+/*购药明细*/
+.jz-md{
+   margin-bottom: 3px;
+}
+.jz-sp{
+  padding-left:12px;
+}
+.jz-m{
+  margin-left: 2px;
+}
+.jz-s{
+  color:#45c19c;
+}
+.jz-mysp{
+  float: right;
+  padding-right: 15px;
+}
+.tabPadding{
+    padding:0 24px;
+}
+.jz-data{
+    margin-top:70px;
+}
+.record-combine{
+    top: 117px;
+}
+.isEmptyDataDetail{
+    width:100%;
+    height:100%;
+    .record_detail_purchase{
+        display: table;
+        height:78%;
+    } 
+}
+.isRecord{
+    width:100%;
+    height:100%;
+    .scroll{
+        height:85%;
+        width:100%;
+        display: table;
+    }
+}
+.isPill{
+    width:100%;
+    height:100%;
+    .scroll{
+        height:85%;
+        width:100%;
+        display: table;
+    }
+}
+.isPurchase{
+    width:100%;
+    height:100%;
+    .scroll{
+        height:85%;
+        width:100%;
+        display: table;
+    }
+}
+.custom-medical-record{
+    .custommedicaltophide{
+        display:none;
+    }
+    .custommedicaltop{
+    }
+}
+.module_view .hasTwoBar.custommedicaltop {
+  top: 47px;
+}
+ion-content.record-bg.noscroll_record.noscroll.scroll-content.ionic-scroll.overflow-scroll.custommedicaltop.has-header{
+   top:123px;
+}
+.record-margin-bottom .row:last-child{
+    margin-bottom:62px;
+}

@@ -1,0 +1,173 @@
+/************************************
+ *
+ *  Main Styles to compile. Here only @imports!
+ *
+ ************************************/
+
+@import "_variables";
+@import "_fonts";
+
+/**
+ * LAYOUT
+ */
+
+@import "layout/layout";
+
+
+/**
+ * MENU
+ */
+
+/**
+ * VIEWS
+ */
+
+@import "views/home";
+@import "views/myPrescription";
+@import "views/familyDoctor";
+@import "views/slowDisease";
+@import "views/myPrescription";
+@import "views/medicalRecord";
+@import "views/accountSearch";
+@import "views/insurance";
+@import "views/paymentDetail";
+@import "views/citizenCard";
+@import "views/newsletter";
+@import "views/search";
+@import "views/stuInsurance";
+@import "views/question";
+@import "views/drugExpense";
+
+.slider-text {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 20px;
+    margin-bottom: 0;
+    color: white;
+    background-color: rgba(0,0,0,.2);
+}
+
+//.min-text{
+//font-size:12px !important;
+//}
+//.small-text{
+//font-size:14px !important;
+//}
+//.normal-text{
+//font-size:16px !important;
+//}
+//.large-text{
+//font-size:18px !important;
+//}
+.card {
+    box-shadow: 0 0 0;
+    border: solid #ddd 1px;
+    padding-bottom: 0;
+} 
+.fr{
+  float:right;
+}
+.fl{
+  float:left;
+}
+@media screen and(max-width:370px){
+   .min-text{
+      font-size:12px !important;
+    }
+    .normal-text{
+      font-size:14px !important;
+    }
+    .large-text{
+      font-size:16px !important;
+    }
+    .super-text{
+      font-size:18px !important;
+    }
+}
+
+@media screen and(min-width:371px){
+    .min-text{
+      font-size:14px !important;
+    }
+    .normal-text{
+      font-size:16px !important;
+    }
+    .large-text{
+      font-size:18px !important;
+    } 
+    .super-text{
+      font-size:20px !important;
+    }
+}
+.backdrop {
+    display: none;
+}
+.loading-container {
+    width: 100px;
+    height: 100px;
+    top: 50%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -50px;
+}
+.bar.bar-calm, .calm-bg, .button.button-calm {
+    background-color: #35c7fa;
+}
+.noscroll {
+    overflow: hidden;
+}
+.module_view {
+    .bar-subheader {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+    .button-bar {
+        border-radius: 8px;
+    }
+    .button.opacity_left {
+        border-radius: 8px 0 0 8px;
+    }
+    .button.opacity_right {
+        border-radius: 0 8px 8px 0;
+    }
+    .hasTwoBar {
+        top: 88px;
+    }
+}
+.text-middle {
+    display: flex;
+    align-items: center;
+}
+.padding-left {
+    padding-left: 16px;
+}
+.padding-clear {
+    padding: 0;
+}
+.isEmptyData{
+    vertical-align: middle;
+    display: table-cell;
+    text-align: center;
+}
+.isEmptyData img{
+    width:30%;
+    margin-bottom:6px;
+}
+.isEmptyData p{
+    letter-spacing: 1px;
+    color:#a9a9a9;
+}
+.psa_emptyView {
+    padding-top: 50%;
+    img {
+        width: 70px;
+    }
+}
+.clearfix:after { clear:both; content:"."; display:block; height:0; visibility:hidden; }
+.clearfix { *zoom:1;}
+
+.bar-header { z-index: 9999; }
+
+@import "views/recruit";
+@import "views/sunshine";

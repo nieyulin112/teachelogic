@@ -1,0 +1,17 @@
+<ion-view class="stable-bg stuInsSuccess" ng-init="initSuccess();">
+    <ion-header-bar align-title="center" class="bar-calm">
+        <h1 class="title super-text">支付成功</h1>
+        <button class="button button-clear large-text" ng-click="goHome();">首页</button>
+    </ion-header-bar>
+    <ion-content class="has-header text-center">
+    		<div class="divContent green">
+            <i class="icon ion-checkmark-circled marginR4"></i>支付成功
+        </div>
+        <p class="large-text payAmount">
+        		<span>金额<span class="orange payMoney" ng-bind="payAmount"></span>元</span>
+        </p>
+  	</ion-content>
+  	<ion-footer-bar class="bar-calm" ui-sref="app.stuInsRefresh">
+  		<h1 class="title super-text">查看保单详情</h1>
+  	</ion-footer-bar>
+</ion-view>

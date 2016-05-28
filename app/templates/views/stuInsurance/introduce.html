@@ -1,0 +1,44 @@
+<ion-view class="stable-bg stuInsIntroduce" ng-init="initIntroduce();">
+    <ion-header-bar align-title="center" class="bar-calm">
+    		<button class="button button-icon ion-ios-arrow-back" ng-click="goHome();"></button>
+        <h1 class="title super-text">城乡居民(学生)医保缴费</h1>
+    </ion-header-bar>
+    <ion-content class="has-header noscroll stuInsIntroContent" overflow-scroll="true">
+		<ion-slide-box does-continue="true">
+			<ion-slide>
+				<img ng-src="{{imgs.img1}}">
+			</ion-slide>
+			<ion-slide>
+				<img ng-src="{{imgs.img2}}">
+			</ion-slide>
+			<ion-slide>
+				<img ng-src="{{imgs.img3}}">
+			</ion-slide>
+			<ion-slide>
+				<img ng-src="{{imgs.img4}}">
+			</ion-slide>
+		</ion-slide-box>
+		<div class="intro_info text-center">
+			<div>
+				<img class="intro_btn" on-touch="goChildView();" src="images/mdi_wyjf.png">
+			</div>
+			<!--<div class="normal-text">
+				<span ng-click="checkArticle();">
+					<img class="intro_check" ng-show="isChecked" src="images/icon_check_yes.png">
+					<img class="intro_check" ng-show="!isChecked" src="images/icon_check_no.png">
+					<span>已阅读并同意</span>
+				</span>
+				<span class="intro_pro" ui-sref="app.stuInsArticle">条款细则</span>
+			</div>-->
+			<div>
+                <div class="normal-text">
+                    <label class="checkbox button-agree" ng-click="checkArticle();">
+                        <input type="checkbox" ng-click="isChecked" class="button-color customCheckBoxPosition" ng-model="isChecked" ng-value="true">
+                    </label>
+                    <span>已阅读并同意</span>
+                    <span class="intro_pro" ui-sref="app.stuInsArticle">条款细则</span>
+                </div>                
+            </div>
+		</div>
+  	</ion-content>
+</ion-view>

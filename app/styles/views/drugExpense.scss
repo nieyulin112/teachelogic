@@ -1,0 +1,571 @@
+.bar {
+    input.light, .light{
+        color: #fff;
+    }
+}
+.drugExpense {
+    .de_hot {
+        .item {
+            border-color: #F5F5F5;
+            
+            .col-75 {
+                color: #333;
+            }
+            .col-25 {
+                color: #969696;
+            }
+            .de_selfScale {
+                color: #ff6600;
+            }
+        }
+        .de_itemTile {
+            margin-bottom: 4px;
+        }
+        .de_tag {
+            display: inline-block;
+            background-color: #EDFAFF;
+            margin-left: 5px;
+            padding: 0 4px;
+        }
+    }
+    .list_title {
+        padding: 4px 16px;
+        color: #636262;
+    }
+    .col-75 {
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .de_search, .de_result {
+        top: 72px;
+    }
+    .hisBox {
+        .emptyMsg {
+            margin-top: 20px;
+            color: #757575;
+        }
+    }
+    .de_clearBtn {
+        color: #757575;
+    }
+    .de_seInput {
+        background-color: #86E0FF;
+        border-radius: 14px;
+    }
+    .de_imptText {
+        color: #ff6600;
+    }
+    .de_emptyList {
+        padding-top: 40%;
+        color: #757575;
+        img {
+            width: 94px;
+            margin-bottom: 4px;
+        }
+    }
+}
+.drugExpenseDetail {
+    .item {
+        padding: 10px;
+    }
+    .col-33 {
+        color: #7B7B7B;
+    }
+    .col-67 {
+        color: #333;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .row {
+        margin-top: 0;
+        border-color: #F7F7F7;
+    }
+    .item_spacer {
+        margin-bottom: 10px;
+    }
+    .spacer {
+        height: 30px;
+    }
+}
+.injuryCmpt {
+    .item {
+        margin-bottom: 10px;
+        .col-67 {
+            white-space: initial;
+            .black {
+                white-space: pre;
+            }
+        }
+    }
+    .grey {
+        color: #666;
+    }
+    .ic_company {
+        margin-top: 2px;
+        padding: 5px 5px 0 5px;
+        border-top: solid 1px #F7F7F7;
+        
+        .icon {
+            margin-right: 2px;
+        }
+    }
+}
+.injuryCmptDetail {
+    background: #F5F5F9;
+    .item {
+        padding: 6px;
+        border-color: #F7F7F7;
+        
+        .col-33 {
+            color: #7B7B7B;
+        }
+        .col-67 {
+            color: #333;
+        }
+    }
+    .item_spacer {
+        margin-bottom: 10px;
+    }
+    .spacer {
+        height: 30px;
+    }
+}
+.healthHistory {
+    background-color: #F5F5F9;
+    .grey {
+        color: #999;
+    }
+    .orange {
+        color: #ff6600;
+    }
+    .emptyMsg {
+        height: 100%;
+        img {
+            width: 66px;
+        }
+    }
+    .bar-header {
+        .button-bar {
+            margin: 0 10%;
+        }
+        .button.opacity_left {
+            border-radius: 6px 0 0 6px;
+            border-color: #7FDAFB;
+        }
+        .button.opacity_right {
+            border-radius: 0 6px 6px 0;
+            border-color: #7FDAFB;
+        }
+        .button.hhNoActive {
+            background-color: #fff;
+            color: #11c1f3;
+        }
+    }
+    .hh_history {
+        .bar-subheader {
+            height: 37px;
+            padding: 0;
+            z-index: 11;
+            
+            .button {
+                padding: 0 10px;
+            }
+        }
+        .has-subheader {
+            top: 81px;
+        }
+        .hh_backdrop {
+            position: absolute;
+            top: 81px;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+            z-index: 10;
+        }
+        .hh_siftActive {
+            color: #35C7F9;
+            border-bottom: solid 2px #35C7F9;
+        }
+        .hh_sift {
+            z-index: 10;
+            bottom: 0;
+            
+            .hh_sift_view {
+                height: initial;
+                max-height: 100%;
+                background-color: #fff;
+                .scroll {
+                    padding: 8px 0 8px 14px;
+                }
+            }
+            .siftTitle_normal {
+                margin-bottom: 6px;
+                clear: both;
+            }
+            .siftTitle_magUp {
+                margin-top: 8px;
+            }
+            .item {
+                float: left;
+                border-width: 0;
+                margin-right: 12px;
+            }
+            .hh_sift_item {
+                border: solid 1px #DBDBDB;
+                background-color: #fff;
+                padding: 6px 4px;
+                border-radius: 4px;
+                margin-bottom: 10px;
+                font-size: inherit;
+            }
+            .hh_sift_active {
+                border-color: #ff6600;
+                background-color: #fff6f1;
+                color: #ff6600;
+            }
+            @media screen and(max-width:370px){
+                .hh_typeList .item, .hh_diseaseList .item {
+                    min-width: 29.6%;
+                }
+            }
+            @media screen and(min-width:371px){
+                .hh_typeList .item, .hh_diseaseList .item {
+                    min-width: 30.2%;
+                }
+            }
+            @media screen and(max-width:370px){
+                .hh_timeList .item {
+                    min-width: 21.3%;
+                }
+            }
+            @media screen and(min-width:371px){
+                .hh_timeList .item {
+                    min-width: 21.8%;
+                }
+            }
+            
+            .hh_sift_btn {
+                height: initial;
+                clear: both;
+                padding-top: 14px;
+                padding-right: 14px;
+                padding-bottom: 6px;
+                .button {
+                    min-height: 38px;
+                    line-height: 38px;
+                    border-radius: 4px;
+                }
+            }
+            .hh_sift_spacer {
+                height: 10px;
+                border-bottom: 1px solid #E7E7E7;
+                margin-right: 14px;
+                clear: both;
+            }
+            .hh_sift_btnSpacer {
+                width: 14px;
+            }
+        }
+        .hh_spacer {
+            height: 10px;
+        }
+        .hh_hisList .item {
+            border-width: 0;
+            background-color: #F5F5F9;
+            
+            .col-20 {
+                border-right: solid 1px #A2AFBE;
+            }
+            .col-80 {
+                padding: 10px 14px 10px 20px;
+            }
+            .col-75 {
+                white-space: initial;
+            }
+            .hh_shortDate {
+                padding-right: 4px;
+                color: #999;
+            }
+            .hh_disYear {
+                width: 42px;
+                height: 42px;
+                background-color: #35C7F9;
+                border-radius: 50%;
+                color: #fff;
+                border: solid 2px #F5F5F9;
+                margin-left: -22px;
+                font-size: 14px;
+            }
+            .hh_node {
+                width: 16px;
+                height: 16px;
+                background-color: #35C7F9;
+                border-radius: 50%;
+                border: solid 2px #F5F5F9;
+                margin-right: -13px;
+            }
+            .hh_arrow {
+                position: absolute;
+                display: inline-block;
+                margin-left: 23px;
+                border-top: 10px solid transparent;
+                border-bottom: 10px solid transparent;
+                border-right: 10px solid #fff;
+            }
+            .hh_disease {
+                margin-right: 10px;
+                border-radius: 4px;
+                border-bottom: solid 2px #EDEDEF;
+            }
+            .hh_borArrow {
+                width: 10px;
+                background-color: #35C7F9;
+                font-size: 14px;
+                border-radius: 0 4px 4px 0;;
+            }
+            .hh_type {
+                background-color: #EDFAFE;
+                color: #35C7F9;
+                padding: 0 2px;
+                margin-left: 2px;
+            }
+        }
+    }
+    .hh_manage {
+        .has-header {
+            top: 131px;
+            bottom: 0;
+        }
+        .noscroll .row {
+            height: auto;
+        }
+        .emptyMsg {
+            padding-top: 18%;
+        }
+        .hh_magHeader {
+            position: absolute;
+            z-index: 11;
+            top: 44px;
+            width: 100%;
+            height: 87px;
+            background-color: #F6FBFE;
+            border-bottom: solid 1px #00C2FA;
+            
+            .hh_bloodPre, .hh_heartRate, .hh_weight {
+                width: 44px;
+                height: 44px;
+                margin: 2px auto;
+            }
+            .hh_bloodPre {
+                background: url("../images/icon_sprite.png") -88px 0 / 600% no-repeat;
+            }
+            .hh_heartRate {
+                background: url("../images/icon_sprite.png") -132px 0 / 600% no-repeat;
+            }
+            .hh_weight {
+                background: url("../images/icon_sprite.png") -176px 0 / 600% no-repeat;
+            }
+            .hh_magArrow {
+                width: 14px;
+                height: 14px;
+                margin: auto;
+                background-color: #F6FBFE;
+                font-size: 22px;
+                color: #00C2FA;
+            }
+        }
+        .hh_bloodPreContent {
+            width: 240px;
+            margin: 10px auto 8px auto;
+            padding-top: 150px;
+            background: url("../images/bloodPre.png") 79px 0 / 130px auto no-repeat;
+        }
+        input {
+            width: 100%;
+            height: 30px;
+            margin-top: 2px;
+            border: solid 1px #D2F2FF;
+            border-radius: 4px;
+            font-size: 18px;
+            padding-left: 6px;
+        }
+        .hh_bloodPreSave {
+            width: 60px;
+            padding: 8px 16px 0 0;
+        }
+        .hh_diastole {
+            width: 54px;
+            position: absolute;
+            margin-top: -118px;
+            margin-left: 20px;
+        }
+        .hh_contract {
+            width: 54px;
+            position: absolute;
+            margin-top: -142px;
+            margin-left: 166px;
+        }
+        .hh_bloodPreList {
+            .item {
+                margin: 0 10px 10px 10px;
+                padding: 2px 10px;
+                border-radius: 6px;
+            }
+            .row {
+                padding: 5px;
+            }
+            .col {
+                padding: 0;
+            }
+            .hh_bloodPreLaugh {
+                width: 36px;
+                height: 36px;
+                background-image: url("../images/icon_sprite.png");
+                background-size: 1200%;
+                background-position: -144px -72px;
+                background-repeat: no-repeat;
+                margin-left: 14%;
+            }
+            .hh_bloodPreCry {
+                width: 36px;
+                height: 36px;
+                background-image: url("../images/icon_sprite.png");
+                background-size: 1200%;
+                background-position: -180px -72px;
+                background-repeat: no-repeat;
+                margin-left: 14%;
+            }
+        }
+        .hh_nowDate {
+            padding: 8px 0 0 16px;
+            color: #35C7FA;
+            i {
+                margin-left: 2px;
+            }
+        }
+        .hh_heartRateContent {
+            width: 260px;
+            margin: 10px auto 8px auto;
+            padding-top: 108px;
+            background: url("../images/heartRate.png") center 34px / auto 60px no-repeat;
+        }
+        .hh_hrVal {
+            position: absolute;
+            width: 140px;
+            margin-left: 118px;
+            margin-top: -112px;
+            
+            .inline {
+                width: 54px;
+            }
+        }
+        .hh_weightContent {
+            width: 260px;
+            margin: 10px auto 8px auto;
+            padding-top: 114px;
+            background: url("../images/weight.png") center 0/auto 100px no-repeat;
+        }
+        .hh_wVal {
+            position: absolute;
+            width: 84px;
+            margin-left: 88px;
+            margin-top: -98px;
+            
+            .inline {
+                width: 54px;
+            }
+        }
+    }
+}
+.col-30 {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 30%;
+    -moz-box-flex: 0;
+    -moz-flex: 0 0 30%;
+    -ms-flex: 0 0 30%;
+    flex: 0 0 30%;
+    max-width: 30%
+}
+.axis { 
+
+}
+.axis-item {
+    margin-bottom: 10px;
+    background: #fff;
+    
+    .axis-left {
+        position: relative; top: 0; left: 0;
+        border-right: 2px solid #F7F7F7;
+        z-index: 20;
+
+        .i-dot {
+            display: block; position: absolute; right: -6px; top: 18px;
+            height: 10px; width: 10px;
+            border-radius: 5px;
+            z-index: 999; 
+        }
+        .i-dot.green {
+            background: #5fde46;
+        }
+        .i-dot.red {
+            right: -8px;
+            width: 15px; height: 15px; 
+            border: 3px solid #ffe2cf;
+            border-radius: 7px;
+            background: #f60;
+        }
+        .i-dot.grey {
+            background: #ccc;
+        }
+    }
+    .sub-axis-right {
+        text-align: right;
+    }
+
+}
+.axis-item.white {
+    background: #fff; color: #D7D7D7;
+    .axis-title, .sub-title { color: #aaa; }
+}
+.axis-item.grey {
+    background: #F5F5F9; color: #D7D7D7;
+    .axis-title, .sub-title { color: #aaa; }
+}
+.height100 {
+    height: 100%;
+}
+
+.amt_gradual_show {
+    -webkit-animation: amt_gradual_show 250ms ease-in-out;
+    animation        : amt_gradual_show 250ms ease-in-out;
+    -moz-animation   : amt_gradual_show 250ms ease-in-out;
+}
+@-webkit-keyframes amt_gradual_show {
+    from {top: -100px;}
+    to {top: 81px;}
+}
+@keyframes amt_gradual_show {
+    from {top: -100px;}
+    to {top: 81px;}
+}
+@-moz-keyframes amt_gradual_show {
+    from {top: -100px;}
+    to {top: 81px;}
+}
+.amt_gradual_hide {
+    -webkit-animation: amt_gradual_hide 250ms ease-in-out;
+    animation        : amt_gradual_hide 250ms ease-in-out;
+    -moz-animation   : amt_gradual_hide 250ms ease-in-out;
+}
+@-webkit-keyframes amt_gradual_hide {
+    from {top: 81px;}
+    to {top: -100px;}
+}
+@keyframes amt_gradual_hide {
+    from {top: 81px;}
+    to {top: -100px;}
+}
+@-moz-keyframes amt_gradual_hide {
+    from {top: 81px;}
+    to {top: -100px;}
+}

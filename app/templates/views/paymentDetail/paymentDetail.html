@@ -1,0 +1,75 @@
+<ion-view class="stable-bg2 paymentDetail" ng-init="initPayDetail('','');">
+	<!--主标题-->
+	<ion-header-bar align-title="center" class="bar bar-header bar-calm head-noborder">
+        <button class="button button-icon icon ion-ios-arrow-back" ng-click="backToHome()"></button>
+        <h1 class="title super-text" ng-bind="paymentTitle"></h1>
+    </ion-header-bar>
+    	<!--副标题-->
+    <ion-slide-box active-slide="paymentDetailSlideIndex" slide-interval="4000" on-swipe-right="slideRightYear()" on-swipe-left="slideLeftYear()" delegate-handle="paymentHandle">
+		<ion-slide ng-repeat="slyear in storeLatestYear track by $index">
+			<div class="bar bar-subheader">
+				<div class="button-bar">
+					<div class="icon-right paymentYearMonth">
+						<div class="paymentYear">
+							<span class ="paymentYearSpan" ng-bind="slyear.currentYear"></span>
+							<span class ="paymentYearSpan" ng-if="!slyear.currentYear">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+							<span class ="paymentYearSpan">年</span>
+						</div>
+						<div class="paymentMonth">
+							<span class ="paymentMonthSpan" ng-bind="slyear.currentMonth"></span>
+							<span class ="paymentMonthSpan" ng-if="!slyear.currentMonth">&nbsp;&nbsp;&nbsp;&nbsp;</span>
+							<span class ="paymentMonthSpanLeft">月</span>		
+							<span class="button button-light icon-right ion-ios-arrow-down custom_button_arrow" ng-click="showArrowUpForPay();" ng-class="{'ion-ios-arrow-up':showArrowUp}"></span>
+						</div>
+					</div>
+					<div class="heightLine"></div>
+					<div class="paymentCompanyPersonal">
+						<div class="paymentCompanyPersonalFirst">
+							<div>公司缴纳(元)</div>
+							<div ng-bind="formatNumber(slyear.companySum)"></div>
+						</div>
+						<div class="paymentCompanyPersonalSec">
+							<div>个人缴纳(元)</div>
+							<div ng-bind="formatNumber(slyear.personSum)"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!--年份缴纳明细-->
+			<ion-content class="has-subheader" scroll="true" overflow-scroll="true" ng-class="{'isEmptyDataPaymentList':(!slyear.hasPayYearDetail || connectionIssue)}">
+				<ion-list>
+        				<div class="rec text-center normal-text padding hidEmptyData" ng-class="{hidEmptyData:slyear.hasPayYearDetail,isEmptyData:!slyear.hasPayYearDetail}" ng-if="!slyear.hasPayYearDetail">
+	                    <img src="images/Doctor.png">
+	                    <p>无缴费记录</p>
+        				</div>
+					<ion-item ng-repeat="item in slyear.paymentList" class="insuranceList" ng-click="showPayYearDetail(item,slyear.currentYear)">
+						<div class="insuranceTypeName">
+								<div>
+									<span ng-bind="item.insuranceType"></span>
+								</div>
+								<div>
+									<span>缴费基数{{ formatNumber(item.paymentBase) }}</span>
+								</div>
+						</div>
+						
+						<div class="paymentCompanyPersonalDetail">
+							<div class="paymentAmount">
+							<span ng-bind="formatNumber(item.paymentAmount)"></span>
+							<!--<span ng-if="item.arrivalStatus=='未到账'" ng-bind="item.arrivalStatus"></span>-->
+							</div>
+							<div class="companyPersonal">
+								<span>
+									<span>公司缴纳{{ formatNumber(item.companyPaymentAmount) }}</span>
+								</span>
+								<span>
+									<span>个人缴纳{{ formatNumber(item.personalPaymentAmount) }}</span>
+								</span>
+							</div>
+						</div>
+					</ion-item>
+				</ion-list>
+			</ion-content>
+		</ion-slide>
+	</ion-slide-box>
+</ion-view>

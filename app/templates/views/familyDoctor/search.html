@@ -1,0 +1,50 @@
+<ion-view class="search stable-bg">
+    <ion-header-bar align-title="center" class="bar-calm item-input-inset">
+    		<button class="button button-icon ion-ios-arrow-back" ng-click="goBack();"></button>
+		<label class="dark-calm-bg item-input-wrapper box-search">
+    			<i class="icon ion-ios-search-strong super-text"></i>
+			<input id="searchWord" ng-focus="searchDoctorHistory();" ng-keyup="searchKeyUp($event);" type="text" class="light normal-text" placeholder="请输入医生姓名" style="color:#fff;">
+			<i ng-show="policyKey" on-tap="clearKey();" class="icon ion-close-circled super-text"></i>
+		</label>
+		<button on-touch="getByKey();" class="button-clear light large-text">搜索</button>
+	</ion-header-bar>
+	
+    <ion-content class="grey has-subheader noscroll height100 margin-40" ng-show="isDefault" overflow-scroll="true" ng-class="{isEmptyDataSearch:showSearchDoc}">
+    		<ion-scroll delegate-handle="searchDocScroll">
+			<ion-refresher on-refresh="getAll(params);" pulling-text="下拉刷新" refreshing-text="正在刷新..."></ion-refresher>
+			<div class="list recmd_list padding6">
+				<div class="searchDocNoData normal-text hidEmptyData" ng-if="showSearchDoc" ng-class="{hidEmptyData:!showSearchDoc,isEmptyData:showSearchDoc}">
+					<img src="images/Doctor.png">
+					<p ng-bind="emptyMsg"></p>
+				</div>
+				<div class="searchDocExitData" ng-show="!showSearchDoc">
+					<ion-item class="item-avatar item-thumbnail-left item-borderless" ng-repeat="item in storeAll" ng-click="detail(item.doctorCode);" ng-if="item.doctorCode && item.doctorCode !== 'null'">
+						<img ng-src="{{item.portrait}}">
+						<h2>
+						    <span ng-bind="item.name" class="numval"></span>
+						    <span ng-bind="item.department" class="levelval"></span> -
+							<span ng-bind="item.jobTitle" class="levelval"></span>
+					    </h2>
+						<p ng-bind="item.hospital" class="recmd_item_hospital"></p>
+						<p class="recmd_item_num">
+							<span>签约数<span ng-bind="item.contractNum" class="calm numval"></span><span class="calm">人</span></span>
+							<span class="recmd_item_numRight">慢病续方<span ng-bind="item.slowNum" class="calm numval"></span><span class="calm">次</span></span>
+						</p>
+					</ion-item>
+				</div>
+			</div>
+			<ion-infinite-scroll ng-if="searchMore" on-infinite="getAll(params);" distance="20%" ></ion-infinite-scroll>
+		</ion-scroll>
+    	</ion-content>
+    	<div class="search_backdrop" ng-show="isRecmd"></div>
+    	<ion-content class="search_history noscroll" overflow-scroll="true" ng-show="isRecmd">
+    		<div class="item item-divider normal-text">搜索历史</div>
+    		<ion-scroll class="search_hisScroll stable-bg">
+	    		<div class="list">
+			    	<div class="item" ng-repeat="item in storeSearch | orderBy:'-id'" 
+			    		ng-bind-html="item.keyValue" ng-click="historyItem(item);"></div>
+		    	</div>
+		</ion-scroll>
+		<div class="text-center item item-divider large-text" ng-click="clearHistory()">清除搜索纪录</div>
+	</ion-content>
+</ion-view>

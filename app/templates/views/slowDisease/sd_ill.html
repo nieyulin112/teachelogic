@@ -1,0 +1,66 @@
+<ion-view class="bg-light">
+    <ion-header-bar align-title="center" class="bar-calm">
+        <h1 class="title super-text">提交成功</h1> 
+        <button class="button button-icon large-text" ng-click="backToHome()">完成</button>
+    </ion-header-bar>
+
+    <ion-content class="my-backg">
+        <div class="notice-panel text-center my-notice">
+          <div class="row">
+            <div class="my-ss">
+
+              <div class="text-left super-text my-balanced">
+                <i class="icon ion-checkmark-circled" ng-show="continuePillData.result"></i>
+                <!-- <i class="icon ion-close-circled" ng-show="!continuePillData.result"></i> -->
+                <strong  ng-show="continuePillData.result">提交成功</strong>
+                <!-- <strong ng-show="!continuePillData.result">提交失败</strong> -->
+              </div><br/>
+
+              <p class="dark text-left large-text my-text" ng-show="continuePillData.result">等待医生确认<br/>
+                <span>预计一个工作日完成</span>
+              </p>
+
+<!--               <p class="dark text-left large-text my-text" ng-show="!continuePillData.result">
+                <span ng-bind="continuePillData.message"></span>
+              </p> -->
+
+            </div>
+          </div>
+        </div>
+
+      <p class="my-pcl large-text" ng-show="continuePillData.autoAssined">系统已自动为您匹配家庭医生</p>
+
+      <div class="card my-card" ng-show="continuePillData.autoAssined">
+
+          <!-- <div class="item item-divider large-text my-item-driver">
+            <span>系统已自动为您匹配家庭医生</span>
+          </div> -->
+
+          <div class="item item-avatar item-thumbnail-left my-item-avatar">
+            
+              <img src="{{continuePillData.doctor.portrait}}" alt="医生图片" class="header-img my-img">
+
+              <div class="my-aas">
+                  <h2 class="super-text" ng-bind="continuePillData.doctor.name"></h2>
+
+                  <p class="my-pclass">
+                    <i class="icon ion-person calm"></i>
+                    <span class="calm normal-text my-stt">
+                        &nbsp;已签约<span ng-bind="continuePillData.doctor.contractNum"></span>位用户
+                    </span>
+                  </p>
+                  <span class="my-col">
+                    <span class="large-text" ng-bind="continuePillData.doctor.department"></span>&nbsp;-
+                    <span class="normal-text" ng-bind="continuePillData.doctor.jobTitle"></span>
+                    <p class="min-text my-col" ng-bind="continuePillData.doctor.hospital"></p>
+                  </span>
+              </div>
+          </div>
+      </div>
+    </ion-content>
+
+    <ion-footer-bar align-title="center" class="bar-calm">
+        <h1 class="title super-text" ng-click="checkMyPrescription(continuePillData)">查看我的处方</h1>
+    </ion-footer-bar>
+    
+</ion-view>

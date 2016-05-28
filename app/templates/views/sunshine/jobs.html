@@ -1,0 +1,54 @@
+<ion-view class="sunshine-jobs"  ng-init="initJobs();">
+	<!-- title return 返回至首页 -->
+	<ion-header-bar align-title="center" class="bar-calm">
+		<button class="button button-icon icon ion-ios-arrow-back" ng-click="back()"></button>
+		<h1 class="title super-text" ng-bind="jobsHeader"></h1>
+	</ion-header-bar>
+	
+    <div class="sun-job-nav tabs-striped tabs-top tabs-color-calm">
+
+		<ion-scroll direction="x" class="tabScroll" ng-show="jobsFlag">
+			<div class="tabs scroll_tab">
+				<div class="jobs-item tab-item" 
+					ng-class="{'active': item.isActive}" 
+					ng-repeat="item in jobs track by $index" 
+					ng-click="activeJobsHandler(item)" 
+					ng-bind="item.root.second">
+				</div>
+			</div>
+		</ion-scroll>
+
+    </div>
+    
+	<!-- -->
+    <ion-content ng-class="{'has-subheader': jobs['length'] > 0}" class="noscroll sun-job-content" overflow-scroll="true">
+		<ion-scroll delegate-handle="job_scroll">
+			<ion-list>
+				<!--href="#/app/recruit/{{item.recruitID}}"-->
+		        <ion-item class="job-item" ng-repeat="item in arts track by $index" ng-click="jumpToDetail(item)">
+
+					<div class="job-name" ng-bind="item.affairName"></div>
+		        	<div class="job-date" ng-bind="item.createDate"></div>
+		        
+		        </ion-item>
+		        <!--
+		        <ion-item class="job-no-more" ng-show="isEnough"></ion-item>
+				-->
+		    </ion-list>
+			<!-- 底部分页 -->
+		    <ion-infinite-scroll ng-if="scrollFlag" on-infinite="onScrollHandler(pageNo + 1)" distance="20%" ></ion-infinite-scroll>
+	    
+	    </ion-scroll>
+
+    </ion-content>
+
+    <footer class="psa_empty text-middle width100 light-bg" ng-class="eptCls" ng-show="isEmpty">
+		
+		<div class="text-center width100">
+			<img src="images/Doctor.png" />
+			<div class="normal-text" ng-bind="eptCont"></div>
+		</div>
+
+	</footer>
+
+</ion-view>

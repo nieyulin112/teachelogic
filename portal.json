@@ -1,0 +1,15 @@
+{
+  "慢病续方": "app.project",
+  "我的处方": "app.myPrescription",
+  "家庭医生": "app.familyDoctor",
+  "账户查询": "app.accountSearch",
+  "就诊记录": "app.medicalRecord",
+  "参保信息": "app.insuranceInfo",
+  "缴费明细": "app.paymentDetail",
+  "政策查询": "app.newsletterPage, {menuType: 1}",
+  "办事指南": "app.newsletterPage, {menuType: 2}",
+  "就业招聘公示": "app.newsletterPage, {menuType: 3}",
+  "市民卡": "app.citizenCard",
+  "阳光政务": "app.sunChief",
+  "debug": "app.debug"
+}

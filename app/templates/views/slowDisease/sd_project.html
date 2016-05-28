@@ -1,0 +1,79 @@
+<ion-view class="bg-lighter">
+    <ion-header-bar align-title="center" class="bar-calm">
+    <button class="button button-icon icon ion-ios-arrow-back" ng-click="backToHome()"></button>
+        <h1 class="title super-text">选择续方项目</h1>
+    </ion-header-bar>
+
+    <ion-content class="coon stable-bg">
+      	<div class="list" id="DiseaseNameId">
+	      <!--<ion-radio name="DiseaseName" ng-repeat="item in diseaseTypeList"
+                   ng-value="item.diseaseId"
+                   ng-click="myChooce(item,this);" >
+            {{ item.diseaseType }}
+          </ion-radio>-->
+          <label class="item item-radio" name="DiseaseNameLabel" ng-click="myChooce(this,0);">
+          	<input type="radio" name="DiseaseName"  value="1" id="DiseaseName0">
+          	<div class="item-content disable-pointer-events">
+          		<span class="ng-binding">高血压</span>
+          	</div>
+          	<i name="DiseaseNamei" class="radio-icon disable-pointer-events icon ion-checkmark"></i>
+          </label>
+          <label class="item item-radio" name="DiseaseNameLabel" ng-click="myChooce(this,1);">
+          	<input type="radio" name="DiseaseName"  value="5" id="DiseaseName1">
+          	<div class="item-content disable-pointer-events">
+          		<span class="ng-binding">糖尿病</span>
+          	</div>
+          	<i name="DiseaseNamei" class="radio-icon disable-pointer-events icon ion-checkmark"></i>
+          </label>
+          <label class="item item-radio" name="DiseaseNameLabel" ng-click="myChooce(this,2);">
+          	<input type="radio" name="DiseaseName"  value="2" id="DiseaseName2">
+          	<div class="item-content disable-pointer-events">
+          		<span class="ng-binding">高血脂</span>
+          	</div>
+          	<i name="DiseaseNamei" class="radio-icon disable-pointer-events icon ion-checkmark"></i>
+          </label>
+          <label class="item item-radio" name="DiseaseNameLabel" ng-click="myChooce(this,3);">
+          	<input type="radio" name="DiseaseName"  value="3" id="DiseaseName3">
+          	<div class="item-content disable-pointer-events">
+          		<span class="ng-binding">冠心病</span>
+          	</div>
+          	<i name="DiseaseNamei" class="radio-icon disable-pointer-events icon ion-checkmark"></i>
+          </label>
+          <label class="item item-radio" name="DiseaseNameLabel" ng-click="myChooce(this,4);">
+          	<input type="radio" name="DiseaseName"  value="4" id="DiseaseName4">
+          	<div class="item-content disable-pointer-events">
+          		<span class="ng-binding">脑血管疾病</span>
+          	</div>
+          	<i name="DiseaseNamei" class="radio-icon disable-pointer-events icon ion-checkmark"></i>
+          </label>
+          
+          
+      	</div>
+      <div class="syria bg-dark">
+          
+          <p class="lighter large-text my-po">
+              <strong >续方说明</strong>
+          </p>
+
+          <ul class="lighter large-text my-te">
+              <li>
+                  1. 同时只能提交一张续方申请
+              </li>
+              <li>
+                  2. 药品可使用医保支付
+              </li>
+              <li class="my-li">
+                  3. 服务医生均来自厦门社区卫生中心
+              </li>
+              <li class="my-lif">
+                  4. 申请提交后，需要医生评估确认，一般需要1个工作日,感谢您的支持和配合!
+              </li>
+          </ul>
+      </div>
+      <div class="my-mar"></div>
+    </ion-content>
+
+        <div class=" bar bar-footer footer-container" >
+          <button class="button super-text w100 button-calm" ng-click="choosePill(continuePillData)" ng-disabled="continuePillData.myBotton">下一步</button>
+        </div>
+</ion-view>

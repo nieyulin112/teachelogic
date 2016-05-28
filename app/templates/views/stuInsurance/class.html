@@ -1,0 +1,28 @@
+<ion-view class="stable-bg stuInsSchool" ng-init="getClassByKeyHud(1);">
+    <ion-header-bar align-title="center" class="bar-calm item-input-inset">
+        <button class="button button-icon ion-ios-arrow-back" ng-click="goBack();"></button>
+        <label class="dark-calm-bg item-input-wrapper">
+        		<i class="icon ion-ios-search-strong super-text"></i>
+			<input ng-model="classKey" ng-keyup="classKeyUp($event);" type="text" class="light normal-text" placeholder="请输入班级名">
+			<i ng-show="classKey" on-tap="clearKey();" class="icon ion-close-circled super-text"></i>
+		</label>
+		<button on-touch="getClassByKeyHud(1);" class="button-clear light large-text">搜索</button>
+    </ion-header-bar>
+    <ion-subheader-bar>
+    	<div ng-show="isShowList" class="search_title stable-bg">搜索结果</div>
+    </ion-subheader-bar>
+    <ion-content class="noscroll has-header has-subheader" overflow-scroll="true" ng-class="{isEmptyDataStuInsuranceSchoolList:isEmpty}">
+        <ion-scroll delegate-handle="classScroll">
+        <ion-refresher on-refresh="getClassByKey(1);" pulling-text="下拉刷新" refreshing-text="正在刷新..."></ion-refresher>
+            <ion-list ng-show="isShowList">
+                <div class="rec text-center normal-text padding hidEmptyData" ng-class="{hidEmptyData:!isEmpty,isEmptyData:isEmpty}" ng-if="isEmpty">
+                    <img src="images/Doctor.png">
+                    <p>抱歉，没有相关记录</p>
+                </div>
+
+                <ion-item ng-click="selectClass(item);" ng-bind-html="item.keyWordName" ng-repeat="item in storeClass"></ion-item>
+            </ion-list>
+            <ion-infinite-scroll ng-if="classMore" on-infinite="getClassByKey(classStart);" distance="20%" ></ion-infinite-scroll>
+        </ion-scroll>
+  </ion-content>
+</ion-view>

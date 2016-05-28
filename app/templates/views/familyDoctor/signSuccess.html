@@ -1,0 +1,27 @@
+<ion-view class="stable-bg successDoctor" ng-init="initSuccess();">
+    <ion-header-bar align-title="center" class="bar-calm">
+        <h1 class="title super-text" ng-if="actCode=='0'">签约成功</h1>
+        <h1 class="title super-text" ng-if="actCode=='1'">签约医生更换成功</h1>
+        <button class="button button-icon large-text" ng-click="successClick();">完成</button>
+    </ion-header-bar>
+
+    <ion-content class="text-center">
+        <div class="divHead">
+        		<p ng-show="autoSign" class="small-text dark">系统已自动为您匹配家庭医生</p>
+            <img class="width100" ng-src="{{modelDoctor.portrait}}">
+            <p class="normal-text marginT8">
+            		<span class="marginR4" ng-bind="modelDoctor.name"></span>
+            		<span ng-bind="modelDoctor.deplev"></span>
+            </p>
+            <p class="normal-text" ng-bind="modelDoctor.hospital"></p>
+        </div>
+        <div class="divContent green">
+            <i class="icon ion-checkmark-circled marginR4" ng-if="actCode=='0'">签约成功</i>
+            <i class="icon ion-checkmark-circled marginR4" ng-if="actCode=='1'">签约医生更换成功</i>
+        </div>
+    </ion-content>
+    
+    <ion-footer-bar class="bar-calm" ui-sref="app.project">
+    		<h1 class="title super-text">慢病续方<h1>
+    </ion-footer-bar>
+</ion-view>

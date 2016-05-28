@@ -1,0 +1,37 @@
+<ion-view class="stable-bg newsletter">
+    <ion-header-bar align-title="center" class="bar-calm item-input-inset searchBar">
+	    <button class="button button-icon ion-ios-arrow-back" ng-click="goBack();"></button>
+	    <label class="dark-calm-bg item-input-wrapper search-box">
+    		<i class="icon ion-ios-search-strong super-text"></i>
+				<input id="scPolicyKey" ng-keyup="policyKeyUp($event);" type="text" class="light normal-text" placeholder="社保政策检索">
+				<i ng-show="policyKey" on-tap="clearKey();" class="icon ion-close-circled super-text"></i>
+			</label>
+			<button on-touch="getPolicyByKeyHud(1);" class="button-clear light large-text">搜索</button>
+    </ion-header-bar>
+    <ion-subheader-bar>
+    		<div ng-show="isShowList" class="search_title stable-bg">搜索结果</div>
+    </ion-subheader-bar>
+    <ion-content class="noscroll has-seachHeader" overflow-scroll="true" ng-class="{isEmptyDataNewsLetterSearchList:isEmpty}">
+        <ion-scroll delegate-handle="scSearchScroll">
+        <ion-refresher on-refresh="getPolicyByKey(1);" pulling-text="下拉刷新" refreshing-text="正在刷新..."></ion-refresher>
+            <ion-list>
+              <div class="rec text-center normal-text padding hidEmptyData" ng-class="{hidEmptyData:!isEmpty,isEmptyData:isEmpty}" ng-if="isEmpty">
+                    <img src="images/Doctor.png">
+                    <p ng-bind="emptyMsg"></p>
+            	</div>
+            	<ion-item ng-repeat="item in sunChiefItems" class="padding dia-padding" ng-click="selectPolicy(item)">
+                  <div ng-bind="item.title" class="normal-text item-margin10 overStep" style="font-weight:bold"></div>
+                   <div class="row row-no-padding">
+                      <div class="col" ng-if="item.tag"> 
+                          <div ng-bind="item.tag" class="min-text calm info-lable"></div>
+                      </div>
+                      <div class="col-right"> 
+                          <div ng-bind="item.dateCreated" class="min-text font-gray"></div>
+                      </div>
+                  </div>
+              </ion-item>
+            </ion-list>
+        <ion-infinite-scroll ng-if="policyMore" on-infinite="getPolicyByKey(nextIndex);" distance="20%"></ion-infinite-scroll>
+        </ion-scroll>
+	</ion-content>
+</ion-view>

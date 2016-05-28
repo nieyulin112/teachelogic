@@ -1,0 +1,53 @@
+<ion-view class="rec-view" ng-init="initRecruits();">
+	<!-- title return 返回至首页 -->
+	<ion-header-bar align-title="center" class="bar-calm">
+		<button class="button button-icon icon ion-ios-arrow-back" ng-click="home()"></button>
+
+		<h1 class="title super-text">招聘公示</h1>
+		
+		<button class="button button-icon ion-ios-search-strong" ng-click="getSearchData();"></button>
+
+	</ion-header-bar>
+	
+	<div style="margin-top: 44px;"></div>
+	
+	<ion-content class="noscroll" overflow-scroll="true">
+
+		<ion-scroll delegate-handle="rec_scroll" class="rec-scroll">
+			<ion-list class="rec-list">
+				<!--href="#/app/recruit/{{item.recruitID}}"-->
+		        <ion-item class="rec-item" ng-repeat="item in recruits track by $index" ng-click="jumpToDetail(item)">
+					<div class="rec-item-title">
+						<span class="left">{{ item.position }}</span><span class="right">{{ item.salary }}/月</span>
+					</div>
+					
+					<div class="rec-item-sub">
+						{{ item.companyName.length > 15 ? item.companyName.substr(0, 15) + '...' : item.companyName }}
+					</div>
+
+					<div class="rec-pos">
+						<i class="i-pos"></i><span>{{ item.companyAddr }}</span>
+					</div>
+		        </ion-item>
+
+		    </ion-list>
+			<!-- 底部分页 -->
+		    <ion-infinite-scroll 
+		    	ng-if="scrollFlag" 
+		    	on-infinite="onScrollHandler(pageNo + 1)" 
+		    	distance="20%" >
+		    </ion-infinite-scroll>
+	    </ion-scroll>
+	    
+    </ion-content>
+
+    <footer class="psa_empty text-middle width100 light-bg" ng-class="eptCls" ng-show="isEmpty">
+		
+		<div class="text-center width100">
+			<img src="images/Doctor.png" />
+			<div class="normal-text" ng-bind="eptCont"></div>
+		</div>
+
+	</footer>
+
+</ion-view>

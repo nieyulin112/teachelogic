@@ -1,0 +1,48 @@
+@media screen and(max-width:370px){
+   .min-text{
+      font-size:12px !important;
+    }
+    .normal-text{
+      font-size:14px !important;
+    }
+    .large-text{
+      font-size:16px !important;
+    }
+    .super-text{
+      font-size:18px !important;
+    }
+}
+
+@media screen and(min-width:371px){
+    .min-text{
+      font-size:14px !important;
+    }
+    .normal-text{
+      font-size:16px !important;
+    }
+    .large-text{
+      font-size:18px !important;
+    } 
+    .super-text{
+      font-size:20px !important;
+    }
+}
+.question_view {
+    .question_content {
+        padding: 16px 12px;
+    }
+    .question_item {
+        padding-bottom: 14px;
+    }
+    .item_title {
+        font-weight: bold;
+        padding-top: 6px;
+        padding-bottom: 6px;
+    }
+    .item_subTitle {
+        margin-top: 4px;
+    }
+    .item_indent {
+        text-indent: 2em;
+    }
+}

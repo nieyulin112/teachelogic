@@ -1,0 +1,998 @@
+.lighter {
+    opacity: .5;
+}
+
+.scroll-content{
+  .syria{
+    padding-left:16px;
+  }
+  .notice-panel{
+    height:217px;
+    padding-top:72px;
+  }
+}
+
+div.bar-footer.footer-container{
+  height: 47px;
+  background-position: bottom;
+  padding: 0px;
+  background-color:rgba(0,0,0,0.5);
+
+  button.w60{
+    width: 60%;
+    position:absolute;
+    top:0px !important;
+    bottom:0px !important;
+    border-radius:0px;
+    background-color:rgba(0,0,0,0.5);
+  }
+  button.w40{
+    width:40%;
+    top:0px !important;
+    right:0px !important;
+    bottom:0px !important;
+    border-radius:0px;
+  }
+    button.w100{
+    width:100%!important;
+    top:0px !important;
+    right:0px !important;
+    bottom:0px !important;
+    border-radius:0px;
+  }
+}
+.my-button{
+  border-color: #5C5C5C!important;
+  background-color:rgba(0,0,0,0.2)!important;
+}
+.my-backg{
+  background-color: rgb(250, 250, 250);
+}
+.aa1{
+  
+}  
+.card p{
+  white-space:normal;
+}
+.card{
+  .item-divider{
+    color:#999;
+  }
+  .my-item-driver{
+    text-align:center;
+  }
+  .item-avatar{
+    .header-img{
+      margin-top:-4px;
+      top:20px;
+    }
+  }
+}
+.checkbox input:before, .checkbox .checkbox-icon:before {
+  border-color: #11c1f3 !important; 
+}
+.item-note {
+  span.text-center{
+    position:relative;
+    top:-8px;
+    display:inline-block;
+    width:20px;
+    color:black;
+  }
+}
+
+//.my-padding div:last-child{
+//margin-bottom:50px;
+//}
+
+.my-mar{
+  height:100px;
+}
+
+.list{
+  .select-pill-title{
+    white-space:normal;
+    text-align:center;
+    color:#626262;
+    height: 36px;
+    padding-top:10px; 
+    padding-bottom:10px;
+  }
+  .my-h5{
+    text-align:center;
+    font-size:18px;
+    margin-top: 10px;
+  }
+  .item{
+    .pill-number{
+      margin-top:-44px;
+      span{
+        color:rgb(105, 103, 103);
+      }
+      i{
+        color:#999;
+      }
+    }
+    .pill-img{
+      border-radius:0px;
+    }
+  }
+}
+.my-stt{
+  font-weight: bold;
+  span{
+    font-weight: normal !important;
+  }
+}
+
+.my-col{
+    color:#999 !important;
+    margin-top: 2px;
+    font-weight: bold;
+}
+
+.my-a{
+  padding-top: 20px;
+}
+
+.my-ss{
+  margin: 0 auto;
+}
+
+.my-card{
+  border-radius: 5px;
+}
+
+.coon{
+  .list{
+    .ion-checkmark:before{
+      color: #11c1f3;
+    }
+    .item{
+      color:#333;
+    }
+  }
+  .syria{
+    p{
+      color:#666;
+    }
+    ul{
+      color:#666;
+      margin-right: 2px;
+      li{
+        padding-top: 5px;
+      }
+    }
+  }
+}
+
+.atm{
+  height:100%;
+  background:#F4F4F4;
+  .list{
+    .item-avatar{
+      padding-top:22px;
+      height: 80px;
+    }
+    .stable-bg{
+      .item-doctor{
+        padding-bottom:100%;
+      } 
+    }
+    .select-pill-title{
+      white-space:normal;
+      text-align:center;
+      color:#626262;
+      height: 36px;
+    }
+    .item{
+      border-color:#F4F4F4;
+      h2{
+        white-space:normal;
+      }
+      .pill-img{
+        padding-top:8px;
+        border-radius:0px;
+      }
+      .pill-info{
+  		  width:140px
+      }
+      .ion-chevron-left{
+        color: #dcdcdc;
+        position:absolute;
+        left:5px;
+        top:60px
+      }
+      .pill-number{
+        float:right;
+        margin-top:-38px;
+        span{
+          color:rgb(105, 103, 103);
+        }
+        i{
+          font-size:32px;
+        	color:#999;
+        }
+      }
+      .ion-chevron-right{
+        color: #dcdcdc;
+        position:absolute;
+        right:5px;
+        top:60px
+      }
+      .ionic-scroll{  
+        margin-top: 25px;
+        height: 160px;
+        .scroll-container{
+          width:12000px;
+          .scroll-pill-list{
+            float:left; 
+//          margin-left:5px;
+            img.mwh90{
+              max-width:90px;
+              max-height:90px;
+            }
+            p{
+              color:#333333;
+              margin-right:22px;
+              i{
+                font-size:1px;
+                font-weight:lighter;
+              }
+            }
+          }
+        }
+      }
+      textarea{
+        margin:2px 2px 2px -8px;
+        border:1px solid #ccc;
+        border-radius:8px;
+        resize: none;
+        padding-left: 18px;
+        padding-top: 18px;
+      }
+    }
+    .second{
+      label{
+        background-color:#F4F4F4;
+        padding: 16px 15px 5px 30px;
+      }
+      h5{
+        color:#999;
+      }
+      .text-center{
+        input{
+          font-size:14px;
+        }
+      }
+    }
+  }
+  .checkbox input:checked:before, .checkbox input:checked + .checkbox-icon:before {
+    background: #11c1f3;
+    border-color: #11c1f3;
+  }
+}
+.list-pil{
+  display:inline-block ;  
+}
+@media screen and(max-width:370px){
+  .pll-right{
+    width:76%;
+    float:right;
+}
+  .pillList-Img{
+      width:55px;
+      margin:-5px 3px 0 15px;
+      text-align: center;
+      display: inline-block;
+//    position: absolute !important;
+//    top:15px!important;
+//    left:19px!important;
+
+  }
+.my-pics{
+    max-width: 50px !important;
+    max-height: 50px !important;
+}
+  .mask{
+    background-color: rgba(255,255,255,0.5);
+    text-align:center;
+    position:absolute;
+    top: 35px;
+    height:25px;
+    width:25px;
+    right:0px;
+    overflow:hidden;
+    i{
+      font-size:1%;
+    }
+    span{
+      margin-left:-3px;
+    }
+  }
+  .my-content{
+    width: 66%;
+    float:left;
+    padding-top:0px!important;
+    padding-left: 0px!important;
+    h2{
+      font-size:14px!important;
+    }
+  }
+  .my-avatar{
+    padding-top:24px;
+    height: 80px!important;
+  }
+  .my-span{  
+    margin-top: -39px!important;
+    .my-left{
+      font-size:31px!important;
+    }
+    .my-num{
+      font-size:16px !important;
+      position: relative!important;
+      top: -6px!important;
+    }
+  }
+  .myimg{
+    width: 55px !important;
+    height: 55px !important;
+    margin-left: 15px;
+    display: table-cell;
+    vertical-align: middle;
+  }
+  .my-picst{
+    max-width: 50px !important;
+    max-height: 50px !important;
+    margin:0 auto;
+  }
+  .my-pill-list{
+    height:80px!important;
+    width:86px!important;
+    margin-left: 9px!important;
+  }
+  .my-content{
+    margin-top: -1px;
+   margin-left: 5px;
+  }
+  .my-pillScroll{
+    margin-top: 15px!important;
+    height: 90px!important;
+    width: 268px!important;
+    margin-left: 10px!important;
+  }
+  .my-pcontent{
+    margin-top: 5px!important;
+//  margin-right: 2px!important;
+//  margin-left: -10px!important;
+//  padding-left: 12px;
+    text-align: center;
+  }
+  .my-leftl{
+    position: absolute!important;
+    top: 56px!important;
+    left: 15px!important;
+  }
+  .my-leftr{
+    position: absolute!important;
+    top: 56px!important;
+    right: 15px!important;
+  }
+  .my-notice{
+    height: 240px!important;
+    padding-top: 65px!important;
+  }
+  .my-img{
+    border-radius: 95%!important;
+    margin-top: 2px!important;
+    max-width: 90px!important;
+    max-height: 90px!important;
+    margin-left:20px!important;
+  }
+  .my-aas{
+    margin-left: 30px!important;
+    margin-top: 10px!important;
+  }
+  .my-pclass{
+    padding-top: 2px!important;
+    padding-bottom: 3px!important;
+    margin-bottom: 8px!important;
+  }
+  .my-row{
+    margin-top: -10px;
+    margin-left:-3px!important;
+    label{
+      padding-left:14px!important;
+    }
+  }
+//.my-item-avatar{
+//  height: 132px!important;
+//}
+  .my-balanced{
+    color:#38b690;
+    i{
+      font-size:30px;
+    }
+    strong{
+      font-size:24px;
+    }
+  }
+  .my-text{
+    font-weight: bold;
+    color:#999;
+    height: 50px;
+    line-height: 22px;
+  }
+  .my-te{
+    line-height: 19px;
+  }
+  .my-li{
+    margin-bottom: -2px;
+  }
+  .my-lif{
+    line-height: 24px;
+  }
+  .my-po{
+    margin-bottom: 4px;
+  }
+  .my-spl{
+    background:#11c1f3!important;
+    display: inline-block!important;
+    height: 24px!important;
+    width: 24px!important;
+    border-radius: 90%!important;
+    i{
+      position: absolute!important;
+      top: 23px!important;
+      color:white!important;
+      left:227px!important;
+    }
+  }
+
+  .my-spr{
+    background:#11c1f3!important;
+    display: inline-block!important;
+    height: 24px!important;
+    width: 24px!important;
+    border-radius: 90%!important;
+    i{
+      position: absolute!important;
+      top: 23px!important;
+      left: 279px!important;
+      color:white!important;
+    }
+  }
+  .my-ssp{
+    display: inline-block;
+    width: 24px;
+  }
+  .lightNuml{
+    color:#fff!important;
+    background-image: url(../../images/minus.png)!important;
+    background-repeat:no-repeat!important;
+    background-size:25px 36px!important;
+  }
+  .lightNumr{
+    color:#fff!important;
+    background-image: url(../../images/add.png)!important;
+    background-repeat:no-repeat!important;
+    background-size:25px 36px!important;
+  }
+  .my-pcl{
+    text-align:center;
+    color:#949494; 
+    font-weight: bolder;
+    margin-bottom: -7px!important;
+  }
+.myimg{
+    .mask{
+      position:absolute!important;
+      top: 35px;
+      bottom:0px;
+      height:25px;
+      width:25px;
+      background-color: rgba(255,255,255,0.5);
+      right:0px;
+      overflow:hidden;
+      i{
+        font-size:1%;
+      }
+      span{
+        font-size:85%;
+        margin-left:-2px;
+      }
+    }
+}
+  .my-fsize{
+    width:22px!important;
+    height:22px!important;
+    margin-top: 3px!important;
+  }
+  .checkbox input:after, .checkbox-icon:after {
+    position: absolute!important;
+    top: 30%!important;
+    left: 25%!important;
+    width: 11px!important;
+    height: 5px!important;
+  }
+}
+
+@media screen and(min-width:371px) and (max-width:413px){
+ .pll-right{
+    width:76%;
+    float:right;
+}
+ .pillList-Img{
+    width:75px;
+    margin:14px 0px 0 24px;
+    text-align: center;
+//    position: absolute !important;
+//    top:15px!important;
+//    left:19px!important;
+  }
+  .my-pics{
+    max-width: 70px !important;
+    max-height: 70px !important;
+  }
+  .my-content{
+    width: 68%;
+    float:left;
+    padding-top:25px!important;
+    padding-left:10px!important;
+  }  
+  .my-avatar{
+    min-height: 120px;
+  }
+  .my-span{
+    .my-left{
+      font-size:42px!important;
+    }
+    .my-num{
+      font-size:20px !important;
+    }
+  }
+  .myimg{
+      width:75px;
+      height:75px;
+      display: table-cell;
+      vertical-align: middle;
+      
+  }
+  .my-picst{
+    max-width: 70px !important;
+    max-height: 70px !important;
+    //margin-left: 18px;
+  }
+  .my-pill-list{
+    height:102px!important;
+    width:102px!important;
+    margin-left:9px;
+//  margin-left: -5px!important;
+  }
+  .my-content{
+    margin-top: -1px;
+    margin-left: 3px;
+  }
+  .my-pillScroll{
+    margin-top: 28px!important;
+    height: 122px!important;
+    width: 320px!important;
+    margin-left: 12px!important;
+  }
+  .my-pcontent{
+   margin-top:5px!important;
+//  margin-right: 5px!important;
+//  margin-left: -6px!important;
+//  padding-left: 11px;
+    text-align: center;
+  }
+  .my-leftl{
+    position: absolute!important;
+    top: 86px!important;
+    left: 15px!important;
+  }
+  .my-leftr{
+    position: absolute!important;
+    top: 86px!important;
+    right: 15px!important;
+  }
+  .my-notice{
+    height: 310px!important;
+    padding-top: 95px!important;
+  }
+  .my-img{
+    border-radius: 95%!important;
+    margin-top: -2px!important;
+    max-width: 100px!important;
+    max-height: 100px!important;
+    margin-left:25px!important;
+  }
+  .my-aas{
+    margin-left: 48px!important;
+    margin-top: 10px!important;
+  }
+  .my-pclass{
+    padding-top: 3px!important;
+    padding-bottom: 4px!important;
+    margin-bottom: 8px!important;
+  }
+  .my-row{
+    margin-top: -10px;
+    margin-left:-10px!important;
+  }
+//.my-item-avatar{
+//  height: 137px!important;
+//}
+  .my-balanced{
+    color:#38b690;
+    i{
+      font-size:34px;
+    }
+    strong{
+      font-size:28px;
+    }
+  }
+  .my-pcl{
+    text-align:center;
+    color:#949494; 
+    font-weight: bolder;
+    margin-bottom: -5px!important;
+  }
+  .my-text{
+    font-weight: bold;
+    color:#999;
+    height: 50px;
+    line-height: 23px;
+  }
+  .my-te{
+    line-height: 22px;
+  }
+  .my-li{
+    margin-bottom: -2px;
+  }
+  .my-lif{
+    line-height: 28px;
+  }
+  .my-po{
+    margin-bottom: 4px;
+  }
+  .my-spl{
+    background:#11c1f3!important;
+    display: inline-block!important;
+    height: 32px!important;
+    width: 32px!important;
+    border-radius: 90%!important;
+    i{
+      position: absolute!important;
+      top: 45px!important;
+      color:white!important;
+      left:266px!important;
+    }
+  }
+
+  .my-spr{
+    background:#11c1f3!important;
+    display: inline-block!important;
+    height: 33px!important;
+    width: 33px!important;
+    border-radius: 90%!important;
+    i{
+      position: absolute!important;
+      top: 45px!important;
+      left: 326px!important;
+      color:white!important;
+    }
+  }
+  .my-ssp{
+    display: inline-block;
+    width: 33px;
+  }
+
+.lightNuml{
+  color:#fff!important;
+  background-image: url(../../images/minus.png)!important;
+  background-repeat:no-repeat!important;
+}
+.lightNumr{
+  color:#fff!important;
+  background-image: url(../../images/add.png)!important;
+  background-repeat:no-repeat!important;
+}
+.myimg{
+    .mask{
+      position:absolute!important;
+      top: 55px;
+      bottom:0px;
+      height:20px;
+      width:30px;
+      background-color: rgba(255,255,255,0.5);
+      right:0px;
+      overflow:hidden;
+      i{
+        font-size:1%;
+      }
+      span{
+        font-size:100%;
+        margin-left:-2px;
+      }
+    }
+}
+  .my-fsize{
+    width:25px!important;
+    height:25px!important;
+  }
+  .checkbox input:after, .checkbox-icon:after {
+    position: absolute!important;
+    top: 29%!important;
+    left: 22%!important;
+    width: 13px!important;
+    height: 6px!important;
+  }
+}
+
+@media screen and(min-width:414px){
+   .pll-right{
+    width:76%;
+    float:right;
+}
+  .pillList-Img{
+    width:85px;
+    margin:7px 0px 0 26px;
+    text-align: center;
+//    position: absolute !important;
+//    top:15px!important;
+//    left:19px!important;
+  }
+  .my-pics{
+    max-width: 80px !important;
+    max-height: 80px !important;
+  }
+  .my-content{
+    width: 71%;
+    float:left;
+    padding-top:25px!important;
+    padding-left:8px!important;
+  }  
+  .my-avatar{
+    min-height: 120px;
+  }
+  .my-span{
+    .my-left{
+      font-size:42px!important;
+    }
+    .my-num{
+      font-size:20px !important;
+    }
+  }
+  .my-picst{
+    max-width: 80px !important;
+    max-height: 80px !important;
+    //margin-left: 20px;
+  }
+  .my-pill-list{
+    height:118px!important;
+    width:118px!important;
+    margin-left: 8px!important;
+  }
+  .my-content{
+    margin-top: -1px;
+    margin-left: 3px;
+  }
+  .my-pillScroll{
+    margin-top: 35px!important;
+    height: 140px!important;
+    width: 360px!important;
+    margin-left: 12px!important;
+  }
+  .my-pcontent{
+//  margin-top: 80px!important;
+//  margin-right: 10px!important;
+//  margin-left: -3px!important;
+//  padding-left: 4px;
+    width:90px;
+    text-align: center;
+  }
+  .my-leftl{
+    position: absolute!important;
+    top: 100px!important;
+    left: 15px!important;
+  }
+  .my-leftr{
+    position: absolute!important;
+    top: 100px!important;
+    right: 15px!important;
+  }
+  .my-notice{
+    height: 355px!important;
+    padding-top: 120px!important;
+  }
+  .my-img{
+    border-radius: 95%!important;
+    margin-top: 1px!important;
+    max-width: 110px!important;
+    max-height: 110px!important;
+    margin-left:45px!important;
+  }
+  .my-aas{
+    margin-left: 75px!important;
+    margin-top: 16px!important;
+  }
+  .my-pclass{
+    padding-top: 3px!important;
+    padding-bottom: 4px!important;
+    margin-bottom: 8px!important;
+  }
+  .my-row{
+    margin-top: -10px;
+    margin-left:4px!important;
+  }
+  .my-item-avatar{
+    top: -4px!important;
+//  height: 150px!important;
+  }
+  .my-balanced{
+    color:#38b690;
+    i{
+      font-size:36px;
+    }
+    strong{
+      font-size:30px;
+    }
+  }
+  .my-pcl{
+    text-align:center;
+    color:#949494; 
+    font-weight: bolder;
+    margin-bottom: -3px!important;
+  }
+  .my-text{
+    font-weight: bold;
+    color:#999;
+    height: 50px;
+    line-height: 25px;
+  }
+  .my-card{
+      padding-top: 10px!important;
+  }
+  .my-te{
+      line-height: 22px;
+  }
+  .my-li{
+    margin-bottom: -2px;
+  }
+  .my-lif{
+    line-height: 28px;
+  }
+  .my-po{
+    margin-bottom: 4px;
+  }
+  .my-spl{
+    background:#11c1f3!important;
+    display: inline-block!important;
+    height: 32px!important;
+    width: 32px!important;
+    border-radius: 90%!important;
+    i{
+      position: absolute!important;
+      top: 46px!important;
+      left: 305px!important;
+      color:white!important;
+    }
+  }
+  .my-spr{
+    background:#11c1f3!important;
+    display: inline-block!important;
+    height: 33px!important;
+    width: 33px!important;
+    border-radius: 90%!important;
+    i{
+      position: absolute!important;
+      top: 46px!important;
+      left: 365px!important;
+      color:white!important;
+    }
+  }
+  .my-ssp{
+    display: inline-block;
+    width: 33px;
+  }
+
+  .lightNuml{
+    color:#fff!important;
+    //color:#11c1f3!important;
+    //border-color:red !important;
+    //background-color:#11c1f3!important;
+    background-image: url(../../images/minus.png)!important;
+    background-repeat:no-repeat!important;
+    //background:url(images/head2@2x.png) repeat-x 0 0 !important;
+    //background: url(../../images/add.png) no-repeat left center!important;
+    //background-size:cover!important;
+  }
+  .lightNumr{
+    color:#fff!important;
+    //color:#11c1f3!important;
+    background-image: url(../../images/add.png)!important;
+    background-repeat:no-repeat!important;
+  }
+.myimg{
+  width: 90px;
+  height: 90px;
+  display: table-cell;
+  vertical-align: middle;
+    .mask{
+      position:absolute!important;
+      top: 70px;
+      bottom:0px;
+      height:20px;
+      width:30px;
+      background-color: rgba(255,255,255,0.5);
+      right:0px;
+      overflow:hidden;
+      i{
+        font-size:1%;
+      }
+      span{
+        font-size:100%;
+        margin-left:-2px;
+      }
+    }
+}
+}
+.pill-padding .item-avatar{
+    padding-left:0;
+}
+.myimg{
+    text-align: center;
+    position:relative;
+}
+.my-padding{
+    overflow: hidden;
+}
+.pill-padding .item{
+    display:flex;
+    align-items: center;
+}
+.pill-padding .item:last-child{
+    margin-bottom:46px;
+}
+.atm .scroll{
+    width:100%;
+    height:100%;
+}
+.pill-padding .select-pill-title{
+    padding:0;
+    height:16px;
+}
+.isEmptyDataSlowDiseaseList{
+    height: 85%;
+    width: 100%;
+    .scroll{
+        height:100%;
+        .list{
+            height:100%;
+            width:100%;
+            display:table;
+        }
+    }
+}
+.isHide{
+    display: none;
+}
+.pillShow{
+    display: block;
+}
+#submitPill{
+  position:fixed;
+  bottom:0px;
+  left:0px;
+  //z-index:-3;  
+}
+.atm .checkbox input:checked:before, .atm .checkbox input:checked + .checkbox-icon:before{
+    background:#fff;
+    border-color:#fff;
+}
+.atm .checkbox input:after, .checkbox-icon:after{
+    border-left:2px solid #000;
+    border-bottom:2px solid #000;
+    
+}

@@ -1,0 +1,46 @@
+<ion-view class="newsletter">
+  <!--主标题-->
+  <ion-header-bar align-title="center" class="bar-calm">
+			<button class="button button-icon icon ion-ios-arrow-back" ng-click="backToHome()"></button>
+			<h1 class="title super-text">阳光政务</h1>
+  			<button class="button button-icon ion-ios-search-strong" ui-sref="app.sunChiefSearch"></button>
+  </ion-header-bar>
+    
+    <!--副标题-->
+    <div class="bar bar-subheader">
+        <div class="button-bar paddingTab">
+            <a class="button cyan-bg opacity_left large-text" ng-class="{active:isHave}" ng-click="changeTab(0);">企业版</a>
+            <a class="button cyan-bg opacity_right large-text" ng-class="{active:!isHave}" ng-click="changeTab(1)">个人版</a>
+        </div>
+    </div>
+
+    <!-- 中心内容 -->
+    <ion-content class="grey-bg has-subheader sunScroll custom-has-subheader greyColor" overflow-scroll="true" ng-class="{isEmptyDataNewsLetterList:!findBool}">
+    	<ion-scroll delegate-handle="sunChief">
+        <div class="rec text-center normal-text padding hidEmptyData" ng-class="{hidEmptyData:findBool,isEmptyData:!findBool}" ng-if="!findBool">
+              <img src="images/Doctor.png">
+              <p ng-bind="emptyMsg"></p>
+        </div>
+    		<div ng-show="findBool">
+	    		<ion-list>  				
+	            <ion-item ng-repeat="item in sunChiefItems" class="padding noHavePadding" ui-sref="app.sunChiefDetail({idNews:item.idNews})">
+	                <div ng-bind="item.title" class="normal-text item-margin10 overStep" style="font-weight:bold"></div>
+	
+	                 <div class="row row-no-padding">
+	                        <div class="col"> 
+	                            <div ng-bind="item.tag" ng-if="item.tag" class="min-text calm info-lable"></div>
+	                        </div>
+	                        <div class="col-right"> 
+	                            <div ng-bind="item.dateCreated" class="min-text font-gray"></div>
+	                        </div>
+	                </div>
+	
+	            </ion-item>
+	            
+	        </ion-list>
+	        <ion-infinite-scroll ng-if="sunOver" on-infinite="getNextPageSunChief();" distance="20%" ></ion-infinite-scroll>
+        </div>
+       </ion-scroll>
+  </ion-content>
+   
+</ion-view>

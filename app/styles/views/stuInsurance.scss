@@ -1,0 +1,443 @@
+.stuInsIndex {
+    .insItem{
+        border: 1px #11c1f3 solid;
+        border-radius: 20px;
+        margin: 15% 20%;
+        padding: 8px;
+        img {
+            height: 100px;
+        }
+    }
+}
+.stuInsParent {
+    .listParent {
+        padding-top: 16px;
+    }
+    .stu_parent_content {
+        padding: 16px;
+        
+        .stu_label {
+            margin-left: 2px;
+            color: #444;
+        }
+        #stu_parentPhone {
+            width: 100%;
+            height: 46px;
+            margin-top: 8px;
+            border: solid 1px #E3E3E4;
+            border-radius: 6px;
+            padding-left: 8px;
+        }
+    }
+}
+.stuInsChild {
+    .bar-subheader {
+        padding-left: 24px;
+        padding-right: 24px;
+        margin-top: 5px;
+        height: 57px;
+        border-bottom: #ddd solid 1px;
+    }
+    .button-bar {
+        border-radius: 8px;
+        height: 40px;
+    }
+    .button.opacity_left {
+        border-radius: 8px 0 0 8px;
+        line-height: 36px;
+        min-height: 35px;
+    }
+    .button.opacity_right {
+        border-radius: 0 8px 8px 0;
+        line-height: 36px;
+        min-height: 35px;
+    }
+    .childItem {
+        margin-bottom: 8%;
+        margin-top: 30px;
+    }
+    .custom-personal-card {
+      margin-top: 30px;
+    }
+    .itemInput {
+        padding-left: 8px;
+        padding-right: 36px;
+        color: #11c1f3;
+        background-color: white !important;
+        text-overflow: ellipsis;
+    }
+    .list{
+        padding-top: 16px;
+    }
+    .stu_child_byIdCard {
+        padding: 10px 16px;
+        .stu_label {
+            margin-left: 2px;
+            color: #595959;
+        }
+        #stu_chileIdCard {
+            width: 100%;
+            height: 46px;
+            margin-top: 8px;
+            border: solid 1px #E3E3E4;
+            border-radius: 6px;
+            padding-left: 8px;
+        }
+    }
+    .stu_child_byName {
+        padding: 10px 16px;
+        
+        .itemInput, .stu_child_input {
+            width: 100%;
+            height: 46px;
+            border: solid 1px #E3E3E4;
+            border-radius: 6px;
+            padding-left: 8px;
+        }
+        .item-input {
+            padding: 0;
+            
+            .inline {
+                margin-right: 10px;
+                white-space: nowrap;
+                color: #444;
+            }
+            input {
+                background-color: #fff;
+            }
+        }
+    }
+    .stu_child_spacer {
+        height: 50px;
+    }
+}
+.stuInsSchool {
+    .has-subheader {
+        top: 72px;
+    }
+    input.light {
+        color: #fff !important;
+    }
+    button.light {
+        color: #fff !important;
+    }
+    .search_title {
+        padding: 4px 0 4px 16px;
+        color: #636262;
+    }
+    .search_key {
+        color: #159500;
+    }
+    .item-input-inset .item-input-wrapper{
+        /**margin-top: -2px;*/
+        border-radius: 20px;
+        /**height: 35px;*/
+        padding-left: 12px;
+    }
+}
+.stuInsResult {
+    img {
+        width: 16px;
+        vertical-align: middle;
+        margin-bottom: 2px;
+    }
+    .bill_status0 {
+        color: #F3563B;
+    }
+    .bill_status1 {
+        color: #5BB93A;
+    }
+    .small-spacer {
+        letter-spacing: 1px;
+    }
+    .bill_paybtn {
+        display: inline-flex;
+        align-items: center;
+        position: absolute;
+        right: 20px;
+        top: 0;
+        height: 100%;
+    }
+    .bill_pay {
+        border: solid 1px #11c1f3;
+        border-radius: 4px;
+        padding: 6px 12px;
+    }
+}
+.stuInsDetail {
+    .card {
+        margin: 10px;
+    }
+    .bill_status {
+        position: absolute;
+        right: 16px;
+        top: 10px;
+        color: red;
+    }
+    .bill_bg {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+    .bill_title {
+        position: absolute;
+        width: 100%;
+    }
+    .padding0 {
+        padding: 0 !important;
+    }
+    .padding16 {
+        padding: 10px 16px;
+    }
+    .floatR {
+        float: right;
+    }
+    .item-divider {
+        height: 66px;
+        border: 0;
+    }
+    .item-text-wrap {
+        border: 0;
+        
+        p {
+            margin-bottom: 10px;
+        }
+    }
+    .darkCalm {
+        color: #0295c6;
+    }
+    .bill_article {
+        padding: 0 16px;
+    }
+    .bill_school {
+        display: inline-block;
+        max-width: 66%;
+    }
+    .bill_class {
+        display: table;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .bill_classLabel {
+        display: table-cell;
+        width: 30%;
+    }
+    .bill_classValue {
+        display: table-cell;
+        text-align: right;
+    }
+}
+.stuInsArticle {
+    #isb_article {
+        letter-spacing: 1px;
+        padding-left: 12px;
+        padding-right: 12px;
+        padding-bottom: 12px;
+    }
+    #isb_article_header {
+        border-bottom: dashed 1px #C8C8C8;
+        padding-top: 16px;
+        padding-bottom: 10px;
+        text-align: center;
+    }
+    .isb_article_title {
+        color: black;
+        font-weight: bold;
+    }
+    .isb_article_date {
+        font-family: arial;
+        margin-top: 6px;
+    }
+    .isb_article_p {
+        line-height: 20px;
+        padding-left: 2px;
+        padding-right: 2px;
+        margin-bottom: 4px;
+    }
+    .isb_article_childTitle {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        font-weight: bold;
+    }
+    .isb_article_bold {
+        font-weight: bold;
+    }
+    .isb_article_underline {
+        text-decoration: underline;
+    }
+}
+.stuInsSuccess {
+    .divContent {
+        margin-top: 36%;
+        font-size: 30px;
+    }
+    .marginR4 {
+        margin-right: 4px;
+    }
+    .payAmount {
+        margin-top: 20px;
+        color: #666;
+    }
+    .payMoney {
+        margin: 0 4px;
+        font-size: 24px;
+    }
+    .padding0 {
+        padding: 0 !important;
+    }
+}
+.stuInsIntroduce {
+    .slider {
+        height: 100%;
+    }
+    .slider-pager {
+        bottom: 86px;
+    }
+    img {
+        width: 100%;
+        height: 100%;
+    }
+    .intro_info {
+        position: absolute;
+        width: 100%;
+        bottom: 12px;
+    }
+    .intro_pro {
+        color: #be2800;
+        margin-left: 4px;
+    }
+    .intro_btn {
+        width: auto;
+        height: 34px;
+    }
+    .intro_check {
+        width: auto;
+        height: 18px;
+        vertical-align: middle;
+    }
+    .button-agree{
+        padding:0;
+        vertical-align: middle;
+        
+    }
+    .button-agree input{
+        width:22px;
+        height:22px;
+    }
+    .button-agree+span{
+        color:#000;
+    }
+    .checkbox input:checked:before, .checkbox input:checked + .checkbox-icon:before{
+        background: #fff;
+        border-color: #fff;
+    }
+    .checkbox input::after, .checkbox-icon::after{
+        border-left:2px solid #000;
+        border-bottom:2px solid #000;
+    }
+}
+
+.dark-calm-bg {
+    background-color: #10AAD6;
+}
+input.light::-webkit-input-placeholder {
+    color: #fff;
+}
+.isEmptyDataStuInsuranceSchoolList{
+    height: 80%;
+    width: 100%;
+    .scroll{
+        height:100%;
+        .list{
+            height:100%;
+            width:100%;
+            display:table;
+        }
+    }
+}
+.isEmptyDataStuInsuranceList{
+    height: 90%;
+    width: 100%;
+    .scroll{
+        height:100%;
+        .list{
+            height:100%;
+            width:100%;
+            display:table;
+        }
+    }
+}
+
+@media screen and (max-width: 320px){
+.stuInsIntroduce .checkbox input:after, .stuInsIntroduce .checkbox-icon:after {
+       position: absolute !important;
+    top: 42% !important;
+    left: 25% !important;
+    width: 13px !important;
+    height: 7px !important;
+}
+}
+
+
+ion-footer-bar#searchChildId {
+    z-index: -100;
+    position: fixed;
+}
+
+ion-footer-bar#searchPhoneId {
+    z-index: -100;
+    position: fixed;
+}
+
+
+label.emptyLabel.item.item-input {
+    border: none;
+    margin: 10px 0 25px 0;
+    background-color: #f8f8f8;
+}
+
+label.emptyLabel.item.item-input input {
+    border: none;
+    background: none;
+}
+
+.customChild.content {
+    width: 100%;
+    padding: 0;
+}
+
+.customChild .list.list-inset {
+    margin: 20px 0 20px 0;
+    background-color: #f8f8f8;
+}
+.customChild label.item.item-input {
+    margin: 10px 0 30px 0;
+}
+.customParent.content {
+    padding: 0;
+    width: 100%;
+    top: 45px;
+}
+.customParent label.emptyLabel.item.item-input {
+    border: none;
+    margin: 10px 0 18px 0;
+}
+.stuInsParent>ion-footer-bar.bar-calm.bar.bar-footer.disable-user-behavior {
+    z-index: -10;
+    position: fixed;
+}
+
+.customParent .list {
+    width: 100%;
+    margin-left: 0px;
+    margin-right: 0px;
+    background-color: #f8f8f8;
+}
+.stu_chileIdCardLabel {
+    display: none;
+}
+
+.stuInsChild .button.button-calm.active, .stuInsChild .button.button-calm.activated{
+    background-color: #fff;
+    color: #35c7fa;
+}

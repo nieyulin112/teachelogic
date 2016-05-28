@@ -1,0 +1,86 @@
+<ion-view class="rec-d-view" ng-init="initRecruitDetail();">
+	<!-- title return 返回至上一页 -->
+	<ion-header-bar align-title="center" class="bar-calm">
+		<button class="button button-icon icon ion-ios-arrow-back" ng-click="back()"></button>
+		<h1 class="title super-text">职位详情</h1>
+	</ion-header-bar>
+	
+	<div style="margin-top: 44px;"></div>
+<!--
+age: "18"
+companyAddr: "南京"
+companyName: "平安保险"
+companyNo: null
+dataFrom: "人才市场"
+degree: "高中以上"
+insertTime: "2016-01-07 17:11:52"
+jobDescriptions: null
+position: "销售"
+salary: "20000"
+sex: "男"
+startTime: "2016-01-07"
+workKind: "全职"
+workYears: null
+
+-->
+	<ion-content overflow-scroll="true">
+		<section class="rec-detail-header">
+			<div class="rec-header-title">
+				<div class="main-title">				
+					{{ recruit.position }} <span>{{ recruit.salary }}/月</span>
+				</div>
+				<div class="sub-title">
+					<!--
+					<span class="sp" ng-repeat="n in narture track by $index">{{ n }}</span>
+					-->
+					<span class="sp" ng-bind="recruit.workKind"></span>
+					<span class="clearfix"></span>
+				</div>
+			</div>
+			<div class="rec-header-content">
+				<ul>
+					<li class="li-item li-acad">
+						<div class="li-title" ng-bind="recruit.degree || '&nbsp;'"></div>
+						<div class="li-desp"><i class="i-hat"></i><span>学历</span></div>
+					</li>
+					<li class="li-item li-exp">
+						<div class="li-title" ng-bind="recruit.workYears || '&nbsp;'"></div>
+						<div class="li-desp"><i class="i-water"></i><span>经验</span></div>
+					</li>
+					<li class="li-item li-age">
+						<div class="li-title" ng-bind="recruit.age || '&nbsp;'"></div>
+						<div class="li-desp"><i class="i-circle"></i><span>年龄</span></div>
+					</li>
+					<li class="li-item li-sex">
+						<div class="li-title" ng-bind="recruit.sex || '&nbsp;'"></div>
+						<div class="li-desp"><i class="i-sex"></i><span>性别</span></div>
+					</li>
+					<li class="clearfix"></li>
+				</ul>
+			</div>
+			<div class="rec-header-desp">
+				<div>
+					<span>有效期</span> {{ recruit.startTime }}—{{ recruit.endTime }}
+				</div>
+				<div>
+					<span>来源</span> {{ recruit.dataFrom }}
+				</div>
+			</div>
+		</section>
+		<section class="rec-detail-card">
+			<h3 ng-bind="recruit.companyName"></h3>
+			<div>
+				<i class="i-pos"></i>
+				<span ng-bind="recruit.companyAddr"></span>
+			</div>
+		</section>
+		<section class="rec-detail-detail">
+			<h3>
+				<i class="i-book"></i>
+				<em>职位描述</em>
+			</h3>
+			<div ng-bind="recruit.jobDescriptions || '&nbsp;'"></div>
+		</section>
+	</ion-content>
+
+</ion-view>

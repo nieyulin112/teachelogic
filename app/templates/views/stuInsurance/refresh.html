@@ -1,0 +1,53 @@
+<ion-view class="stable-bg stuInsDetail" ng-init="refreshDetail();">
+    <ion-header-bar align-title="center" class="bar-calm">
+        <button class="button button-icon ion-ios-arrow-back" ng-click="backToHome();"></button>
+        <h1 class="title super-text">保单详情</h1>
+    </ion-header-bar>
+    <ion-content class="has-header">
+    		<div class="card">
+            <div class="item item-divider padding0">
+            		<img class="bill_bg" src="images/bg-bill.png">
+            		<div class="bill_title padding16">
+            			<p class="super-text black">学生基本医疗保险</p>
+            			<p class="large-text darkCalm"><span ng-bind="modelBill.billsNo"></span></p>
+            		</div>
+            		<div class="bill_status" ng-bind="modelBill.status"></div>
+            </div>
+            <div class="item item-text-wrap">
+            		<p class="large-text">
+            			<span>支付金额</span>
+            			<span class="black floatR">
+            				<span ng-bind="modelBill.payAmount"></span>元
+            			</span>
+            		</p>
+            		<p class="large-text">
+            			<span>保障年度</span>
+            			<span class="black floatR" ng-bind="modelBill.payYear"></span>
+            		</p>
+            		<p class="large-text">
+            			<span>参保人</span>
+            			<span class="black floatR" ng-bind="modelBill.stuName"></span>
+            		</p>
+            		<p class="large-text">
+            			<span>性别</span>
+            			<span class="black floatR" ng-bind="modelBill.stuSexName"></span>
+            		</p>
+            		<p class="large-text">
+            			<span>身份证号</span>
+            			<span class="black floatR" ng-bind="modelBill.idCard"></span>
+            		</p>
+            		<p class="large-text">
+            			<span>学校</span>
+            			<span class="black floatR bill_school" ng-bind="modelBill.schoolName"></span>
+            		</p>
+            		<div class="bill_class">
+            			<div class="bill_classLabel">班级</div>
+            			<div class="bill_classValue" ng-bind="modelBill.className"></div>
+            		</div>
+            </div>
+        </div>
+        <div class="bill_article">
+        		查看<span class="calm" ui-sref="app.stuInsArticle">条款细则</span>
+        </div>
+  	</ion-content>
+</ion-view>

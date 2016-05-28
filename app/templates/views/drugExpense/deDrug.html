@@ -1,0 +1,38 @@
+<ion-view class="stable-bg drugExpenseDetail" ng-init="initDetail();">
+	<ion-header-bar align-title="center" class="bar-calm">
+		<button class="button button-icon ion-ios-arrow-back" ng-click="goBack();"></button>
+		<h1 class="title super-text">药品详情</h1>
+	</ion-header-bar>
+	<ion-content>
+		<div class="item row">
+			<div class="col col-33 normal-text">药品名称</div>
+			<div class="col col-67 text-right large-text" ng-bind="drugDetail.drugName"></div>
+		</div>
+		<div class="item row">
+			<div class="col col-33 normal-text">剂型</div>
+			<div class="col col-67 text-right large-text" ng-bind="drugDetail.drugType"></div>
+		</div>
+		<div class="item row">
+			<div class="col col-33 normal-text">药品编号</div>
+			<div class="col col-67 text-right large-text" ng-bind="drugDetail.drugId"></div>
+		</div>
+		<div class="item row">
+			<div class="col col-33 normal-text">药品类型</div>
+			<div class="col col-67 text-right large-text" ng-bind="drugDetail.dosageForm"></div>
+		</div>
+		<div class="item row item_spacer">
+			<div class="col col-33 normal-text">单位</div>
+			<div class="col col-67 text-right large-text" ng-bind="drugDetail.drugUnit"></div>
+		</div>
+		
+		<div class="item row">
+			<div class="col col-33 normal-text">收费级别</div>
+			<div class="col col-67 text-right large-text" ng-bind="drugDetail.chargeLvl"></div>
+		</div>
+		<div class="item row">
+			<div class="col col-33 normal-text">自付比例</div>
+			<div class="col col-67 text-right large-text orange"><span ng-bind="drugDetail.payscale"></span>%</div>
+		</div>
+		<div class="spacer"></div>
+	</ion-content>
+</ion-view>

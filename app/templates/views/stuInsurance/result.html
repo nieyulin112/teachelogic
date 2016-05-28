@@ -1,0 +1,26 @@
+<ion-view class="stable-bg stuInsResult" ng-init="initResult();">
+    <ion-header-bar align-title="center" class="bar-calm">
+        <button class="button button-icon ion-ios-arrow-back" ng-click="goBack();"></button>
+        <h1 class="title super-text">查询结果</h1>
+    </ion-header-bar>
+    <ion-content class="has-header" ng-class="{isEmptyDataStuInsuranceList:isEmpty}">
+        <ion-list>
+            <div class="rec text-center normal-text padding hidEmptyData" ng-class="{hidEmptyData:!isEmpty,isEmptyData:isEmpty}" ng-if="isEmpty">
+                    <img src="images/Doctor.png">
+                    <p>抱歉，没有相关记录</p>
+            </div>
+            <ion-item ng-click="showDetail(item);" class="item-icon-right" ng-repeat="item in storeResult">
+            		<p class="large-text">
+            			<span ng-bind="item.stuName"></span>
+            			<img src="images/icon_sex{{item.stuSex}}.png">
+            			<span class="bill_status{{item.statusNum}}" ng-bind="item.status"></span>
+            		</p>
+            		<p class="super-text small-spacer" ng-bind="item.idCard"></p>
+            		<i ng-show="item.canPay==='01'" class="icon ion-ios-arrow-right super-text"></i>
+        			<div class="bill_paybtn calm" ng-show="item.canPay==='00'">
+        				<div class="bill_pay">去付费</div>
+        			</div>
+            </ion-item>
+        </ion-list>
+  </ion-content>
+</ion-view>

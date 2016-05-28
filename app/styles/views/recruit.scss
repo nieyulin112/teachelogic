@@ -1,0 +1,188 @@
+.rec-scroll {
+	background: #f5f5f9; font-size: 14px;	
+
+	.rec-list {
+		margin-top: 44px;
+
+		ion-item {
+			margin: 0; padding: 10px; margin-bottom: 15px;
+			border: 0; font-size: 14px;
+		}
+		
+	}
+}
+.rec-item-title {
+	position: relative; top: 0;  
+	height: 25px; width: 100%;
+	line-height: 25px;
+	
+	.left {
+		position: absolute; left: 0;
+		display: inline-block; 
+		/*font-weight: bold;*/
+	}
+	.right {
+		position: absolute; right: 0;
+		display: inline-block;
+		color: #ff904c;
+	}
+}
+.rec-item-sub {
+	margin-bottom: 7px;
+	height: 25px; width: 100%;
+	text-align: left; line-height: 25px; /*font-weight: bold;*/
+}
+.rec-pos {
+	position: relative; top: 0;
+	padding-top: 7px; height: 30px;
+	border-top: 1px solid #e6e6e6;
+	
+	i{ 
+		display: inline-block; height: 25px; width: 25px; 
+		position: absolute; left: 0;
+		background-image: url(../images/icon_sprite.png); 
+		background-repeat: no-repeat; background-size: 1500%;
+		background-position: -92px -62px;
+	}
+	span { 
+		display: inline-block; 
+		position: absolute; left: 30px;
+		height: 25px; line-height: 25px;
+		color: #aaa;
+	}
+}
+/* recruit - detail */
+.rec-detail-header, .rec-detail-card, .rec-detail-detail {
+	padding: 10px 15px;
+
+	h3 {
+		width: 100%; position: relative; top: 0; left: 0;
+		font-size: 18px; font-weight: 100;
+	}
+}
+
+.rec-detail-card h3 {
+	padding-bottom: 10px; border-bottom: 1px solid #aaa;
+}
+.rec-header-title {
+	.main-title {
+		height: 30px; width: 100%; 
+		line-height: 30px; font-size: 18px; /*font-weight: bold;*/
+
+		span {
+			display: inline-block; margin-left: 10px; margin-bottom: 5px;
+			font-size: 16px; color: #ff6600; /*font-weight: 300;*/
+		}
+	}
+	.sub-title {
+		margin-top: 5px;
+		span.sp { 
+			display: block; float: left;
+			padding: 2px 5px; margin-right: 10px; margin-bottom: 5px;
+			background: #edfaff; color: #6cd5f4;
+			font-size: 14px;
+		}
+	}
+}
+.rec-header-content {
+	padding-top: 10px;
+
+	.li-item {
+		float: left; margin-bottom: 20px;
+		width: 25%;
+		text-align: center;
+		border-right: 1px solid #ccc;
+
+		.li-title { 
+			margin-bottom: 10px;
+			font-size: 16px; /*font-weight: 400; */
+		}
+
+		.li-desp {
+			position: relative;
+			line-height: 20px; height: 20px;
+		}
+
+		i { 
+			display: inline-block; height: 20px; width: 20px; 
+			position: absolute; left: 9px;
+			background-image: url(../images/icon_sprite.png); 
+			background-repeat: no-repeat; background-size: 1500%;
+			background-position: -92px -62px;
+		}
+
+		.i-hat { background-position: -22px -47px; }
+		.i-water  { background-position: -47px -47px; }
+		.i-circle  { background-position: 0px -47px; }
+		.i-sex  { background-position: -25px -72px; }
+
+		span { 
+			display: inline-block; 
+			position: absolute; left: 30px;
+			height: 20px; line-height: 20px;
+			color: #aaa;
+		}
+	}
+	.li-sex { border-right: 0; }
+
+}
+.rec-header-desp {
+	color: #aaa;
+	span {
+		display: inline-block; width: 15%; text-align: right;
+		margin-right: 10px;
+	}
+}
+.rec-detail-card div {
+	height: 30px;
+}
+.rec-detail-detail { padding-bottom: 30px;}
+.rec-detail-detail, .rec-detail-card {
+	padding-top: 20px;
+	border-top: 15px solid #f5f5f9;
+	
+	i {
+		display: inline-block; height: 25px; width: 25px; 
+		position: absolute; 
+		background-image: url(../images/icon_sprite.png); 
+		background-repeat: no-repeat; background-size: 1500%;
+	}
+	.i-pos { background-position: -92px -63px; }
+	.i-book { background-position: 0px -93px;; }
+
+	span {
+		display: inline-block; 
+		position: absolute; left: 40px;
+		height: 20px; line-height: 20px;
+		color: #aaa;
+	}
+}
+.rec-detail-detail h3 {
+	height: 20px;
+	em { position: absolute; left: 40px; }
+}
+
+
+.psa_empty {
+    position: absolute;
+    height: 100%;
+    min-height: 130px;
+    z-index: 11;
+    img {
+        width: 6em;
+    }
+}
+
+@media screen and (max-width: 320px) {
+	
+}
+
+
+@media (min-width: 321px) and (max-width: 375px) {
+	.rec-scroll .rec-list ion-item { font-size: 16px; }
+}
+
+
+@media (min-width: 376px)  {
+	.rec-scroll .rec-list ion-item { font-size: 16px; }
+}

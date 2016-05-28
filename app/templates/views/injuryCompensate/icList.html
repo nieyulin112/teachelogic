@@ -1,0 +1,32 @@
+<ion-view class="stable-bg injuryCmpt" ng-init="initInjuryCmpt();">
+	<ion-header-bar align-title="center" class="bar-calm item-input-inset">
+		<button class="button button-icon ion-ios-arrow-back" ng-click="backToHome();"></button>
+		<h1 class="title super-text">工伤赔付</h1>
+    </ion-header-bar>
+    
+    <ion-content>
+    		<ion-list>
+    			<div class="text-center text-middle psa_emptyView" ng-show="isEmpty">
+	    			<div class="width100">
+	    				<img src="images/Doctor.png">
+	    				<div>暂无赔付记录</div>
+	    			</div>
+	    		</div>
+    			<ion-item ng-repeat="item in storeInjury" class="item-borderless padding" ng-click="goDetail(item);">
+    				<div class="row">
+    					<div class="col-67">
+    						<div ng-bind="item.injName" class="black large-text"></div>
+    					</div>
+    					<div class="col-33 text-right text-middle">
+    						<div ng-bind="item.occurDate" class="width100 normal-text grey"></div>
+    					</div>
+    				</div>
+    				<div class="ic_company">
+    					<i class="icon ion-ios-location-outline calm large-text"></i>
+    					<span ng-bind="item.comName" class="normal-text grey"></span>
+    				</div>
+    			</ion-item>
+    		</ion-list>
+    		<ion-infinite-scroll ng-if="injuryMore" on-infinite="getList(injuryPageNum);" distance="20%" ></ion-infinite-scroll>
+    </ion-content>
+</ion-view>

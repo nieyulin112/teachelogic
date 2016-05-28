@@ -1,0 +1,111 @@
+<ion-view class="stable-bg familyDoctor" ng-init="initDetail()">
+    <!--主标题-->
+    <ion-header-bar align-title="center" class="bar-calm">
+        <button class="button button-icon ion-ios-arrow-back" ng-click="backToPre()"></button>
+        <h1 class="title super-text">就医明细</h1>
+    </ion-header-bar>
+
+	<ion-content class="record-bg hidEmptyData" ng-show="!recbo" ng-class="{hidEmptyData:recbo,isRecord:!recbo}">
+		<div class="text-center normal-text padding isEmptyData">
+			<img src="images/Doctor.png">
+			<p ng-bind="emptyMsg"></p>
+		</div>
+	</ion-content>
+
+  <ion-content class="record-bg" ng-show="recbo">
+    <div class="list item-margin10">
+        <div class="item item-jzmx normal-text">就诊时间
+            <span class="si-fl-right" ng-bind="medicalDetail.visitDate"></span>
+        </div>
+        <div class="item item-jzmx normal-text">就诊医院
+            <span class="si-fl-right" ng-bind="medicalDetail.hospitalName"></span>
+        </div>
+        <div class="item item-jzmx normal-text">科室
+            <span class="si-fl-right" 
+                ng-bind="medicalDetail.deptName">
+            </span>
+        </div>
+        <div class="item item-jzmx normal-text">医生
+            <span class="si-fl-right" ng-bind="medicalDetail.doctorName">
+            </span>
+        </div>
+        <div class="item item-jzmx normal-text">诊断结果
+            <span class="si-fl-right" 
+                ng-bind="medicalDetail.diseaseName">
+            </span>
+        </div>
+    </div>
+
+    <div class="list item-margin10">
+        <div class="item item-noborder super-text">
+            <strong>总金额</strong>
+            <span class="si-fl-right"><span style="color:#45c19c;">￥</span><span ng-bind="medicalDetail.visitAmount"></span></span>
+        </div>
+    </div> 
+    
+    <!--药品-->
+    <div class="list item-margin10" ng-if="medicalDetail.data1.length">
+        <div class="item item-divider light-bg large-text">药品</div>
+        <div class="item item-jzmxyp" ng-repeat="item in medicalDetail.data1">
+            <div ng-click="skipPillDetail(item)">
+                <div class="jz-md">
+                    <span class="normal-text jz-sp" ng-bind="item.projectName"></span>
+                </div>
+                <div class="nolmal-text">
+                    <span class="jz-sp">
+                        x<span class="normal-text jz-m" ng-bind="item.sumNumber"></span>
+                    </span>
+                    <span class="jz-mysp">
+                        <span class="jz-s">￥</span>
+                        <span ng-bind="item.sumAmount"></span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--诊疗项目-->
+    <div class="list item-margin10" ng-if = "medicalDetail.data2.length">
+        <div class="item item-divider light-bg large-text">诊疗项目</div>
+
+        <div class="item item-jzmxyp" ng-repeat="data in medicalDetail.data2">
+        <div>
+            <div class="jz-md">
+                <span class="normal-text jz-sp" ng-bind="data.projectName"></span>
+            </div>
+            <div class="nolmal-text">
+                <span class="jz-sp">
+                    x<span class="normal-text jz-m" ng-bind="data.sumNumber"></span>
+                </span>
+                <span class="jz-mysp">
+                    <span class="jz-s">￥</span>
+                    <span ng-bind="data.sumAmount"></span>
+                </span>
+            </div>
+        </div>
+
+    </div>
+
+    <!--材料及服务项目-->
+    <div class="list item-margin10 jz-mar" ng-if="medicalDetail.data3.length" >
+        <div class="item item-divider light-bg large-text">材料及服务项目</div>
+
+        <div class="item item-jzmxyp" ng-repeat="data in medicalDetail.data3">
+            <div>
+                <div class="jz-md">
+                    <span class="normal-text jz-sp" ng-bind="data.projectName"></span>
+                </div>
+                <div class="nolmal-text">
+                    <span class="jz-sp">
+                        x<span class="normal-text jz-m" ng-bind="data.sumNumber"></span>
+                    </span>
+                    <span class="jz-mysp">
+                        <span class="jz-s">￥</span>
+                        <span ng-bind="data.sumAmount"></span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+  </ion-content>
+</ion-view>

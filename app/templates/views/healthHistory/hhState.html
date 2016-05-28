@@ -1,0 +1,172 @@
+<ion-view class="healthHistoryState" ng-init="">
+	<!--副标题-->
+	<div class="hh_magHeader row text-center padding-clear">
+		<div class="col" ng-click="showBloodPre();">
+			<div class="hh_bloodPre"></div>
+			<div class="normal-text hh_headerTitle">记录血压</div>
+			<div class="hh_magArrow" ng-show="isBloodPre">
+				<i class="icon ion-ios-arrow-up"></i>
+			</div>
+		</div>
+		<div class="col" ng-click="showHeartRate();">
+			<div class="hh_heartRate"></div>
+			<div class="nolmal-text hh_headerTitle">记录心率</div>
+			<div class="hh_magArrow" ng-show="isHeartRate">
+				<i class="icon ion-ios-arrow-up"></i>
+			</div>
+		</div>
+		<div class="col" ng-click="showWeight();">
+			<div class="hh_weight"></div>
+			<div class="nolmal-text hh_headerTitle">记录体重</div>
+			<div class="hh_magArrow" ng-show="isWeight">
+				<i class="icon ion-ios-arrow-up"></i>
+			</div>
+		</div>
+	</div>
+	<!--血压-->
+	<ion-content class="has-header noscroll" ng-show="isBloodPre" overflow-scroll="true">
+		<ion-scroll delegate-handle="hh_bloodPreScroll">
+			<div class="row padding-clear">
+				<div class="col padding-clear" on-touch="selectDateBP();">
+					<div class="hh_nowDate large-text">
+						<span id="hh_bloodPreDate" ng-bind="inDateBloodPre"></span>
+						<i class="icon ion-compose"></i>
+					</div>
+				</div>
+				<div class="calm text-right large-text hh_bloodPreSave" on-touch="setBloodPre();">保存</div>
+			</div>
+			<div class="hh_bloodPreContent">
+				<div class="hh_diastole">
+					<div class="normal-text">舒张压</div>
+					<input id="hh_diastoleVal" type="tel" maxlength="3" class="grey" />
+					<div class="normal-text grey">mmHg</div>
+				</div>
+				<div class="hh_contract">
+					<div class="normal-text">收缩压</div>
+					<input id="hh_contractVal" type="tel" maxlength="3" class="grey" />
+					<div class="normal-text grey">mmHg</div>
+				</div>
+			</div>
+			<ion-list class="hh_bloodPreList">
+				<div class="text-center text-middle emptyMsg" ng-show="isBloodPreEmpty">
+					<div class="width100">
+						<div><img src="images/Doctor.png"></div>
+						<div class="normal-text">暂无血压记录</div>
+					</div>
+				</div>
+				<ion-item ng-repeat="item in storeBloodPre">
+					<div class="row">
+						<!--<div class="col-20">
+							<div ng-class="{hh_bloodPreLaugh:item.dbp<80, hh_bloodPreCry:item.dbp>=80}"></div>
+						</div>-->
+						<div class="col-34 grey large-text">
+							<div ng-bind="item.inputDateFormat|date:'MM-dd'"></div>
+							<div ng-bind="item.inputDateFormat|date:'HH:mm'"></div>
+						</div>
+						<div class="col-34">
+							<div>
+								<span class="super-text" ng-bind="item.dbp"></span>
+								<span class="grey normal-text">mmHg</span>
+							</div>
+							<div class="grey normal-text">舒张压</div>
+						</div>
+						<div class="col-34">
+							<div>
+								<span class="super-text" ng-bind="item.sbp"></span>
+								<span class="grey normal-text">mmHg</span>
+							</div>
+							<div class="grey normal-text">收缩压</div>
+						</div>
+					</div>
+				</ion-item>
+			</ion-list>
+			<ion-infinite-scroll ng-if="bpMore" on-infinite="getBloodPre();" distance="20%" ></ion-infinite-scroll>
+		</ion-scroll>
+	</ion-content>
+	
+	<!--心率-->
+	<ion-content class="has-header noscroll" ng-show="isHeartRate" overflow-scroll="true">
+		<ion-scroll delegate-handle="hh_heartRateScroll">
+			<div class="row padding-clear">
+				<div class="col padding-clear" on-touch="selectDateHR();">
+					<div class="hh_nowDate large-text">
+						<span id="hh_heartRateDate" ng-bind="inDateHeartRate"></span>
+						<i class="icon ion-compose"></i>
+					</div>
+				</div>
+				<div class="calm text-right large-text hh_bloodPreSave" on-touch="setHeartRate();">保存</div>
+			</div>
+			<div class="hh_heartRateContent">
+				<div class="hh_hrVal">
+					<span class="normal-text">心率</span>
+					<div class="inline"><input id="hh_heartRateVal" type="tel" maxlength="3" class="grey" /></div>
+					<span class="large-text grey">bmp</span>
+				</div>
+			</div>
+			<ion-list class="hh_bloodPreList">
+				<div class="text-center text-middle emptyMsg" ng-show="isHeartRateEmpty">
+					<div class="width100">
+						<div><img src="images/Doctor.png"></div>
+						<div class="normal-text">暂无心率记录</div>
+					</div>
+				</div>
+				<ion-item ng-repeat="item in storeHeartRate">
+					<div class="row">
+						<div class="col grey large-text">
+							<div ng-bind="item.inputDateFormat|date:'MM-dd'"></div>
+							<div ng-bind="item.inputDateFormat|date:'HH:mm'"></div>
+						</div>
+						<div class="col text-middle">
+							<span class="super-text" ng-bind="item.heartRate"></span>
+							<span class="grey normal-text">bmp</span>
+						</div>
+					</div>
+				</ion-item>
+			</ion-list>
+			<ion-infinite-scroll ng-if="hrMore" on-infinite="getHeartRate();" distance="20%" ></ion-infinite-scroll>
+		</ion-scroll>
+	</ion-content>
+	
+	<!--体重-->
+	<ion-content class="has-header noscroll" ng-show="isWeight" overflow-scroll="true">
+		<ion-scroll delegate-handle="hh_weightScroll">
+			<div class="row padding-clear">
+				<div class="col padding-clear" on-touch="selectDateW();">
+					<div class="hh_nowDate large-text">
+						<span id="hh_weightDate" ng-bind="inDateWeight"></span>
+						<i class="icon ion-compose"></i>
+					</div>
+				</div>
+				<div class="calm text-right large-text hh_bloodPreSave" on-touch="setWeight();">保存</div>
+			</div>
+			<div class="hh_weightContent">
+				<div class="hh_wVal text-center">
+					<div class="normal-text">体重</div>
+					<div class="inline"><input id="hh_weightVal" type="tel" maxlength="3" class="grey" /></div>
+					<span class="large-text grey">kg</span>
+				</div>
+			</div>
+			<ion-list class="hh_bloodPreList">
+				<div class="text-center text-middle emptyMsg" ng-show="isWeightEmpty">
+					<div class="width100">
+						<div><img src="images/Doctor.png"></div>
+						<div class="normal-text">暂无体重记录</div>
+					</div>
+				</div>
+				<ion-item ng-repeat="item in storeWeight">
+					<div class="row">
+						<div class="col grey large-text">
+							<div ng-bind="item.inputDateFormat|date:'MM-dd'"></div>
+							<div ng-bind="item.inputDateFormat|date:'HH:mm'"></div>
+						</div>
+						<div class="col text-middle">
+							<span class="super-text" ng-bind="item.bodyMass"></span>
+							<span class="grey normal-text">kg</span>
+						</div>
+					</div>
+				</ion-item>
+			</ion-list>
+			<ion-infinite-scroll ng-if="wMore" on-infinite="getWeight();" distance="20%" ></ion-infinite-scroll>
+		</ion-scroll>
+	</ion-content>
+</ion-view>

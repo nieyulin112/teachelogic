@@ -1,0 +1,29 @@
+<ion-view class="stable-bg drugExpense" ng-init="initDrugExpense();">
+	<ion-header-bar align-title="center" class="bar-calm item-input-inset">
+		<button class="button button-icon ion-ios-arrow-back" ng-click="backToHome();"></button>
+		<h1 class="title super-text">报销目录</h1>
+		<button class="button button-icon ion-ios-search-strong" ui-sref="app.drugExpenseSearch"></button>
+    </ion-header-bar>
+    
+    <!--报销药品列表-->
+    <ion-content class="de_hot">
+    		<ion-list>
+    			<div class="text-center text-middle psa_emptyView" ng-show="isHotEmpty">
+	    			<div class="width100">
+	    				<img src="images/Doctor.png">
+	    				<div>暂无报销目录</div>
+	    			</div>
+	    		</div>
+    			<ion-item ng-repeat="item in storeHot" class="padding" ng-click="goDrugDetail(item);">
+    				<div class="row padding-clear de_itemTile">
+    					<div class="col col-75 large-text" ng-bind="item.drugName"></div>
+    					<div class="col col-25 text-right nolmal-text">自付<span class="de_selfScale"><span ng-bind="item.payscale"></span>%</span></div>
+    				</div>
+    				<div class="row padding-clear">
+    					<div class="de_tag calm min-text" ng-bind="item.chargeLvl"></div>
+    				</div>
+    			</ion-item>
+    		</ion-list>
+    		<ion-infinite-scroll ng-if="hotMore" on-infinite="getHot(hotPageNum);" distance="20%" ></ion-infinite-scroll>
+    </ion-content>
+</ion-view>

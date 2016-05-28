@@ -1,0 +1,106 @@
+<ion-view class="bg-lighter" ng-init="initPrescriptionPillDetail()">
+
+    <ion-header-bar align-title="center" class="bar-calm">
+        <button class="button button-icon icon ion-ios-arrow-back" ng-click="goBack();"></button>
+        <h1 class="title super-text">药品详情</h1>
+    </ion-header-bar>
+
+    <ion-content ng-class="{isEmptyDataPrescriptionList:!showPrePillDetailContent}">
+        <div class="rec text-center normal-text padding hidEmptyData" ng-class="{hidEmptyData:showPrePillDetailContent,isEmptyData:!showPrePillDetailContent}" ng-if="!showPrePillDetailContent">
+                    <img src="images/Doctor.png">
+                    <p ng-bind="emptyMsg"></p>
+            </div>
+    	<div class="prePillDetailExitData" ng-show="showPrePillDetailContent">
+	        <div class="list pre-Pill-Detail-list">
+	
+	            <div class="item normal-text">
+	                
+	                药品名称
+	                <span class="item-note normal-text" ng-bind="prescriptionPillDetailList.name">
+	                 <!-- 青霉素 -->
+	                </span>
+	            </div>
+	
+	            <div class="item normal-text">
+	                
+	                规格
+	                <span class="item-note normal-text" ng-bind="prescriptionPillDetailList.specification">
+	                  <!-- 25毫克/100片 -->
+	                </span>
+	            </div>
+	
+	            <div class="item normal-text">
+	                
+	                单次计量
+	                <span class="item-note normal-text" ng-bind="prescriptionPillDetailList.single">
+	                  <!-- 10毫克 -->
+	                </span>
+	            </div>
+	
+	            <div class="item normal-text">
+	                剂量单位
+	                <span class="item-note normal-text" ng-bind="prescriptionPillDetailList.soseUnit">
+	                  <!-- 毫克 -->
+	                </span>
+	            </div>
+	            <div class="item normal-text">
+	                用法
+	                <span class="item-note normal-text" ng-bind="prescriptionPillDetailList.useWay">
+	                  <!-- 口服 -->
+	                </span>
+	            </div>
+	            <div class="item normal-text">
+	                频次
+	                <span class="item-note normal-text" ng-bind="prescriptionPillDetailList.useFrequence">
+	                  <!-- 一天两次 -->
+	                </span>
+	            </div>
+	            <div class="item normal-text">
+	                用药天数
+	                <span class="item-note normal-text" ng-bind="prescriptionPillDetailList.useDay">
+	                  <!-- 一个月 -->
+	                </span>
+	            </div>
+	            <div class="item normal-text">
+	                数量
+	                <span class="item-note normal-text" ng-bind="prescriptionPillDetailList.number">
+	                  <!-- 2瓶 -->
+	                </span>
+	            </div>
+	            <div class="item normal-text">
+	                单位
+	                <span class="item-note normal-text" ng-bind="prescriptionPillDetailList.unit">
+	                  <!-- 瓶 -->
+	                </span>
+	            </div>
+	            <div class="item normal-text" ng-if="prescriptionPillDetailList.price">
+	                参考单价
+	                <div class="item-note normal-text">
+		                <span>¥</span>
+		                <span ng-bind="formatNumber(prescriptionPillDetailList.price)"></span>
+		                  <!-- ¥3.38 -->
+	                </div>
+	            </div>
+	            <div class="item normal-text">
+	                参考金额
+	                <div class="item-note normal-text" ng-if="prescriptionPillDetailList.totalAmount">
+		                <span>¥</span>
+		                <span ng-bind="formatNumber(prescriptionPillDetailList.totalAmount)"></span>
+		                  <!-- ¥3.38 -->
+	                </div>
+	            </div>
+	            <div class="item normal-text customDoctor">
+	                <span class="custDoctorFirst">医嘱</span>
+	                <span class="custDoctorSec">
+	                		<span class="item-note normal-text" ng-bind="prescriptionPillDetailList.remark">
+	                	</span>
+	                 <!--  限二次用药 -->
+	                </span>
+	            </div>
+	        </div>
+		</div>
+    </ion-content>
+
+    
+</ion-view>
+

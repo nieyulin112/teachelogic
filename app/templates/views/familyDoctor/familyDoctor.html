@@ -1,0 +1,100 @@
+<ion-view class="stable-bg familyDoctor" ng-init="initFamilyDoctor();">
+	<!--主标题-->
+	<ion-header-bar align-title="center" class="bar-calm">
+		<button class="button button-icon ion-ios-arrow-back" ng-click="backHome();"></button>
+		<div class="button-bar">
+			<a class="button cyan-bg opacity_left" ng-class="{active:isRecmd}" ng-click="showRecmd();">推荐医生</a>
+			<a class="button cyan-bg opacity_right" ng-class="{active:!isRecmd}" ng-click="showAll()">所有医生</a>
+		</div>
+		<button class="button button-icon ion-ios-search-strong" ui-sref="app.search"></button>
+	</ion-header-bar>
+	
+	<!--推荐医生-->
+	<ion-content ng-show="isRecmd" overflow-scroll="true" class="noscroll greyColor" ng-class="{isCmdDoc:isCmdEmpty}">
+		<ion-scroll delegate-handle="recmdScroll">
+			<ion-refresher on-refresh="getRecmd(1);" pulling-text="下拉刷新" refreshing-text="正在刷新..."></ion-refresher>
+			<ion-list class="recmd_list">
+				<div class="text-center normal-text padding hidEmptyData" ng-class="{hidEmptyData:!isCmdEmpty,isEmptyData:isCmdEmpty}" ng-if="isCmdEmpty">
+					<img src="images/Doctor.png">
+					<p ng-bind="emptyMsg"></p>
+				</div>
+				<ion-item class="item-avatar item-borderless" ng-repeat="item in storeRecmd" ng-click="showDetail(item);" ng-if="item.doctorCode && item.doctorCode !== 'null'">
+					<img ng-src="{{item.portrait}}">
+					<h2>
+					    <span ng-bind="item.name" class="nameval"></span>
+					    <span ng-bind="item.deplev" class="levelval"></span>
+				    </h2>
+					<p ng-bind="item.hospital" class="recmd_item_hospital"></p>
+					<p class="recmd_item_num">
+						<span>签约数<span ng-bind="item.contractNum" class="calm numval"></span><span class="calm">人</span></span>
+						<span class="recmd_item_numRight">慢病续方<span ng-bind="item.slowNum" class="calm numval"></span><span class="calm">次</span></span>
+					</p>
+				</ion-item>
+			</ion-list>
+			<ion-infinite-scroll ng-if="recmdMore" on-infinite="getRecmd(recmdStart);" distance="20%" ></ion-infinite-scroll>
+		</ion-scroll>
+	</ion-content>
+    
+    	<!--副标题-->
+	<div class="bar bar-subheader" ng-show="!isRecmd">
+		<div class="button-bar">
+			<a class="button button-light icon-right" ng-class="{subactive: !isDefault && isHospital || sltHospital!='按医院', 'ion-ios-arrow-down':sltHospital==='按医院', 'ion-ios-arrow-up':sltHospital!=='按医院'}" ng-click="showHospital();" ng-bind="sltHospital"></a>
+			<a class="button button-light icon-right" ng-class="{subactive: !isDefault && isSubject || sltSubject!='按科室', 'ion-ios-arrow-down':sltSubject==='按科室', 'ion-ios-arrow-up':sltSubject!=='按科室'}" on-touch="showSubject();" ng-bind="sltSubject"></a>
+		</div>
+	</div>
+    
+    <!--所有医生-->
+    <ion-content class="grey-bg has-subheader noscroll greyColor" ng-show="isDefault" overflow-scroll="true" ng-class="{isAllDoc:isAllEmpty}">
+    		<ion-scroll delegate-handle="allScroll">
+			<ion-refresher on-refresh="getAll(1);" pulling-text="下拉刷新" refreshing-text="正在刷新..."></ion-refresher>
+			<div class="list recmd_list">
+				<div class="text-center normal-text padding hidEmptyData" ng-if="isAllEmpty" ng-class="{hidEmptyData:!isAllEmpty,isEmptyData:isAllEmpty}">
+					<img src="images/Doctor.png">
+					<p ng-bind="emptyMsg"></p>
+				</div>
+				<ion-item class="item-avatar item-thumbnail-left item-borderless" ng-repeat="item in storeAll" ng-click="showDetail(item);" ng-if="item.doctorCode && item.doctorCode !== 'null'">
+					<img ng-src="{{item.portrait}}">
+					<h2>
+					    <span ng-bind="item.name" class="numval"></span>
+					    <span ng-bind="item.deplev" class="levelval"></span>
+				    </h2>
+					<p ng-bind="item.hospital" class="recmd_item_hospital"></p>
+					<p class="recmd_item_num">
+						<span>签约数<span ng-bind="item.contractNum" class="calm numval"></span><span class="calm">人</span></span>
+						<span class="recmd_item_numRight">慢病续方<span ng-bind="item.slowNum" class="calm numval"></span><span class="calm">次</span></span>
+					</p>
+				</ion-item>
+			</div>
+			<ion-infinite-scroll ng-if="allMore" on-infinite="getAll(allStart);" distance="20%" ></ion-infinite-scroll>
+		</ion-scroll>
+    </ion-content>
+    
+    <!--按医院-->
+	<ion-content class="has-subheader noscroll greyColor" overflow-scroll="true" ng-show="!isDefault && isHospital" ng-class="{isHosData:isHosEmpty}">
+		<ion-scroll delegate-handle="hospitalScroll">
+			<ion-refresher on-refresh="selectArea(1);" pulling-text="下拉刷新" refreshing-text="正在刷新..."></ion-refresher>
+			<ion-list>
+				<div class="text-center normal-text padding hidEmptyData" ng-if="isHosEmpty" ng-class="{hidEmptyData:!isHosEmpty,isEmptyData:isHosEmpty}">
+					<img src="images/Doctor.png">
+					<p ng-bind="emptyMsg"></p>
+				</div>
+				<ion-item ng-repeat="item in storeHospital" class="hospital item-icon-right" ng-click="selectHospital(item);">
+					<h2 ng-bind="item.name"></h2>
+					<p ng-bind="item.address"></p>
+					<div class="inline hosdoc green">
+						<img src="images/head2@2x.png" />
+						<span ng-bind="item.population"></span>
+					</div>
+				</ion-item>
+			</ion-list>
+			<ion-infinite-scroll ng-if="hosMore" on-infinite="selectArea(hosStart);" distance="20%" ></ion-infinite-scroll>
+		</ion-scroll>
+	</ion-content>
+	
+	<!--按科室-->
+	<ion-content class="subject grey-bg has-subheader greyColor" ng-show="!isRecmd && !isDefault && isSubject">
+		<ion-list>
+			<ion-item ng-repeat="item in storeSubject" ng-bind="item.departmentName" ng-click="selectSubject(item);"></ion-item>
+		</ion-list>
+	</ion-content>
+</ion-view>

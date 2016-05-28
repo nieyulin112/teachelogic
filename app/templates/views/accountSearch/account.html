@@ -1,0 +1,67 @@
+<ion-view class="bg-lighter customAccountSearch" ng-init="initAccountSearch();">
+	
+	<ion-header-bar align-title="center" class="bar-calm">
+		<button class="button button-icon icon ion-ios-arrow-back" ng-click="backToHome()"></button>
+		<h1 class="title super-text">医保账户</h1>
+	</ion-header-bar>
+	<div class="bar bar-subheader has-header">
+		<div class="si-blance-total calm-bg">
+			<div class="act_siCard text-center">
+				<span>社保编号</span>
+				<span ng-bind="getRecordAccountMoney.account"></span>
+			</div>
+		</div>
+		
+		<div class="card_account text-center">
+			<div class="min-text">账户余额(元)</div>
+			<div class="super-text" ng-bind="getRecordAccountMoney.balance"></div>
+		</div>
+	</div>
+	<div class="fixAccountLabel" id="fixAccountLabel">
+		<span id="fixAccountSpan"></span>
+	</div>
+	<!--基本的数据展示-->
+	<ion-content class="has-subheader noscroll_account noscroll" overflow-scroll="true"  ng-class={isAccountSearch:isEmpty}>  
+	
+	<!--分页的数据-->
+		<ion-scroll id="accountScrollId" delegate-handle="accountScroll" class="account_top">
+			<ion-refresher on-refresh="getAccount(0);" pulling-text="下拉刷新" refreshing-text="正在刷新..."></ion-refresher>
+			<div class="money-detail">
+				<ul>
+					<div class="rec text-center normal-text padding hidEmptyData" ng-class="{hidEmptyData:!isEmpty,isEmptyData:isEmpty}" ng-if="isEmpty">
+						<img src="images/Doctor.png">
+						<p ng-bind="emptyMsg"></p>
+					</div>
+					<li ng-repeat="item in recordMoney.record" class="customYearDivider">
+						<div class="year custom-year-divider" ng-show="item.showYear">
+							<span>{{item.date.substr(0,4)}}年</span>
+						</div>
+						<div class="money-detail-date">
+							<span>{{item.date.substr(5,2)}}月{{item.date.substr(8,2)}}日</span>
+						</div>
+
+						<div class="money-detail-d money_detail_add"
+						ng-class="{money_detail_reduce:item.consumption,  money_detail_add:item.healthAdd}">
+							<div class="money-detail-content">
+								<img src="images/amountInclude.png" class="detail-images" ng-if="item.amountInclude">
+								<img src="images/amountInclude.png" class="detail-images" ng-if="item.healthAdd">
+								<img src="images/consumption.png" class="detail-images" ng-if="item.consumption">
+								<p class="money-detail-content-type normal-text"  ng-if="item.amountInclude">{{item.includedType}}
+									<p class="money-detail-content-amount assertive large-text" ng-bind="item.amountInclude" ng-if="item.amountInclude"></p>
+								</p>
+								<p class="money-detail-content-type normal-text" ng-if="item.healthAdd">{{item.includedType}}
+									<p class="money-detail-content-amount assertive large-text" ng-bind="item.healthAdd" ng-if="item.healthAdd"></p>
+								</p>
+								<p class="money-detail-content-type normal-text" ng-if="item.consumption">{{item.includedType}}
+									<p class="money-detail-content-amount greenColor large-text" ng-bind="item.consumption" ng-if="item.consumption"></p>
+								</p>
+								<i  class="ion-android-arrow-dropdown-circle" ng-class="item.downup" ng-show=""></i>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<ion-infinite-scroll ng-if="accountMore" on-infinite="getAccount(accountStart);" distance="20%"></ion-infinite-scroll>
+		</ion-scroll>
+	</ion-content>
+</ion-view>

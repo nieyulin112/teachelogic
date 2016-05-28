@@ -1,0 +1,73 @@
+<ion-view class="stable-bg2 paymentDetail" ng-init="createSlidesForMonth();">
+	<!--主标题-->
+	<ion-header-bar align-title="center" class="bar bar-header bar-calm head-noborder">
+        <button class="button button-icon icon ion-ios-arrow-back" ng-click="goPreviouPage()"></button>
+        <h1 class="title super-text" ng-bind="paymentTitle"></h1>
+    </ion-header-bar>
+	<ion-slide-box  active-slide="insuranceDetailSlideIndex" slide-interval="4000" on-swipe-right="slideRightInsurance()" on-swipe-left="slideLeftInsurance()" delegate-handle="insuranceHandle" >
+		<ion-slide ng-repeat="insurance in storeInsurances track by $index">
+			<div class="bar bar-subheader">
+				<div class="button-bar">
+					<div class="icon-right insuranceYearMonth">
+						<div class="insuranceYear">
+							<span class ="insuranceYearSpan" ng-bind="insurance.insuranceYear"></span>
+							<span class ="insuranceYearSpan" ng-if="!insurance.insuranceYear">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+							<span class ="insuranceMonthSpanLeft">年</span>	
+							<span class="button button-light icon-right ion-ios-arrow-down custom_button_arrow" ng-click="showArrowUpForInsurance();" ng-class="{'ion-ios-arrow-up':showArrowUp}"></span>
+						</div>
+					</div>
+					<div class="heightLine"></div>
+					<div class="paymentCompanyPersonal">
+						<div class="paymentCompanyPersonalFirst">
+							<div>公司缴纳(元)</div>
+							<div ng-bind="formatNumber(insurance.companyPay)"></div>
+						</div>
+						<div class="paymentCompanyPersonalSec">
+							<div>个人缴纳(元)</div>
+							<div ng-bind="formatNumber(insurance.personPay)"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			 <ion-content class="has-subheader" scroll="true" overflow-scroll="true" ng-class="{'isEmptyDataPaymentList':(!insurance.hasInsuranceDetail || connectionIssue)}">
+				<ion-list>
+					<!--<div class="rec text-center normal-text padding hidEmptyData" ng-class="{hidEmptyData:!connectionIssue,isEmptyData:connectionIssue}" ng-if="connectionIssue">
+	                    <img src="images/Doctor.png">
+	                    <p>网络连接不可用，请稍后再试</p>
+        				</div>-->
+					<div class="rec text-center normal-text padding hidEmptyData" ng-class="{hidEmptyData:insurance.hasInsuranceDetail,isEmptyData:!insurance.hasInsuranceDetail}" ng-if="!insurance.hasInsuranceDetail">
+	                    <img src="images/Doctor.png">
+	                    <p>无缴费记录</p>
+	    				</div>
+					<ion-item ng-repeat="monthItem in insurance.insuranceDetailList" class="insuranceMonths">
+						<div class="month">
+							<div class="monthDIVFirst">
+								<span ng-bind="monthItem.paymentMonth"></span><span>月</span>
+							</div>
+							<div class="monthDIVSec">
+								<span >缴费基数{{ formatNumber(monthItem.paymentBase) }}</span>
+							</div>
+						</div>
+						<div class="insuranceDetail">
+							<!--<div class="insuranceDetailDIVFirst" ng-if="monthItem.arrivalStatus!='2'">
+								<span class="isPayedState" ng-if="monthItem.arrivalStatus=='0'">&nbsp;</span>
+								<span class="isPayedState" ng-if="monthItem.arrivalStatus=='1'">&nbsp;</span>
+							</div>-->
+	
+							<!--<div class="insuranceDetailDIVSec" ng-if="monthItem.arrivalStatus=='2'">-->
+								<div class="insuranceDetailDIVSec">
+								<div class="paymentAmountDIV">
+									<span ng-bind="formatNumber(monthItem.paymentAmount)"></span>
+								</div>
+								<div class="insuranceDetailDIV">
+									<span>公司缴纳{{ formatNumber(monthItem.companyPaymentAmount) }}</span>
+									<span>个人缴纳{{ formatNumber(monthItem.personalPaymentAmount) }}</span>
+								</div>
+							</div>
+						</div>
+					</ion-item>
+				</ion-list>
+			 </ion-content>
+		</ion-slide>
+	</ion-slide-box>
+</ion-view>

@@ -1,0 +1,19 @@
+<ion-view class="rec-view" ng-init="initSunshine();">
+	<!-- title return 返回至首页 -->
+	<ion-header-bar align-title="center" class="bar-calm">
+		<button class="button button-icon icon ion-ios-arrow-back" ng-click="home()"></button>
+		<h1 class="title super-text">服务目录</h1>
+	</ion-header-bar>
+	
+	<div style="margin-top: 44px;"></div>
+	
+	<ion-content overflow-scroll="true">
+		
+		<div class="sun-item" ng-repeat="item in sunList track by $index" ng-click="jumpJobsHandler(item)">
+			<i class="{{ item.iconClass }}"></i>
+			<span>{{ item.root.second }}</span>
+		</div>
+
+	</ion-content>
+
+</ion-view>

@@ -1,0 +1,166 @@
+<ion-view class="stable-bg injuryCmptDetail" ng-init="initInjuryDetail();">
+	<ion-header-bar align-title="center" class="bar-calm">
+		<button class="button button-icon ion-ios-arrow-back" ng-click="goBack();"></button>
+		<h1 class="title super-text" ng-bind="'工伤' + modelInjury.compensationId">详情描述</h1>
+	</ion-header-bar>
+	<ion-content class="axis">
+		<div class="axis-item">
+			<div class="row">
+				<div class="axis-left col col-10">
+					<i class="i-dot green"></i>
+				</div>
+				<div class="axis-left col col-90">
+					<div class="row">
+						<div class="axis-title col col-40">工伤报案</div>
+						<div class="col col-60"></div>
+					</div>
+					<div class="row">
+						<div class="col col-40">发生时间</div>
+						<div class="col col-60" ng-bind="modelInjury.occurDate"></div>
+					</div>
+					<div class="row">
+						<div class="col col-40">企业名称</div>
+						<div class="col col-60" ng-bind="modelInjury.comName"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="axis-item" 
+			ng-class="{'white': steps.step1_apply.style == 'white', 'grey': steps.step1_apply.style == 'grey'}">
+			<div class="row">
+				<div class="axis-left col col-10">
+					<i class="i-dot" 
+					ng-class="{'grey': steps.step1_apply.dot == 0, 'red': steps.step1_apply.dot == 1, 'green': steps.step1_apply.dot == 2 }">
+					</i>
+				</div>
+				<div class="axis-left col col-90">
+					<div class="row">
+						<div class="axis-title sub-axis-left col col-40">工伤认定申请</div>
+						<div class="sub-axis-right col col-60">已申请</div>
+					</div>
+					<div class="row">
+						<div class="sub-axis-left col col-40" ng-bind="modelInjury.applyDate"></div>
+						<div class="sub-axis-right col col-60"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 批复 -->
+		<div class="axis-item" 
+			ng-class="{'white': steps.step2_approve.style == 'white', 'grey': steps.step2_approve.style == 'grey'}">
+			<div class="row">
+				<div class="axis-left col col-10">
+					<i class="i-dot" 
+					ng-class="{'grey': steps.step2_approve.dot == 0, 'red': steps.step2_approve.dot == 1, 'green': steps.step2_approve.dot == 2 }"></i>
+				</div>
+				<div class="axis-left col col-90">
+					<div class="row">
+						<div class="axis-title sub-axis-left col col-40">批复</div>
+						<div class="sub-axis-right col col-60">
+							{{ modelInjury.response == '认定为工伤' || modelInjury.response == '工伤' ? '认定为工伤' : '认定为非工伤' }}
+						</div>
+					</div>
+					<div class="row">
+						<div class="sub-axis-left col col-40" ng-bind="modelInjury.responseDate"></div>
+						<div class="sub-axis-right col col-60"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 医疗费用核定 -->
+		<div class="axis-item" 
+			ng-class="{'white': steps.step3_count.style == 'white', 'grey': steps.step3_count.style == 'grey'}">
+			<div class="row">
+				<div class="axis-left col col-10">
+					<i class="i-dot" 
+					ng-class="{'grey': steps.step3_count.dot == 0, 'red': steps.step3_count.dot == 1, 'green': steps.step3_count.dot == 2 }">
+					</i>
+				</div>
+				<div class="axis-left col col-90">
+					<div class="row">
+						<div class="axis-title sub-axis-left col col-40">医疗费用核定</div>
+						<div class="sub-axis-right col col-60"></div>
+					</div>
+					<div class="row">
+						<div class="sub-axis-left col col-60">费用总额（元）</div>
+						<div class="sub-axis-right col col-40" ng-bind="modelInjury.sumFee"></div>
+					</div>
+					<div class="row">
+						<div class="sub-axis-left col col-70">核定报销金额（元）</div>
+						<div class="sub-axis-right col col-30" ng-bind="modelInjury.reimburseFee"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 医疗费用支付 -->
+		<div class="axis-item" 
+			ng-class="{'white': steps.step4_pay.style == 'white', 'grey': steps.step4_pay.style == 'grey'}">
+			<div class="row">
+				<div class="axis-left col col-10">
+					<i class="i-dot" ng-class="{'grey': steps.step4_pay.dot == 0, 'red': steps.step4_pay.dot == 1, 'green': steps.step4_pay.dot == 2 }"></i>
+				</div>
+				<div class="axis-left col col-90">
+					<div class="row">
+						<div class="axis-title sub-axis-left col col-40">医疗费用支付</div>
+						<div class="sub-axis-right col col-60" ng-bind="modelInjury.isPay"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="axis-item" 
+			ng-class="{'white': steps.step5_level.style == 'white', 'grey': steps.step5_level.style == 'grey'}">
+			<div class="row">
+				<div class="axis-left col col-10">
+					<i class="i-dot" ng-class="{'grey': steps.step5_level.dot == 0, 'red': steps.step5_level.dot == 1, 'green': steps.step5_level.dot == 2 }"></i>
+				</div>
+				<div class="axis-left col col-90">
+					<div class="row">
+						<div class="axis-title sub-axis-left col col-40">等级认定</div>
+						<div class="sub-axis-right col col-60" ng-bind="modelInjury.grade"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="axis-item" 
+			ng-class="{'white': steps.step6_check.style == 'white', 'grey': steps.step6_check.style == 'grey'}">
+			<div class="row">
+				<div class="axis-left col col-10">
+					<i class="i-dot" ng-class="{'grey': steps.step6_check.dot == 0, 'red': steps.step6_check.dot == 1, 'green': steps.step6_check.dot == 2 }"></i>
+				</div>
+				<div class="axis-left col col-90">
+					<div class="row">
+						<div class="axis-title sub-axis-left col col-40">核定</div>
+						<div class="sub-axis-right col col-60"></div>
+					</div>
+					<div class="row" ng-repeat="item in modelInjury.details track by $index">
+						<div 
+							class="sub-axis-left col col-70" 
+							ng-class="{'sub-title': $index == 0}" 
+							ng-bind="item.first">
+						</div>
+						<div class="sub-axis-right col col-30" ng-bind="item.second"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="axis-item" 
+			ng-class="{'white': steps.step7_checkPay.style == 'white', 'grey': steps.step7_checkPay.style == 'grey'}">
+			<div class="row">
+				<div class="axis-left col col-10">
+					<i class="i-dot" ng-class="{'grey': steps.step7_checkPay.dot == 0, 'red': steps.step7_checkPay.dot == 1, 'green': steps.step7_checkPay.dot == 2 }"></i>
+				</div>
+				<div class="axis-left col col-90">
+					<div class="row">
+						<div class="axis-title sub-axis-left col col-70">核定支付费用</div>
+						<div class="sub-axis-right col col-30" ng-bind="modelInjury.isFinalPay"></div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+
+		<div class="spacer"></div>
+
+	</ion-content>
+</ion-view>

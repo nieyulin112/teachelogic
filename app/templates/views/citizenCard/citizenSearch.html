@@ -1,0 +1,43 @@
+<ion-view class="search citizenCard">
+    <ion-header-bar align-title="center" class="bar-calm item-input-inset">
+    		<button class="button button-icon ion-ios-arrow-back" ng-click="doBack();"></button>
+			<label class="item-input-wrapper dark-calm-bg box-search">
+   			    <input id="searchWords" type="search" ng-focus="searchCardHistory()" placeholder="请输入网点名称" ng-model="searchAddress" class="normal-text width100" ng-change="changeBtn()">
+  			</label>
+  			<button class="button button-clear large-text" ng-click="execute()" ng-bind="changeText"></button>
+	</ion-header-bar>
+   
+    	<ion-content class="grey has-subheader  citizenSearchResult" overflow-scroll="true">
+    		<div class="has-header has-subheader record-bg" ng-class="{isEmptySearch:!isHide}">
+    			<div class="rec text-center normal-text padding hidEmptyData" ng-class="{hidEmptyData:!isData,isEmptySearch:isData}" ng-if="isData">
+                   <div class="searchPic">
+                   		 <img src="images/Doctor.png">
+                   		 <p ng-bind="emptyMsg"></p>
+                   </div>
+            	</div>
+	        	<div class="cardInfor height100" ng-if="isAddressData">
+	            <div class="list card" ng-repeat="item in listAddress | filter:searchAddress" ng-click="getPosition(item);">
+	            	<div class="left">
+		                <div class="large-text margin-5" ng-bind="item.unit"></div>     
+		                <div class="font-gray normal-text" ng-bind="item.address" ng-show="addressTrim(item)"></div>
+	                </div>
+	                <!--<h3 class="font-gray">电话:<span ng-bind="item.phonenumber"></span></h3>-->
+	                <i class="icon ion-ios-telephone right" on-touch="telephoned(item)" ng-show="dataTrim(item)"></i>
+	            	</div>
+	        	</div>
+    		</div>
+    </ion-content>
+    
+     <div class="search_backdrop" ng-show="isShowTips"></div>
+     <ion-content class=" noscroll" overflow-scroll="true" ng-show="isShowTips">
+     	<div class="item item-divider normal-text">搜索历史</div>
+     	<ion-scroll class="search_hisScroll stable-bg">
+     		<div class="list">
+			    	<div class="item" ng-repeat="item in addressItem | filter:searchAddress | orderBy:'-id'"
+			    		 ng-bind-html="item.value" ng-click="selectSearchHistoryWowrd(item.value)">
+			    	</div>
+		   	 </div>
+		</ion-scroll>
+		<div class="text-center item item-divider large-text" ng-click="delKey()">清除搜索纪录</div>
+    	</ion-content>
+</ion-view>

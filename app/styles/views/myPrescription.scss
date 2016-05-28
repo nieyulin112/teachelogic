@@ -1,0 +1,464 @@
+.flatten .item{padding:0px!important;}
+.flatten{margin:-1px 0px 20px 0px;border-radius:0px;}
+.readynopadding{padding:0px;}
+.iflatten{font-size:21px;}
+.c-background-color{background-color:#f0f0f0;}
+.head-noborder{border-bottom:0px;}
+.slider-line:nth-child(1):after{background:#33cd5f;}
+.myPreNoData,.preDetailNoData,.prePillDetailNoData{
+    text-align:center;
+}
+.pre-Pill-Detail-list{
+    div{
+      color:#999999;
+      span{
+        color:#303030;
+      }    
+    }
+}
+.mP-disease-doctor-status{
+    .mP-dds{
+      .mP-dds-divone{
+          .mP-disease-doctor{
+              overflow: hidden;
+            span.mPre-disease{
+              margin-right:15px;
+              margin-left:5px;
+              float:left;
+              margin-top: 1px;
+            }
+            img.mPre-doc-pic{
+                height:15px;
+                float: left;
+                margin-right: 5px;
+                margin-top: 3px;
+            }
+            span.mPre-doc-name{
+                color:#999999;
+            }  
+          }
+      }
+      .mP-dds-divtwo{
+          .status-r{
+            float:right;
+            color:#999999;
+          }
+      }
+      .mP-dds-divthree{
+          .status-w{
+            float:right;
+            color:darkorange; 
+          }
+      }  
+    }
+}
+
+.mPre-button-time{
+    border-top:0px;
+    .mPre-bt-row{
+        padding:2px;
+        .mPre-button{
+            .mPre-downi{
+               padding-left:5px; 
+            }
+            .mPre-upi{
+               padding-left:5px; 
+            }
+            .mPre-time{
+                padding:3px 1px 3px 15px;
+               span.mPre-timespan{
+                   color:#999999;
+               } 
+            }
+        }
+    }
+}
+
+.pd-list-one{
+    margin-bottom:8px;
+    .div-one{
+        span.pd-one{
+          span.pd-two{
+              color:#333;
+              font-weight: 500;
+          }  
+        }
+        span.pd-dis{
+            color:#333;
+        }
+    }
+    .div-two{
+        
+        .name{
+          color:#333;  
+        }
+        .spe{
+            color:#333;
+        }
+        .adv{
+            color:#8F8F8F;
+            width: 100%;
+            white-space:normal;
+            span.pd-adv{
+              color:#333;  
+            }
+        }
+        .dis-doc{
+          color: #8F8F8F; 
+          margin-right: 5px;
+          right: 22px;
+        }
+        .customGT{
+            color: #8F8F8F; 
+            margin-right: -15px;
+        }
+    }
+    .div-three{
+            padding:12px;
+            .div-t-o{
+                float:right;
+                .doctor-pic{
+                vertical-align: bottom;height: 18px;
+            }
+                span.doctor-name{
+                    font-weight: 500;
+                }
+            }
+    }
+    .div-four{
+        span.status-tittle{
+            color:#555555;
+        }
+    }
+}
+.pd-list-two{
+    border-bottom: 1px solid #ddd;
+    margin-bottom:8px;
+}
+
+@media screen and(max-width:370px){
+    .pd-res{
+        width:100%;
+        line-height: 180px;
+        .pd-res-bgImg{
+            width:50%;
+            height: 100%;
+            margin: 0 auto;
+            background: url(../images/vector-smart-object.png) no-repeat center;
+            .pd-res-w{
+             color:#38B690;
+             text-align: center;
+            }
+        } 
+    };
+    .pd-state{
+        line-height:150px;
+    }
+    .myPre-piliList{
+        border-bottom:0px;
+        .myPre-row{
+            padding:7% 6% 1%;
+            width:100%;
+                .myPre-container-default,.myPre-container-click{
+                    width:1000px;
+ //                   height:90px;
+                    div.myPre-pilldiv{
+                        float:left;
+                        margin-right:4%;
+                        margin-left:4%;
+                        text-align:center;
+                        width:70px;
+                        height:92px;
+                        position:relative;
+                        margin-bottom:16px;
+                        .pre-img{
+                            width:70px;
+                            height:70px;
+                            vertical-align: middle;
+                            display: table-cell;
+                            img.myPre-pillImg{
+                                max-width: 66px;
+                                max-height: 66px;
+                                padding: 2px;
+                            }
+                        }
+                        div.myPre-PillName{
+                            color:#777777;
+                            font-weight: 500;
+                            text-align: center;
+                            width:70px;
+                            height:20px;
+                            text-overflow: ellipsis;
+                            overflow: hidden;
+                            position:absolute;
+                            bottom:0;
+                            left:50%;
+                            margin-left:-35px;
+                        }
+                    }      
+                }
+                .myPre-container-default{
+                    height:90px;
+                }
+                .myPre-container-click{
+                    height:100%;   
+                }
+        }
+    }
+}
+
+@media screen and(min-width:371px) and (max-width:413px){
+    .pd-res{
+        width:100%;
+        line-height: 200px;
+        .pd-res-bgImg{
+            width:50%;
+            height: 100%;
+            margin: 0 auto;
+            background: url(../images/vector-smart-object.png) no-repeat center;
+            .pd-res-w{
+             color:#38B690;
+             text-align: center;
+            }
+        }
+    }
+     .pd-state{
+        line-height:166px;
+    }
+    .myPre-piliList{
+        border-bottom:0px;
+        .myPre-row{
+            padding:7% 4% 1%;
+            width:100%;
+                .myPre-container-default,.myPre-container-click{
+                    width:1000px;
+//                  height:90px;
+                    div.myPre-pilldiv{
+                        float:left;
+                        margin-right:5%;
+                        margin-left:5%;
+                        text-align:center;
+                        width:80px;
+                        height:104px;
+                        position:relative;
+                        margin-bottom:16px;
+                        .pre-img{
+                            width:80px;
+                            height:80px;
+                            vertical-align: middle;
+                            display: table-cell;
+                            img.myPre-pillImg{
+                                max-width: 77px;
+                                max-height: 77px;
+                                padding: 2px;
+                            }
+                        }
+                        div.myPre-PillName{
+                            color:#777777;
+                            font-weight: 500;
+                            text-align: center;
+                            width:80px;
+                            height:20px;
+                            line-height:20px;
+                            text-overflow: ellipsis;
+                            overflow: hidden;
+                        }
+                    }      
+                }
+                .myPre-container-default{
+                    height:106px;
+                }
+                .myPre-container-click{
+                    height:100%;
+                }
+        }
+    }
+    
+}
+
+@media screen and(min-width:414px){
+    .pd-res{
+        width:100%;
+        line-height: 200px;
+        .pd-res-bgImg{
+            width:50%;
+            height: 100%;
+            margin: 0 auto;
+            background: url(../images/vector-smart-object.png) no-repeat center;
+            .pd-res-w{
+                color:#38B690;
+                text-align: center;
+            }
+        }
+    }
+    .pd-state{
+       line-height:166px;
+    }
+    .myPre-piliList{
+        border-bottom:0px;
+        .myPre-row{
+            padding:7% 1% 1%;
+            width:100%;
+                .myPre-container-default,.myPre-container-click{
+                    width:1000px;
+//                  height:90px;
+                    div.myPre-pilldiv{
+                        float:left;
+                        margin-right:7%;
+                        margin-left:7%;
+                        text-align:center;
+                        width:77px;
+                        height:104px;
+                        position:relative;
+                        margin-bottom:16px;
+                        .pre-img{
+                            width:77px;
+                            height:77px;
+                            vertical-align: middle;
+                            display: table-cell;
+                            img.myPre-pillImg{
+                                max-width: 73px;
+                                max-height: 73px;
+                                padding: 2px;
+                            }
+                        }
+                       div.myPre-PillName{
+                            color:#777777;
+                            font-weight: 500;
+                            text-align: center;
+                            width:77px;
+                            height:20px;
+                            line-height:20px;
+                            text-overflow: ellipsis;
+                            overflow: hidden;
+                        } 
+                    }      
+                }
+                .myPre-container-default{
+                    height:110px;
+                }
+                .myPre-container-click{
+                    height:100%;
+                }
+        }
+    }
+}
+
+
+.slider-line{border-left:2px solid #ccc;padding:0  0 10px 35px;margin-left:25px;position:relative;}
+.slider-line:after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  left: -9px;
+  top: 0px;
+  width: 16px;
+  height: 16px;
+  -webkit-border-radius: 10px;
+  background: #bdbdbd;
+  border: 2px solid #eee;
+}
+.active-green {
+  border-left:2px solid #33cd5f; 
+  color:#33cd5f;
+}
+
+.si_item{padding:5px 10px;}
+.si-fl-left{float:left;}
+.si-fl-right{float:right;}
+.si-button{min-height:36px;line-height:36px;}
+.si-margin-top20{margin-top:20px;}
+.si-drugs-list{padding:0px 10px;float:left;}
+
+//药品详情
+.padding-0 .item-thumbnail-left{
+      padding-left:10px;
+    }
+@media screen and(max-width:370px){
+    .div-two .detailPic{
+        width:75px;
+        display: inline-block;
+        text-align: center;
+        margin-right: 10px;
+    }
+    .detailPic .pic{
+       max-width: 73px;
+        max-height: 73px;
+        padding: 2px; 
+    }
+}
+@media screen and(min-width:371px) and (max-width:413px){
+    .div-two .detailPic{
+        width:80px;
+        display: inline-block;
+        text-align: center;
+        margin-right: 10px;
+    }
+    .detailPic .pic{
+       max-width: 73px;
+        max-height: 73px;
+        padding: 2px; 
+    }
+}
+@media screen and(min-width:414px){
+    .div-two .detailPic{
+        width:86px;
+        display: inline-block;
+        text-align: center;
+        margin-right: 10px;
+    }
+    .detailPic .pic{
+       max-width: 73px;
+        max-height: 73px;
+        padding: 2px; 
+    }
+}
+.noscroll-myPre{
+    overflow:hidden;
+}
+.noscroll-myPre .scroll-view{
+    height:100%;
+}
+.detail-insurance{
+    width:63%;
+    float:right;
+}
+.detail-insurance{
+    width:63%;
+    float:right;
+}
+.div-two{
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+.detail-my{
+    height:100%;
+}
+.margin-60{
+    padding-bottom:120px;
+}
+
+.isEmptyDataPrescriptionList{
+    height:93%;
+    width:100%;
+    .scroll {
+      height: 100%;
+      display: table;
+      width: 100%;
+    }
+}
+
+.pre-Pill-Detail-list div span.custDoctorFirst {
+    color: #999999;
+}
+.custDoctorSec {
+    text-align: left;
+    width: 70%;
+    white-space: normal;
+    float: right;
+    span {
+    color: #303030;
+}
+}
+

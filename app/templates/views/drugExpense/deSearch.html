@@ -1,0 +1,46 @@
+<ion-view class="stable-bg drugExpense" ng-init="initDESearch();">
+	<ion-header-bar align-title="center" class="bar-calm item-input-inset">
+        <label class="de_seInput item-input-wrapper">
+        		<i class="icon ion-ios-search-strong super-text"></i>
+			<input type="text" id="de_drugSearch" ng-keyup="drugKeyUp($event);" 
+				class="light" placeholder="请输入药品名搜索" ng-model="keyWord" ng-change="inputChange();">
+			<i ng-show="drugKey" on-tap="clearKey($event);" class="icon ion-close-circled super-text"></i>
+		</label>
+		<!--<button ng-click="btnAction($event);" ng-bind="!isSearch?'搜索':'取消'" class="button-clear light"></button>-->
+		<button ng-click="goBack();" class="button-clear light">取消</button>
+    </ion-header-bar>
+    
+    <!--搜索历史-->
+    <ion-subheader ng-show="!isSearch">
+    		<div class="stable-bg list_title">搜索历史</div>
+    </ion-subheader>
+    <ion-content overflow-scroll="true" class="noscroll de_search" ng-show="!isSearch">
+    		<div class="hisBox">
+    			<ion-list>
+    				<div class="text-center normal-text emptyMsg" ng-show="!storeHistory.length">暂无历史搜索记录</div>
+    				<ion-item ng-repeat="item in storeHistory | orderBy:'-id'" 
+    					ng-bind="item.drugName" ng-click="goSearch(item);"></ion-item>
+    				<div class="text-center" ng-show="storeHistory.length">
+    					<button class="button button-clear icon-left ion-trash-a normal-text de_clearBtn" ng-click="clearHistory();">清除历史搜索记录</button>
+    				</div>
+    			</ion-list>
+    		</div>
+    </ion-content>
+    
+    <!--搜索结果列表-->
+    <ion-subheader ng-show="isSearch">
+    		<div class="stable-bg list_title">搜索结果</div>
+    </ion-subheader>
+    <ion-content overflow-scroll="true" class="noscroll de_result" ng-show="isSearch">
+    		<ion-scroll delegate-handle="yearScroll">
+	    		<ion-list>
+	    			<div class="text-center de_emptyList" ng-show="isEmpty">
+	    				<img src="images/Doctor.png">
+	    				<div class="normal-text">没有该种报销药品</div>
+	    			</div>
+	    			<ion-item ng-repeat="item in storeDrug track by $index" ng-bind-html="item.searchName" ng-click="goDrugDetail(item);"></ion-item>
+	    		</ion-list>
+	    		<ion-infinite-scroll ng-if="drugMore" on-infinite="getDrugByKey(drugPageNum);" distance="20%" ></ion-infinite-scroll>
+	    	</ion-scroll>
+    </ion-content>
+</ion-view>

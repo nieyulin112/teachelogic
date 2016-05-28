@@ -1,0 +1,57 @@
+<ion-view class="stable-bg familyDoctor">
+    <!--主标题-->
+    <ion-header-bar align-title="center" class="bar-calm">
+        <button class="button button-icon ion-ios-arrow-back" ng-click="backToHome()"></button>
+        <h1 class="title super-text">市民卡</h1>
+    </ion-header-bar>
+    <ion-content class="record-bg">
+
+        <div class="row light-bg">
+            <div class="col col-33 text-right">
+                <img src="images/placeholder/avatars/avatar-1.png" class="insurance-face">
+            </div>
+            <div class="col">
+                <div class="mt10">
+                    <strong class="large-text" ng-bind="processDatas.person.name"></strong>
+                    <span class="min-text" ng-bind="processDatas.person.sex"></span> 
+                    <span class="min-text" ng-bind="processDatas.person.age">
+                    </span>岁
+                </div>
+                <span class="min-text" ng-bind="processDatas.person.siCard"></span>
+            </div>
+        </div>
+
+        <div class="si-padding-10 large-text pt16 pl20">制卡进度查询</div>
+        <div class="bank-schedule">
+
+            <ul>
+                <li ng-class="state">
+                    <i><span class="ion-clipboard"></span></i> 提交资料
+                </li>
+                <li ng-class="arrowState">
+                    <span class="bank-arrow"></span>
+                </li>
+
+                <li ng-class="openState">
+                    <i><span class="ion-card"></span></i> 银行开户
+                </li>
+                <li ng-class="arrowState2">
+                    <span class="bank-arrow"></span>
+                </li>
+
+                <li ng-class="successState">
+                    <i><span class="ion-android-done"></span></i> 制卡
+                </li>
+            </ul>
+        </div>
+
+        <div class="text-center font-gray padding-bottom">
+            <p ng-bind="message"></p>
+            <p ng-bind="mes"></p>
+        </div>
+
+        <div class="card-button calm" ng-click="interPoint(1)">
+            市民卡网点
+        </div>
+  </ion-content>
+</ion-view>
